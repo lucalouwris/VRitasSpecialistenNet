@@ -8,10 +8,21 @@ public class Movement : MonoBehaviour
 {
     public float wanderRadius;
     public float wanderTimer;
+    private System.Random rd = new System.Random();
+    //public GameObject rootObj;
+    //private GameObject rootObj = GameObject.FindWithTag("Original");
 
     private Transform target;
     private UnityEngine.AI.NavMeshAgent agent;
     private float timer;
+    private float peopleTimer; 
+
+    void Start()
+    {
+        
+        wanderRadius = rd.Next(2, 10);
+        wanderTimer = rd.Next(2, 10);
+    }
 
     // Use this for initialization
     void OnEnable()
@@ -24,6 +35,18 @@ public class Movement : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        if (gameObject.tag == "Original")
+        {
+
+            peopleTimer += Time.deltaTime;
+
+            if (peopleTimer > rd.Next(3,10))
+            {
+                peopleTimer = 0;
+                GameObject duplicate = Instantiate(GameObject.FindWithTag("Original"));
+                duplicate.tag = "Untagged";         
+            }
+            }
 
         if (timer >= wanderTimer)
         {
