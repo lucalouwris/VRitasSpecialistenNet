@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         
-        wanderRadius = rd.Next(2, 10);
+        wanderRadius = rd.Next(5, 30);
         wanderTimer = rd.Next(2, 10);
     }
 
