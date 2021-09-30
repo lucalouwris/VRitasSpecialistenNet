@@ -31,13 +31,13 @@ public class focusObjectScript : MonoBehaviour
     void ReversedLinearPattern()
     {
         x = Mathf.Sin(Time.time * frequency) * amplitude;
-        y = transform.position.y;
+        y = Mathf.Sin(5.0f * Time.time);
         z = transform.position.z;
     }
 
     void LinearPattern()
     {
-        x = transform.position.x;
+        x = Mathf.Sin(5.0f * Time.time);
         y = Mathf.Sin(Time.time * frequency) * amplitude;
     }
 
@@ -57,12 +57,6 @@ public class focusObjectScript : MonoBehaviour
     {
         x = Mathf.Cos(Time.time * frequency) * Mathf.Sin(Time.time * frequency) * amplitude;
         y = Mathf.Sin(Time.time * frequency) * amplitude;
-    }
-
-    void WeirdPattern()
-    {
-        x = Mathf.Sin(Time.time * frequency) * amplitude;
-        y = Mathf.Cos(Time.time * frequency) * Mathf.Sin(Time.time * frequency) * amplitude;
     }
 
     void HandlePattern()
@@ -93,11 +87,6 @@ public class focusObjectScript : MonoBehaviour
         if (Time.time > 50.0 && Time.time < 60.0)
         {
             this.ReveredKnotPattern();
-        }
-
-        if (Time.time > 60.0 && Time.time < 70.0)
-        {
-            this.WeirdPattern();
         }
     }
 }
