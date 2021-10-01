@@ -13,10 +13,12 @@ public class focusObjectScript : MonoBehaviour
     private float y;
     private float z;
 
+    private Renderer renderer;
+
     // Start is called before the first frame update
     void Start()
     {
-   
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -84,9 +86,19 @@ public class focusObjectScript : MonoBehaviour
         }
 
 
-        if (Time.time > 50.0 && Time.time < 60.0)
+        if (Time.time > 50.0)
         {
             this.ReveredKnotPattern();
         }
+    }
+
+    private void OnMouseEnter()
+    {
+        renderer.material.color = Color.green;
+    }
+
+    private void OnMouseExit()
+    {
+        renderer.material.color = Color.red;
     }
 }
