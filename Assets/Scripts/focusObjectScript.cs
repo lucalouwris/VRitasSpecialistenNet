@@ -9,6 +9,12 @@ public class focusObjectScript : MonoBehaviour
     public float amplitude;
     public float frequency;
 
+    public GameObject player;
+
+    //If player is further than this distance, lookAtScore should return -1
+    public float maximumDistance = 20;
+    private float maximumDistanceSquared;
+
     private float x;
     private float y;
     private float z;
@@ -19,6 +25,7 @@ public class focusObjectScript : MonoBehaviour
     void Start()
     {
         renderer = GetComponent<Renderer>();
+        maximumDistanceSquared = maximumDistance * maximumDistance;
     }
 
     // Update is called once per frame
@@ -26,8 +33,18 @@ public class focusObjectScript : MonoBehaviour
     {
 
         this.HandlePattern();
+        float score = this.getLookAtScore();
 
-        transform.position = new Vector3(x, y, z);
+        Debug.Log(score);
+        if (score > 0.95)
+        {
+            renderer.material.color = Color.green;
+        } else
+        {
+            renderer.material.color = Color.red;
+        }
+
+        this.transform.position = new Vector3(x, y, z);
     }
 
     void ReversedLinearPattern()
@@ -92,6 +109,21 @@ public class focusObjectScript : MonoBehaviour
         }
     }
 
+    float getLookAtScore()
+    {
+        Vector3 playerToObject = this.transform.position - player.transform.position;
+
+        if(maximumDistance!=0 && playerToObject.sqrMagnitude > maximumDistanceSquared)
+        {
+            return -1;
+        }
+
+        playerToObject.Normalize();
+        Vector3 lookDirection = player.transform.forward;
+
+        return Vector3.Dot(playerToObject, lookDirection);
+    }
+
     private void OnMouseEnter()
     {
         renderer.material.color = Color.green;
@@ -101,4 +133,6 @@ public class focusObjectScript : MonoBehaviour
     {
         renderer.material.color = Color.red;
     }
+
+
 }
