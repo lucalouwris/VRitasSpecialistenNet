@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 using static System.Math;
 
 public class focusObjectScript : MonoBehaviour
@@ -9,7 +10,7 @@ public class focusObjectScript : MonoBehaviour
     public float amplitude;
     public float frequency;
 
-    public GameObject player;
+    GameObject player;
 
     //If player is further than this distance, lookAtScore should return -1
     public float maximumDistance = 20;
@@ -24,6 +25,7 @@ public class focusObjectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("VRCamera");
         renderer = GetComponent<Renderer>();
         maximumDistanceSquared = maximumDistance * maximumDistance;
     }
@@ -31,18 +33,13 @@ public class focusObjectScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         this.HandlePattern();
         float score = this.getLookAtScore();
 
-        Debug.Log(score);
         if (score > 0.95)
-        {
             renderer.material.color = Color.green;
-        } else
-        {
+        else
             renderer.material.color = Color.red;
-        }
 
         this.transform.position = new Vector3(x, y, z);
     }
@@ -82,31 +79,19 @@ public class focusObjectScript : MonoBehaviour
     {
 
         if (Time.time < 10.0)
-        {
             this.ReversedLinearPattern();
-        }
 
         if (Time.time > 10.0 && Time.time < 30.0)
-        {
             this.LinearPattern();
-        }
 
         if (Time.time > 30.0 && Time.time < 40.0)
-        {
             this.CirclePattern();
-        }
-
 
         if (Time.time > 40.0 && Time.time < 50.0)
-        {
             this.KnotPattern();
-        }
-
 
         if (Time.time > 50.0)
-        {
             this.ReveredKnotPattern();
-        }
     }
 
     float getLookAtScore()
@@ -114,9 +99,7 @@ public class focusObjectScript : MonoBehaviour
         Vector3 playerToObject = this.transform.position - player.transform.position;
 
         if(maximumDistance!=0 && playerToObject.sqrMagnitude > maximumDistanceSquared)
-        {
             return -1;
-        }
 
         playerToObject.Normalize();
         Vector3 lookDirection = player.transform.forward;
