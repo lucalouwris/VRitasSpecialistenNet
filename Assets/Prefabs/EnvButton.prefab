@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 309260996639855016}
   - component: {fileID: 6402369390961258989}
   - component: {fileID: 7221191207648921947}
+  - component: {fileID: 6113021497809262510}
   m_Layer: 0
   m_Name: Select
   m_TagString: Button
@@ -135,7 +136,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &309260996639855016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +215,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!65 &7221191207648921947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -228,6 +229,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6113021497809262510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596649812078588180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dfe1db62181a244e8878adf95336e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Title: {fileID: 6355717657781319995}
+  envNumber: 0
 --- !u!1 &3651490860192852224
 GameObject:
   m_ObjectHideFlags: 0

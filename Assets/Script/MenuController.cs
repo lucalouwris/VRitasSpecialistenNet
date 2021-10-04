@@ -82,13 +82,12 @@ public class MenuController : MonoBehaviour
         float xSpacing = 0.8f;
         float ySpacing = 0.64f;
         int colLength = 2;
-        
+
         for (int i = 0; i < environments.Length; i++)
         {
             GameObject button = Instantiate(envButton, new Vector3(xStart + (xSpacing * (i % colLength)), yStart + (-ySpacing * (i / colLength)), -0.1f), Quaternion.identity, envPanel.transform);
-            
-            Button envbutton = button.GetComponentInChildren<Button>();
-            envbutton.onClick.AddListener(delegate { SwitchScene(i); });
+            ButtonListener but = button.GetComponentInChildren<ButtonListener>();
+            but.envNumber = i;
         }
     }
     public void SwitchScene(int sceneNumber)
