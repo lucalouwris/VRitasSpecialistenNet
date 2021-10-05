@@ -59,6 +59,7 @@ public class focusObjectScript : MonoBehaviour
 
     void CirclePattern()
     {
+        Debug.Log("test");
         x = Mathf.Sin(Time.time * frequency) * amplitude;
         y = Mathf.Cos(Time.time * frequency) * amplitude;
     }
