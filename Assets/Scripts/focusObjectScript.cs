@@ -20,13 +20,14 @@ public class focusObjectScript : MonoBehaviour
     private float y;
     private float z;
 
-    private Renderer renderer;
+    [SerializeField] private Renderer renderer;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("VRCamera");
-        renderer = GetComponent<Renderer>();
+        if(renderer == null)
+            renderer = GetComponent<Renderer>();
         maximumDistanceSquared = maximumDistance * maximumDistance;
     }
 
@@ -36,7 +37,7 @@ public class focusObjectScript : MonoBehaviour
         this.HandlePattern();
         float score = this.getLookAtScore();
 
-        if (score > 0.95)
+        if (score > 0.95f)
             renderer.material.color = Color.green;
         else
             renderer.material.color = Color.red;
