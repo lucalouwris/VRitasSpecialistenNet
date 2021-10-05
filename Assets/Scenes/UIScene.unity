@@ -1203,10 +1203,10 @@ MonoBehaviour:
   - Menu: {fileID: 1247482858}
     faded: 1
   environments:
+  - focusScene
   - Test1
   - Test2
   - Test3
-  - Test4
   envPanel: {fileID: 1247482858}
   envButton: {fileID: 3651490860192852224, guid: dfefc14cf4988f54d89df5346c8c0efc, type: 3}
   fadeDuration: 0.4

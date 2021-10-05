@@ -17,11 +17,7 @@ MonoBehaviour:
   SkipPromptForVersion: 
   StereoRenderingMode: 1
   InitializationType: 1
-  EditorAppKey: application.generated.unity.emptyproject.exe
-<<<<<<< HEAD
+  EditorAppKey: application.generated.unity.emptyproject.2033440768.exe
   ActionManifestFileRelativeFilePath: StreamingAssets\SteamVR\actions.json
-=======
-  ActionManifestFileRelativeFilePath: StreamingAssets/SteamVR/actions.json
->>>>>>> Concentration_Test
   MirrorView: 2
   HasCopiedDefaults: 0
