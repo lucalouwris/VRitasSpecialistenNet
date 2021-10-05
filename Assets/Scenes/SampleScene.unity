@@ -1199,9 +1199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu:
   - Menu: {fileID: 1790203130}
-    faded: 1
-  - Menu: {fileID: 1247482858}
     faded: 0
+  - Menu: {fileID: 1247482858}
+    faded: 1
   environments:
   - Test1
   - Test2
