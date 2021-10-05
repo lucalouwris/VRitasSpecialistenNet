@@ -8,6 +8,7 @@ public class ButtonListener : MonoBehaviour
     MenuController MenuControl;
     [SerializeField] Text Title;
     [HideInInspector] public int envNumber;
+    [HideInInspector] public string envName;
     private void Start()
     {
         MenuControl = GameObject.Find("MenuController").GetComponent<MenuController>();
@@ -16,6 +17,6 @@ public class ButtonListener : MonoBehaviour
         {
             MenuControl.SwitchScene(envNumber);
         });
-        Title.text = "Test" + envNumber+1;
+        Title.text = envName;
     }
 }

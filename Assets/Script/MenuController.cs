@@ -88,6 +88,7 @@ public class MenuController : MonoBehaviour
             GameObject button = Instantiate(envButton, new Vector3(xStart + (xSpacing * (i % colLength)), yStart + (-ySpacing * (i / colLength)), -0.1f), Quaternion.identity, envPanel.transform);
             ButtonListener but = button.GetComponentInChildren<ButtonListener>();
             but.envNumber = i;
+            but.envName = environments[i];
         }
     }
     public void SwitchScene(int sceneNumber)
