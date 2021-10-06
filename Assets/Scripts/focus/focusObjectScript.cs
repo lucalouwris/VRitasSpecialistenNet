@@ -16,7 +16,9 @@ public class focusObjectScript : MonoBehaviour
     private float maximumDistanceSquared;
 
     private Transform playerTransform;
-    
+
+    Vector3 startPosition;
+
     private float x;
     private float y;
     private float z;
@@ -26,6 +28,7 @@ public class focusObjectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPosition = this.transform.position;
         if (Player.instance.hmdTransforms[0].gameObject.activeInHierarchy)
         {
             playerTransform = Player.instance.hmdTransforms[0];
@@ -50,7 +53,7 @@ public class focusObjectScript : MonoBehaviour
         else
             renderer.material.color = Color.red;
 
-        this.transform.position = new Vector3(x, y, z);
+        this.transform.position = new Vector3(x + startPosition.x, y + startPosition.y, z);
     }
 
     void ReversedLinearPattern()
