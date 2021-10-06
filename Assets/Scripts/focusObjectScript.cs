@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 using static System.Math;
 
 public class focusObjectScript : MonoBehaviour
@@ -10,12 +11,12 @@ public class focusObjectScript : MonoBehaviour
     public float amplitude;
     public float frequency;
 
-    GameObject player;
-
     //If player is further than this distance, lookAtScore should return -1
     public float maximumDistance = 20;
     private float maximumDistanceSquared;
 
+    private Transform playerTransform;
+    
     private float x;
     private float y;
     private float z;
@@ -25,7 +26,14 @@ public class focusObjectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("VRCamera");
+        if (Player.instance.hmdTransforms[0].gameObject.activeInHierarchy)
+        {
+            playerTransform = Player.instance.hmdTransforms[0];
+        }
+        else
+        {
+            playerTransform = Player.instance.hmdTransforms[1];
+        }
         if(renderer == null)
             renderer = GetComponent<Renderer>();
         maximumDistanceSquared = maximumDistance * maximumDistance;
@@ -60,7 +68,6 @@ public class focusObjectScript : MonoBehaviour
 
     void CirclePattern()
     {
-        Debug.Log("test");
         x = Mathf.Sin(Time.time * frequency) * amplitude;
         y = Mathf.Cos(Time.time * frequency) * amplitude;
     }
@@ -98,13 +105,13 @@ public class focusObjectScript : MonoBehaviour
 
     float getLookAtScore()
     {
-        Vector3 playerToObject = this.transform.position - player.transform.position;
+        Vector3 playerToObject = this.transform.position - playerTransform.position;
 
         if(maximumDistance!=0 && playerToObject.sqrMagnitude > maximumDistanceSquared)
             return -1;
 
         playerToObject.Normalize();
-        Vector3 lookDirection = player.transform.forward;
+        Vector3 lookDirection = playerTransform.forward;
 
         return Vector3.Dot(playerToObject, lookDirection);
     }
