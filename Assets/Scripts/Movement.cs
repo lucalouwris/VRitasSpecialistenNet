@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float wanderRadius;
-    public float wanderTimer;
+    public float walkRadius;
+    public float newPositionTimer;
     public float peopleCount = 1;
     public float playTime;
     private System.Random rd = new System.Random();
 
-    [SerializeField] private int duplicateMin = 3, duplicateMax = 10;
+    [SerializeField] private int duplicateMinTime = 3, duplicateMax = 10;
 
     private Transform target;
     private UnityEngine.AI.NavMeshAgent agent;
@@ -22,15 +22,15 @@ public class Movement : MonoBehaviour
     void Start()
     {
         
-        wanderRadius = rd.Next(5, 30);
-        wanderTimer = rd.Next(2, 10);
+        walkRadius = rd.Next(5, 30);
+        newPositionTimer = rd.Next(2, 10);
     }
 
     // Use this for initialization
     void OnEnable()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        timer = wanderTimer;
+        timer = newPositionTimer;
     }
 
     // Update is called once per frame
@@ -43,20 +43,20 @@ public class Movement : MonoBehaviour
 
             peopleTimer += Time.deltaTime;
 
-            if (peopleTimer > rd.Next(duplicateMin,duplicateMax))
+            if (peopleTimer > rd.Next(duplicateMinTime,duplicateMax))
             {
                 peopleTimer = 0;
                 GameObject duplicate = Instantiate(GameObject.FindWithTag("Original"));
-                duplicate.tag = "Untagged";         
+                duplicate.tag = "Untagged";
+                peopleCount++;
             }
             }
 
-        if (timer >= wanderTimer)
+        if (timer >= newPositionTimer)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            Vector3 newPos = RandomNavSphere(transform.position, walkRadius, -1);
             agent.SetDestination(newPos);
-            timer = 0;
-            peopleCount++;           
+            timer = 0;          
         }
     }
 
