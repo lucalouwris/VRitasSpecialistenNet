@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 {
     public float wanderRadius;
     public float wanderTimer;
+    public float peopleCount = 1;
     private System.Random rd = new System.Random();
 
     [SerializeField] private int duplicateMin = 3, duplicateMax = 10;
@@ -55,6 +56,7 @@ public class Movement : MonoBehaviour
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
             timer = 0;
+            peopleCount++;           
         }
     }
 
