@@ -58,6 +58,12 @@ public class EmergencyExit : MonoBehaviour
             leftActive = true;
             rightActive = true;
         }
+        else
+        {
+            leftActive = false;
+            rightActive = false;
+        }
+        ///////////////////////
 
         loadingBar.fillAmount = (currentTimer / timer);
         if (rightActive && leftActive && scene.name != "UIScene")
