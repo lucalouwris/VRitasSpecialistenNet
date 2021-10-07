@@ -9,11 +9,10 @@ public class Movement : MonoBehaviour
     public float wanderRadius;
     public float wanderTimer;
     public float peopleCount = 1;
+    public float playTime;
     private System.Random rd = new System.Random();
 
     [SerializeField] private int duplicateMin = 3, duplicateMax = 10;
-    //public GameObject rootObj;
-    //private GameObject rootObj = GameObject.FindWithTag("Original");
 
     private Transform target;
     private UnityEngine.AI.NavMeshAgent agent;
@@ -38,6 +37,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        playTime += Time.deltaTime;
         if (gameObject.tag == "Original")
         {
 
