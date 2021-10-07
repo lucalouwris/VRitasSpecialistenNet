@@ -16,62 +16,52 @@ public class EmergencyExit : MonoBehaviour
 
     [SerializeField] Image loadingBar;
 
+    Scene scene;
     string sceneName;
+
     bool leftActive = false;
     bool rightActive = false;
     float timer = 2.0f;
     float currentTimer;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
         loadingBar.enabled = false;
         currentTimer = timer;
-        exitGrip.AddOnStateDownListener(TriggerDownLeft, leftHand);
-        exitGrip.AddOnStateUpListener(TriggerUpLeft, leftHand);
-        exitGrip.AddOnStateDownListener(TriggerDownRight, rightHand);
-        exitGrip.AddOnStateUpListener(TriggerUpRight, rightHand);
     }
-    public void TriggerUpLeft(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        leftActive = false;
-    }
-    public void TriggerDownLeft(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        leftActive = true;
-    }
-    public void TriggerUpRight(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        rightActive = false;
-    }
-    public void TriggerDownRight(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        rightActive = true;
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
-        //Testing only
-        if (Input.GetKey("t"))
-        {
+        scene = SceneManager.GetActiveScene();
+        sceneName = scene.name;
+
+        if (exitGrip.GetState(SteamVR_Input_Sources.LeftHand))
             leftActive = true;
-            rightActive = true;
-        }
         else
-        {
             leftActive = false;
+
+        if (exitGrip.GetState(SteamVR_Input_Sources.RightHand))
+            rightActive = true;
+        else
             rightActive = false;
-        }
-        ///////////////////////
 
         loadingBar.fillAmount = (currentTimer / timer);
-        if (rightActive && leftActive)
+        if (rightActive && leftActive && sceneName != "UIScene")
         {
             loadingBar.enabled = true;
             if (currentTimer > 0)
                 currentTimer -= Time.deltaTime;
             else
+            {
                 SceneManager.LoadScene("UIScene");
+                currentTimer = timer;
+            }
         }
         else
         {
