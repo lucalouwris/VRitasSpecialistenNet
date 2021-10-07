@@ -16,8 +16,7 @@ public class EmergencyExit : MonoBehaviour
 
     [SerializeField] Image loadingBar;
 
-    private Scene scene;
-
+    string sceneName;
     bool leftActive = false;
     bool rightActive = false;
     float timer = 2.0f;
@@ -66,7 +65,7 @@ public class EmergencyExit : MonoBehaviour
         ///////////////////////
 
         loadingBar.fillAmount = (currentTimer / timer);
-        if (rightActive && leftActive && scene.name != "UIScene")
+        if (rightActive && leftActive)
         {
             loadingBar.enabled = true;
             if (currentTimer > 0)
