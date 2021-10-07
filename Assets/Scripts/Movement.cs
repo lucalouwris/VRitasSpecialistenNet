@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     public float wanderRadius;
     public float wanderTimer;
     private System.Random rd = new System.Random();
+
+    [SerializeField] private int duplicateMin = 3, duplicateMax = 10;
     //public GameObject rootObj;
     //private GameObject rootObj = GameObject.FindWithTag("Original");
 
@@ -40,7 +42,7 @@ public class Movement : MonoBehaviour
 
             peopleTimer += Time.deltaTime;
 
-            if (peopleTimer > rd.Next(3,10))
+            if (peopleTimer > rd.Next(duplicateMin,duplicateMax))
             {
                 peopleTimer = 0;
                 GameObject duplicate = Instantiate(GameObject.FindWithTag("Original"));
