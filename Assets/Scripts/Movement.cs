@@ -77,6 +77,7 @@ public class Movement : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log($"Player exited the map with {peopleCount} in the map, after {playTime}");
+        if (gameObject.tag == "Original")
+            Debug.Log($"Player exited the map with {peopleCount} in the map, after {playTime}");
     }
 }

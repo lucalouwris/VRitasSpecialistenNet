@@ -56,15 +56,15 @@ public class focusObjectScript : MonoBehaviour
             if (score > 0.95f)
             {
                 renderer.material.color = Color.green;
-                totalScore += score;
             }
             else
             {
                 renderer.material.color = Color.red;
-                totalScore += 0;
             }
-
+            
+            totalScore += score;
             frameCount++;
+            
             this.transform.position = new Vector3(x + startPosition.x, y + startPosition.y, z);
         }
     }
@@ -144,6 +144,6 @@ public class focusObjectScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log($"Plane in focus for {(int)(totalScore/frameCount) * 100}% of the {(int) Time.timeSinceLevelLoad} seconds the player was in the scene");
+        Debug.Log($"Plane in focus for {(totalScore/frameCount) * 100}% of the {(int) Time.timeSinceLevelLoad} seconds the player was in the scene");
     }
 }
