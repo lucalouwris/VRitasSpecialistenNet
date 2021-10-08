@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Splash.unity
     guid: a233395800b731e4ab288f06557344ab
   - enabled: 1
-    path: Assets/Scenes/Test2.unity
-    guid: 5bdee0b6524765849869be6076b71384
-  - enabled: 1
     path: Assets/Scenes/focusScene.unity
     guid: c9501b12630c54850980990cefef6227
+  - enabled: 1
+    path: Assets/Scenes/Cinema.unity
+    guid: 6205a901146db4bb7b3eb278b88da74a
+  - enabled: 1
+    path: Assets/Scenes/Test2.unity
+    guid: 5bdee0b6524765849869be6076b71384
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 2637fc07d53edcf4ea1e525130f03950, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f76a6799aae3bfe40aaf0dda0643a0dd, type: 2}
