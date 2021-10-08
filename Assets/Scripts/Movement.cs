@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 //Got from https://forum.unity.com/threads/solved-random-wander-ai-using-navmesh.327950/
 
@@ -71,5 +73,10 @@ public class Movement : MonoBehaviour
         UnityEngine.AI.NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
 
         return navHit.position;
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log($"Player exited the map with {peopleCount} in the map, after {playTime}");
     }
 }

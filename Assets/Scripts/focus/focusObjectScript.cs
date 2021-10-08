@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,9 @@ public class focusObjectScript : MonoBehaviour
 
     [SerializeField] private Renderer renderer;
 
+    private int frameCount;
+    private float totalScore;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +57,9 @@ public class focusObjectScript : MonoBehaviour
         else
             renderer.material.color = Color.red;
 
+        frameCount++;
+        totalScore += score;
+        
         this.transform.position = new Vector3(x + startPosition.x, y + startPosition.y, z);
     }
 
@@ -129,5 +136,8 @@ public class focusObjectScript : MonoBehaviour
         renderer.material.color = Color.red;
     }
 
-
+    private void OnDestroy()
+    {
+        Debug.Log($"total score: {totalScore/frameCount}");
+    }
 }
