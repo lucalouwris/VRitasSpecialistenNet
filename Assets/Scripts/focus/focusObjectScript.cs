@@ -49,23 +49,29 @@ public class focusObjectScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.HandlePattern();
-        float score = this.getLookAtScore();
+        if(Time.timeSinceLevelLoad > 3)
+        { 
+            this.HandlePattern();
+            float score = this.getLookAtScore();
+            if (score > 0.95f)
+            {
+                renderer.material.color = Color.green;
+                totalScore += score;
+            }
+            else
+            {
+                renderer.material.color = Color.red;
+                totalScore += 0;
+            }
 
-        if (score > 0.95f)
-            renderer.material.color = Color.green;
-        else
-            renderer.material.color = Color.red;
-
-        frameCount++;
-        totalScore += score;
-        
-        this.transform.position = new Vector3(x + startPosition.x, y + startPosition.y, z);
+            frameCount++;
+            this.transform.position = new Vector3(x + startPosition.x, y + startPosition.y, z);
+        }
     }
 
     void ReversedLinearPattern()
     {
-        x = Mathf.Sin(Time.time * frequency) * amplitude;
+        x = Mathf.Sin(Time.timeSinceLevelLoad * frequency) * amplitude;
         y = Mathf.Sin(5.0f * Time.time);
         z = transform.position.z;
     }
@@ -73,43 +79,43 @@ public class focusObjectScript : MonoBehaviour
     void LinearPattern()
     {
         x = Mathf.Sin(5.0f * Time.time);
-        y = Mathf.Sin(Time.time * frequency) * amplitude;
+        y = Mathf.Sin(Time.timeSinceLevelLoad * frequency) * amplitude;
     }
 
     void CirclePattern()
     {
-        x = Mathf.Sin(Time.time * frequency) * amplitude;
-        y = Mathf.Cos(Time.time * frequency) * amplitude;
+        x = Mathf.Sin(Time.timeSinceLevelLoad * frequency) * amplitude;
+        y = Mathf.Cos(Time.timeSinceLevelLoad * frequency) * amplitude;
     }
 
     void KnotPattern()
     {
-        x = Mathf.Sin(Time.time * frequency) * amplitude;
-        y = Mathf.Cos(Time.time * frequency) * Mathf.Sin(Time.time * frequency) * amplitude;
+        x = Mathf.Sin(Time.timeSinceLevelLoad * frequency) * amplitude;
+        y = Mathf.Cos(Time.timeSinceLevelLoad * frequency) * Mathf.Sin(Time.timeSinceLevelLoad * frequency) * amplitude;
     }
 
     void ReveredKnotPattern()
     {
-        x = Mathf.Cos(Time.time * frequency) * Mathf.Sin(Time.time * frequency) * amplitude;
-        y = Mathf.Sin(Time.time * frequency) * amplitude;
+        x = Mathf.Cos(Time.timeSinceLevelLoad * frequency) * Mathf.Sin(Time.timeSinceLevelLoad * frequency) * amplitude;
+        y = Mathf.Sin(Time.timeSinceLevelLoad * frequency) * amplitude;
     }
 
     void HandlePattern()
     {
 
-        if (Time.time < 10.0)
+        if (Time.timeSinceLevelLoad < 10.0)
             this.ReversedLinearPattern();
 
-        if (Time.time > 10.0 && Time.time < 30.0)
+        if (Time.timeSinceLevelLoad > 10.0 && Time.timeSinceLevelLoad < 30.0)
             this.LinearPattern();
 
-        if (Time.time > 30.0 && Time.time < 40.0)
+        if (Time.timeSinceLevelLoad > 30.0 && Time.timeSinceLevelLoad < 40.0)
             this.CirclePattern();
 
-        if (Time.time > 40.0 && Time.time < 50.0)
+        if (Time.timeSinceLevelLoad > 40.0 && Time.timeSinceLevelLoad < 50.0)
             this.KnotPattern();
 
-        if (Time.time > 50.0)
+        if (Time.timeSinceLevelLoad > 50.0)
             this.ReveredKnotPattern();
     }
 
@@ -138,6 +144,6 @@ public class focusObjectScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log($"total score: {totalScore/frameCount}");
+        Debug.Log($"Plane in focus for {(int)(totalScore/frameCount) * 100}% of the {(int) Time.timeSinceLevelLoad} seconds the player was in the scene");
     }
 }

@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
                 duplicate.tag = "Untagged";
                 peopleCount++;
             }
-            }
+        }
 
         if (timer >= newPositionTimer)
         {
