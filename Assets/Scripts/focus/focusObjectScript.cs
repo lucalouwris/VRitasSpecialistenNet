@@ -47,7 +47,7 @@ public class focusObjectScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Time.timeSinceLevelLoad > 3)
         { 

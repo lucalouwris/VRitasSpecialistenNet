@@ -6,6 +6,7 @@ public class RandomForce : MonoBehaviour
 {
     private float interval = 4;
     [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private float forceToApply = 90;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class RandomForce : MonoBehaviour
         if (Time.time % interval < 0.01f)
         {
             Debug.Log("matches 0");
-            rigidbody.AddForce(Random.insideUnitSphere * Random.Range(30, 90), ForceMode.Impulse);
+            rigidbody.AddForce(Random.insideUnitSphere * forceToApply, ForceMode.Impulse);
         }
     }
 }
