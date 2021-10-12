@@ -30,7 +30,7 @@ public class focusObjectScript : MonoBehaviour
         maximumDistanceSquared = maximumDistance * maximumDistance;
     }
 
-    // Update is called once per frame
+    // Update is called once per framehzbcbcsbh
     void Update()
     {
         this.HandlePattern();

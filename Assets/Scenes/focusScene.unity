@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c06d356c379fd444b80a7580a4223e8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c06d356c379fd444b80a7580a4223e8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c06d356c379fd444b80a7580a4223e8e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 946e2c5736be04a96a6613ea49e36c85, type: 2}
     - target: {fileID: 919132149155446097, guid: c06d356c379fd444b80a7580a4223e8e, type: 3}
       propertyPath: m_Name
       value: paperplane(focus object)
@@ -522,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.39
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
