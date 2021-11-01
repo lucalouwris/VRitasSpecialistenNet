@@ -11,6 +11,8 @@ public class ControllerInput : MonoBehaviour
     [HideInInspector] public Vector3 previousPosition, currentPosition;
     [HideInInspector] public float c_Movement;
     [HideInInspector] public bool isWalking;
+    [SerializeField] XRInteractorLineVisual line;
+
 
     private void Update()
     {
@@ -19,8 +21,6 @@ public class ControllerInput : MonoBehaviour
 
         foreach (var binding in bindings)
             binding.Update(controller.inputDevice);
-
-        
     }
     public void Walk()
     {
