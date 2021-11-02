@@ -7,7 +7,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public bool timerStarted = false;
-    [SerializeField] private float timerLength = 12000;
+    [SerializeField] public float timerLength = 12000;
     
     /// <summary>
     /// Code that runs every frame.
