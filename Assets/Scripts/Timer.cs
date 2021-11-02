@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    private bool timerStarted = false;
+    public bool timerStarted = false;
     [SerializeField] private float timerLength = 12000;
     
     /// <summary>
