@@ -262,7 +262,7 @@ MonoBehaviour:
   startTimer: {fileID: 1780125439}
   player: {fileID: 716351226}
   keyObject: {fileID: 2127858095}
-  pathToCsv: D:\distanceCheck.csv
+  pathToCsv: \DistanceCheck.csv
 --- !u!1 &716351226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3847453200713012396, guid: 491a6671fa652a442876463806f19a28, type: 3}
