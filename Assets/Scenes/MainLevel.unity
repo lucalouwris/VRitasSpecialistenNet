@@ -410,7 +410,7 @@ Transform:
   - {fileID: 1824604404}
   - {fileID: 1765167219}
   m_Father: {fileID: 188330064}
-  m_RootOrder: 24
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8773703
 PrefabInstance:
@@ -2523,9 +2523,9 @@ Transform:
   - {fileID: 1594835193}
   - {fileID: 1855734327}
   - {fileID: 653913836}
+  - {fileID: 5751223}
   - {fileID: 902878933}
   - {fileID: 1025277933}
-  - {fileID: 5751223}
   m_Father: {fileID: 380787854}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25065,6 +25065,7 @@ GameObject:
   - component: {fileID: 1907531921}
   - component: {fileID: 1907531924}
   - component: {fileID: 1907531925}
+  - component: {fileID: 1907531926}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -25201,6 +25202,15 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Main Camera - TPD - Rotation
       m_Flags: 0
+--- !u!45 &1907531926
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907531920}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 19e86ccde48714adca3e11cba1941dbd, type: 2}
 --- !u!1001 &1911294334
 PrefabInstance:
   m_ObjectHideFlags: 0
