@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WalkingController : MonoBehaviour
 {
-    [SerializeField] ControllerInput leftController;
-    [SerializeField] ControllerInput rightController;
+    [SerializeField] private ControllerInput leftController;
+    [SerializeField] private ControllerInput rightController;
 
     // Update is called once per frame
     void Update()
