@@ -17,11 +17,11 @@ public class SignRotation : MonoBehaviour
         if(player != null)
         {
             float distance = Vector3.Distance(this.transform.position, player.transform.position);
-            if (distance < 20)
+            if (distance < 1)
             {
-                Vector3 targetPostition = new Vector3(player.transform.position.x,
+                Vector3 targetPostition = new Vector3(-player.transform.position.x,
                                            this.transform.position.y,
-                                           player.transform.position.z);
+                                           -player.transform.position.z);
                 this.transform.LookAt(targetPostition);
             }
         }
