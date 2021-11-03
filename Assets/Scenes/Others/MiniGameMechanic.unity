@@ -256,13 +256,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 327042802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 296c9783abc6df041873730e2036dca5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b4659f050397f74db7f65e8ea577169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startTimer: {fileID: 1780125439}
-  player: {fileID: 716351226}
+  player: {fileID: 1231836352}
   keyObject: {fileID: 2127858095}
-  pathToCsv: \DistanceCheck.csv
+  pathToDistanceCsv: \DistanceCheck.csv
+  pathToViewingCsv: \AngleCheck.csv
 --- !u!1001 &701631458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,11 +321,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b3c8cf45def254e82365573ecd53ef, type: 3}
---- !u!1 &716351226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3847453200713012396, guid: 491a6671fa652a442876463806f19a28, type: 3}
-  m_PrefabInstance: {fileID: 1500643407}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &801347847
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +512,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972127134}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1231836352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3847453201330156704, guid: 491a6671fa652a442876463806f19a28, type: 3}
+  m_PrefabInstance: {fileID: 1500643407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1500643407
 PrefabInstance:
   m_ObjectHideFlags: 0
