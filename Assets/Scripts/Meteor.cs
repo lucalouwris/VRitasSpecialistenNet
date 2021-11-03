@@ -11,9 +11,15 @@ public class Meteor : MonoBehaviour
         range = Random.Range(0.35f, 2.5f);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        this.transform.Rotate(Mathf.Sin(range * Time.time), 0, 0);
+       
+        if (this.range > 0.8f)
+        {
+            this.transform.Rotate(range * (Time.time * 0.001f), 0, 0);
+        } else
+        {
+            this.transform.Rotate(0, range * (Time.time * 0.001f), 0);
+        }
     }
 }
