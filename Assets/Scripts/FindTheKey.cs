@@ -75,7 +75,7 @@ public class FindTheKey : MonoBehaviour
 
         foreach (var VARIABLE in viewingAngle)
         {
-            csv += $"{VARIABLE[0]},{VARIABLE[1]},";
+            csv += $"{VARIABLE[0]},{VARIABLE[1]}\n";
         }
 
         System.IO.File.WriteAllText(Application.dataPath+pathToViewingCsv, csv);
@@ -87,7 +87,7 @@ public class FindTheKey : MonoBehaviour
 
         foreach (var VARIABLE in distance)
         {
-            csv += $"{VARIABLE[0]},{VARIABLE[1]},";
+            csv += $"{VARIABLE[0]},{VARIABLE[1]}\n,";
         }
 
         System.IO.File.WriteAllText(Application.dataPath+pathToDistanceCsv, csv);
