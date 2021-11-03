@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Trees : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Quaternion target = Quaternion.Euler(0, Random.Range(0.0f, 90.0f), 0);
+        this.transform.rotation = target;
     }
 }
