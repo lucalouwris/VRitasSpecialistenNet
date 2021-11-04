@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WalkingController : MonoBehaviour
 {
-    [SerializeField] private ControllerInput leftController;
-    [SerializeField] private ControllerInput rightController;
+    [SerializeField] ControllerInput leftController;
+    [SerializeField] ControllerInput rightController;
+    [SerializeField] Rigidbody playerBody;
+    [SerializeField] float speedModifier = 2;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +24,7 @@ public class WalkingController : MonoBehaviour
             direction.y = 0;
 
             float moveDistance = leftController.c_Movement + rightController.c_Movement;
-            transform.position += (direction * moveDistance);
+            playerBody.velocity += (direction * moveDistance) * speedModifier;
         }
         leftController.currentPosition = leftController.transform.position;
         rightController.currentPosition = rightController.transform.position;
