@@ -8,7 +8,7 @@ public class FindTheKey : MonoBehaviour
     private List<List<int>> distance = new List<List<int>>();
     private List<List<int>> viewingAngle = new List<List<int>>();
     
-    [SerializeField] private Timer startTimer;
+    [SerializeField] private IngameTimer startTimer;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject keyObject;
     
@@ -22,13 +22,13 @@ public class FindTheKey : MonoBehaviour
 
     private void Update()
     {
-        if (startTimer.timerStarted)
+        if (startTimer.timerIsRunning)
         {        
             frameNumber++;
             TrackDistance();
             TrackViewingAngle();
         }
-        if (startTimer.timerLength == 0 && !dataSaved)
+        if (startTimer.timeRemaining == 0 && !dataSaved)
         {
             dataSaved = true;
             SaveDistanceData();
