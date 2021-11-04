@@ -6,7 +6,7 @@ public class openDoor : MonoBehaviour
 {
     [SerializeField] GameObject rotated, moved;
     [SerializeField] float rotateSpeed, moveSpeed;
-    private void Start()
+    public void Starting()
     {
         StartCoroutine(DoorOpenRotate());
     }
