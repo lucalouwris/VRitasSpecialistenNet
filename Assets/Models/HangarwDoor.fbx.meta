@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models/HangarInterior/ScrewDriver.fbx.meta
+guid: 2680fd8683e4e498c8a5cf9439a89746
+=======
 guid: 1ac012ecf76eb436389bee4601aeb44a
+>>>>>>> develop:Assets/Models/HangarwDoor.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

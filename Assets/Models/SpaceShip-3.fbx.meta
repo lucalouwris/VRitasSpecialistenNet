@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Models/HangarInterior/WorkshopChair.fbx.meta
-guid: 60e2c181e5c8a442d8ac6898b1cee267
-=======
-guid: c3b3c8cf45def254e82365573ecd53ef
->>>>>>> develop:Assets/Models/TestHangar.dae.meta
+guid: a8c3fcd5fbaa5441db9240db662a6405
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
