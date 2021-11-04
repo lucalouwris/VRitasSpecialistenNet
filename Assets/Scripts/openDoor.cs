@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class openDoor : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+    [SerializeField] GameObject rotated, moved;
+    [SerializeField] float rotateSpeed, moveSpeed;
+    private void Start()
     {
-        if(transform.localRotation.eulerAngles.x > 10)
+        StartCoroutine(DoorOpenRotate());
+    }
+
+    public IEnumerator DoorOpenRotate()
+    {
+        float singleStep = rotateSpeed * Time.deltaTime;
+        while (transform.rotation != rotated.transform.rotation)
         {
-            transform.Rotate(new Vector3(0, 15, 0) * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotated.transform.rotation, singleStep);
+            yield return null;
         }
-        else
+        StartCoroutine(DoorOpenMove());
+    }
+
+    public IEnumerator DoorOpenMove()
+    {
+        float singleStep = moveSpeed * Time.deltaTime;
+        while (transform.position != moved.transform.position)
         {
-            if (transform.localPosition.x < -10.5f)
-            {
-                transform.position = new Vector3(transform.localPosition.x + 1f * Time.deltaTime, transform.position.y, transform.position.z);
-            }
+            transform.position = Vector3.MoveTowards(transform.position, moved.transform.position, singleStep);
+            yield return null;
         }
     }
 }
