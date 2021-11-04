@@ -575,7 +575,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1500643407}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 544e7a2ee559e024884f4f499c17f883, type: 3}
   m_Name: 
@@ -965,12 +965,6 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1500643408}
         m_TargetAssemblyTypeName: IngameTimer, Assembly-CSharp
@@ -984,6 +978,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
