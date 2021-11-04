@@ -15,7 +15,7 @@ public class openDoor : MonoBehaviour
         {
             if (transform.localPosition.x < -10.5f)
             {
-                transform.position = new Vector3(transform.position.x + 1f * Time.deltaTime, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.localPosition.x + 1f * Time.deltaTime, transform.position.y, transform.position.z);
             }
         }
     }
