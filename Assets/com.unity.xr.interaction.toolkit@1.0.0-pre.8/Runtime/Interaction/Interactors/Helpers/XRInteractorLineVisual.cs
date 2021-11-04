@@ -468,7 +468,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
             // interpolate points between the two points to enable better color gradient effects.
             if (isValidTarget)
             {
-                m_LineRenderer.enabled = true;
+                //m_LineRenderer.enabled = true;
                 m_LineRenderer.colorGradient = m_ValidColorGradient;
                 // Set reticle position and show reticle
                 m_ReticleToUse = m_CustomReticleAttached ? m_CustomReticle : m_Reticle;
@@ -481,8 +481,8 @@ namespace UnityEngine.XR.Interaction.Toolkit
             }
             else
             {
-                m_LineRenderer.enabled = false;
-                ClearLineRenderer();
+               // m_LineRenderer.enabled = false;
+                //ClearLineRenderer();
                 m_LineRenderer.colorGradient = m_InvalidColorGradient;
                 m_ReticleToUse = m_CustomReticleAttached ? m_CustomReticle : m_Reticle;
                 if (m_ReticleToUse != null)
