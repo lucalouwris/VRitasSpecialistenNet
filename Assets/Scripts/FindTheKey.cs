@@ -52,7 +52,6 @@ public class FindTheKey : MonoBehaviour
             int viewAngle = (int)(100 * Vector3.Dot(playerToObject, lookDirection));
             if (lastFrameDistance != viewAngle)
             {
-                Debug.Log(viewAngle); 
                 viewingAngle.Add(new List<int> {frameNumber, viewAngle});
             }
             lastViewAngle = viewAngle;

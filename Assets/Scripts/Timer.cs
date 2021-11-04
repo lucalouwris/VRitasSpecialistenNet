@@ -42,4 +42,11 @@ public class Timer : MonoBehaviour
             timerStarted = true;
         }
     }
+
+    public void TimerStop()
+    {
+        timerStarted = false;
+        Debug.Log(timerLength);
+        timerLength = 0;
+    }
 }
