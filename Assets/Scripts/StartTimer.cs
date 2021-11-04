@@ -15,7 +15,7 @@ public class StartTimer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Checking if colliding object is the XR Rig
-        if (other.CompareTag("MainCamera"))
+        if (other.CompareTag("Player"))
         {
             timer.enabled = true;
             timer.Restart();
