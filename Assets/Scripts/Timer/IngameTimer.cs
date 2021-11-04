@@ -10,15 +10,16 @@ public class IngameTimer : MonoBehaviour
     public bool timerIsRunning = false;
     [SerializeField] Text timeText;
     [SerializeField] GameObject timerCanvas;
-
-    private void Start()
-    {
-        Restart();
-    }
+    
     public void Restart()
     {
         timeRemaining = time;
         timerIsRunning = true;
+    }
+
+    public void StopTimer()
+    {
+        timeRemaining = -1;
     }
     void Update()
     {
@@ -59,4 +60,6 @@ public class IngameTimer : MonoBehaviour
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+    
+    
 }
