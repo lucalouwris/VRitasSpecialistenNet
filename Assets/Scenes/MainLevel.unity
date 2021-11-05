@@ -5760,13 +5760,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8654318759046737730, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279793, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_CameraYOffset
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279794, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: speedModifier
-      value: 2
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279795, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_RootOrder
@@ -5823,6 +5827,10 @@ PrefabInstance:
     - target: {fileID: 8654318760002279807, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318760816970933, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: time
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8654318760002279792, guid: 491a6671fa652a442876463806f19a28, type: 3}
@@ -14950,8 +14958,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotated: {fileID: 444469287}
   moved: {fileID: 1619324643}
-  rotateSpeed: 6
-  moveSpeed: 6
+  rotateSpeed: 10
+  moveSpeed: 2
 --- !u!1001 &1071111012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27035,124 +27043,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6157cf60b9ac04944b605e6cae0a7a79, type: 3}
   m_PrefabInstance: {fileID: 1821336853}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1821595215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4665847011644200312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5973d1630985d814d825f10073addcee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CustomReticle: {fileID: 0}
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: IngameTimer, Assembly-CSharp
-        m_MethodName: StopTimer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
 --- !u!65 &1821595217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31158,7 +31048,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5765943985993167662, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: m_Text
-      value: Your feedback is important to us :)
+      value: Follow the path ahead of you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765943985993167662, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5765943986565808416, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: player
@@ -31178,15 +31072,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765943986565808419, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 5765943986565808419, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 5765943986565808419, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 5765943986565808419, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31230,11 +31124,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765943987300711788, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: m_Text
-      value: Explore and see what you can do.
+      value: The goal is to find a key located somewhere near the hangar.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765943987300711788, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5765943987403619631, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
       propertyPath: m_Text
       value: Welcome to this alien looking world.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765943987403619631, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67e22dd513c9b84882394b41bcb6fa7, type: 3}
@@ -39724,7 +39626,6 @@ GameObject:
   - component: {fileID: 8945380429849002087}
   - component: {fileID: 6611450635180143789}
   - component: {fileID: 1821595217}
-  - component: {fileID: 1821595215}
   - component: {fileID: 1254128879}
   - component: {fileID: 1254128880}
   - component: {fileID: 1254128878}
