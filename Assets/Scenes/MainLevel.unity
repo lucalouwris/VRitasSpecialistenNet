@@ -28514,7 +28514,7 @@ GameObject:
   - component: {fileID: 1881434755}
   - component: {fileID: 1881434754}
   m_Layer: 0
-  m_Name: FindTheKey (1)
+  m_Name: FindTheKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41850,7 +41850,7 @@ GameObject:
   - component: {fileID: 3349403326286563181}
   - component: {fileID: 1122346255}
   m_Layer: 0
-  m_Name: Door (1)
+  m_Name: Timer Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
