@@ -15,10 +15,11 @@ public class StartTimer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Checking if colliding object is the XR Rig
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && timer.enabled == false)
         {
             timer.enabled = true;
             timer.Restart();
+            gameObject.SetActive(false);
         }
     }
 }
