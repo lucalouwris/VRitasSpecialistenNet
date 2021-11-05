@@ -14,8 +14,9 @@ public class StartTimer : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"Tag: {other.tag}, timer running: {timer.timerIsRunning}");
         // Checking if colliding object is the XR Rig
-        if (other.CompareTag("Player") && timer.enabled == false)
+        if (other.CompareTag("Player") && timer.timerIsRunning == false)
         {
             timer.enabled = true;
             timer.Restart();
