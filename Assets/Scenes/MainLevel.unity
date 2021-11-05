@@ -5766,7 +5766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279794, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: speedModifier
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279795, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_RootOrder
@@ -5817,10 +5817,15 @@ PrefabInstance:
       value: XR Rig
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279807, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: m_Constraints
-      value: 80
+      propertyPath: m_Drag
+      value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8654318760002279807, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8654318760002279792, guid: 491a6671fa652a442876463806f19a28, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 491a6671fa652a442876463806f19a28, type: 3}
 --- !u!114 &362067149 stripped
 MonoBehaviour:
@@ -40201,7 +40206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4665847011644200312}
   m_LocalRotation: {x: 0.9725448, y: -0.00000004283765, z: -0.23271579, w: 0.00000062672774}
-  m_LocalPosition: {x: -17.012781, y: 0.41845393, z: -18.334303}
+  m_LocalPosition: {x: -17.012781, y: 0.291, z: -18.334303}
   m_LocalScale: {x: 0.60101044, y: 0.60101086, z: 4.108334}
   m_Children: []
   m_Father: {fileID: 0}

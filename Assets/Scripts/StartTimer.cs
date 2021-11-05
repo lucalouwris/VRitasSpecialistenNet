@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class StartTimer : MonoBehaviour
@@ -14,7 +13,6 @@ public class StartTimer : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Tag: {other.tag}, timer running: {timer.timerIsRunning}");
         // Checking if colliding object is the XR Rig
         if (other.CompareTag("Player") && timer.timerIsRunning == false)
         {
