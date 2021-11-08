@@ -26,6 +26,10 @@ public class WalkingController : MonoBehaviour
             float moveDistance = leftController.c_Movement + rightController.c_Movement;
             playerBody.velocity += (direction * moveDistance) * speedModifier;
         }
+        else
+        {
+            playerBody.velocity = Vector3.zero;
+        }
         leftController.currentPosition = leftController.transform.position;
         rightController.currentPosition = rightController.transform.position;
     }
