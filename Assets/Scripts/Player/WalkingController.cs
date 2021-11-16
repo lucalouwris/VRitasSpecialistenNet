@@ -28,7 +28,7 @@ public class WalkingController : MonoBehaviour
         }
         else
         {
-            playerBody.velocity = Vector3.zero;
+            playerBody.velocity = new Vector3(0, playerBody.velocity.y, 0);
         }
         leftController.currentPosition = leftController.transform.position;
         rightController.currentPosition = rightController.transform.position;
