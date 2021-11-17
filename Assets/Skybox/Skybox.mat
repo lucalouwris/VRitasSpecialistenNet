@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShaderSkybox
+  m_Name: Skybox
   m_Shader: {fileID: -6465566751694194690, guid: 71c546e6704c25047a3d606867c347b2, type: 3}
   m_ShaderKeywords: _MAPPING_LATITUDE_LONGITUDE_LAYOUT _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 4
@@ -132,9 +132,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_05ca07f9279e45b3b60e49d152fd1cc1: {r: 0.38024548, g: 0.002447496, b: 0.51886785, a: 0}
-    - Color_623d3fcceda741199f75057e6f9f64f2: {r: 0.096119575, g: 0.5382937, b: 0.75471693, a: 0}
+    - Color_623d3fcceda741199f75057e6f9f64f2: {r: 0.3207992, g: 0.32163954, b: 0.764151, a: 0}
     - Color_6f14bd315d484cb38995c7125fd18fb6: {r: 0.05513528, g: 0.5505983, b: 0.5566038, a: 0}
-    - Color_af3a0784ae0d480682f371b1e903b4d1: {r: 0.745283, g: 0.08085617, b: 0.62897676, a: 0}
+    - Color_af3a0784ae0d480682f371b1e903b4d1: {r: 0.5098039, g: 0.14901957, b: 0.69803923, a: 0}
     - Vector2_ffd1819ccc0f42a28566d7b469886cdb: {r: 10.5, g: 16.78, b: 4.92, a: 2.19}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
