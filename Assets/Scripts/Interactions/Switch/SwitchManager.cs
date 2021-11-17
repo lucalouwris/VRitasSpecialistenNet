@@ -9,10 +9,13 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private bool ShouldCheckObject;
     [SerializeField] private GameObject ObjectCheck;
     private bool taskCompleted;
+    [SerializeField] private Animator ObjectAnimator;
+    [SerializeField] private string animatorTrigger;
 
     private void Update()
     {
-        if (switchJoint.limits.max == switchJoint.angle)
+        Debug.Log(switchJoint.limits.max - switchJoint.angle);
+        if (switchJoint.limits.max - switchJoint.angle < 10)
         {
             OnSwitchDown();
         }
@@ -37,6 +40,7 @@ public class SwitchManager : MonoBehaviour
 
     private void TriggerObject()
     {
-        
+        ObjectAnimator.SetTrigger(animatorTrigger);
+        enabled = false;
     }
 }

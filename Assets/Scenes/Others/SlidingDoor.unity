@@ -380,16 +380,16 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -4.5, y: 1.5, z: 4.7920003}
-  m_UseSpring: 0
+  m_ConnectedAnchor: {x: -4.5, y: 2.55, z: 4.7920003}
+  m_UseSpring: 1
   m_Spring:
-    spring: 0
+    spring: 1
     damper: 0
-    targetPosition: 0
+    targetPosition: 179
   m_UseMotor: 0
   m_Motor:
-    targetVelocity: 0
-    force: 0
+    targetVelocity: 1
+    force: 0.1
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
@@ -575,6 +575,8 @@ MonoBehaviour:
   switchJoint: {fileID: 313857748}
   ShouldCheckObject: 0
   ObjectCheck: {fileID: 0}
+  ObjectAnimator: {fileID: 29851744}
+  animatorTrigger: DoorOpens
 --- !u!1 &426104141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983049397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.122}
   m_LocalScale: {x: 0.5, y: 1, z: 0.2}
   m_Children: []
   m_Father: {fileID: 413172136}
