@@ -19,6 +19,10 @@ public class SwitchManager : MonoBehaviour
         {
             OnSwitchDown();
         }
+        if (switchJoint.angle < 2)
+        {
+            switchJoint.useSpring = false;
+        }
     }
 
     private void OnSwitchDown()
@@ -34,7 +38,12 @@ public class SwitchManager : MonoBehaviour
 
         if (taskCompleted)
         {
+            switchJoint.useSpring = false;
             TriggerObject();
+        }
+        else
+        {
+            switchJoint.useSpring = true;
         }
     }
 
