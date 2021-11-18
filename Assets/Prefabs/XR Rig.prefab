@@ -1625,7 +1625,7 @@ MonoBehaviour:
   leftController: {fileID: 8654318759103765489}
   rightController: {fileID: 8654318760816970890}
   playerBody: {fileID: 8654318760002279807}
-  speedModifier: 2.75
+  speedModifier: 2.5
 --- !u!114 &8654318760002279806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,7 +1653,7 @@ Rigidbody:
   m_GameObject: {fileID: 8654318760002279796}
   serializedVersion: 2
   m_Mass: 70
-  m_Drag: 5
+  m_Drag: 4
   m_AngularDrag: 0.65
   m_UseGravity: 0
   m_IsKinematic: 0
