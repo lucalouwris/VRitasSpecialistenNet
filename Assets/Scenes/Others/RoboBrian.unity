@@ -230,6 +230,10 @@ PrefabInstance:
       propertyPath: PlayerTransform
       value: 
       objectReference: {fileID: 1148754324}
+    - target: {fileID: 2438190431619714771, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: floatHeight
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5990817434369855309, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: m_RootOrder
       value: 4

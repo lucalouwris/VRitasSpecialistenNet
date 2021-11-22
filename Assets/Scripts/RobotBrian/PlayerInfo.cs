@@ -9,7 +9,7 @@ public class PlayerInfo : MonoBehaviour
 
     private void Start()
     {
-        if(PlayerTransform = null)
+        if(PlayerTransform == null)
         {
             PlayerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
         }

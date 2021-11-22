@@ -6,9 +6,6 @@ using UnityEngine;
 public class BaseState : MonoBehaviour
 {
     public int TriggerChange = 0;
-
-    [SerializeField] private PlayerInfo playerInfo;
-    
     // OnEnable is called when a transition starts and the state machine starts to evaluate this state
     public virtual void OnEnable()
     {
