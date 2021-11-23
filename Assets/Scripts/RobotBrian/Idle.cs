@@ -32,6 +32,16 @@ public class Idle : BaseState
         }
         transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
         // If close by make sure it's around the vision of the player.
+        
+        Vector3[] frustumCorners = new Vector3[4];
+        Camera cam = playerTransform.gameObject.GetComponent<Camera>();
+        cam.CalculateFrustumCorners(new Rect(0, 0, 1, 1), cam.farClipPlane, Camera.MonoOrStereoscopicEye.Mono, frustumCorners);
+        
+        for (int i = 0; i < 4; i++)
+        {
+            var worldSpaceCorner = cam.transform.TransformVector(frustumCorners[i]);
+            Debug.DrawRay(cam.transform.position, worldSpaceCorner, Color.blue);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

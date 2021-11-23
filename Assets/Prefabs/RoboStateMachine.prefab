@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 2438190431619714771}
   - component: {fileID: 2438190431619714770}
   - component: {fileID: 2438190431619714781}
-  - component: {fileID: 601183392}
   m_Layer: 0
   m_Name: RoboStateMachine
   m_TagString: Untagged
@@ -164,7 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerChange: 2
-  playerInfo: {fileID: 601183392}
+  floatHeight: 2
+  playerTransform: {fileID: 0}
 --- !u!114 &2438190431619714770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerChange: 0
-  playerInfo: {fileID: 601183392}
+  playerTransform: {fileID: 0}
+  distanceFromPlayer: 3
 --- !u!114 &2438190431619714781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,17 +193,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerChange: 1
-  playerInfo: {fileID: 601183392}
---- !u!114 &601183392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5990817434369855310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34eb19d518852eb448d82ce8e059b049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 0}

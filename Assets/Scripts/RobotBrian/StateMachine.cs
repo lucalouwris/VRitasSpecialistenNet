@@ -16,6 +16,14 @@ public class StateMachine : MonoBehaviour
         currentState = States[StartState];
     }
 
+    public void SwitchState(BaseState newState)
+    {
+        Triggers[newState.TriggerChange] = false;
+        currentState.enabled = false;
+        newState.enabled = true;
+        currentState = newState;
+    }
+
     private void Update()
     {
         foreach (BaseState state in States)
