@@ -55,6 +55,12 @@ public class ScrewdriverTrigger : MonoBehaviour
 
     private void changeMaterial()
     {
-        objectRenderer.material = wantedMaterial;
+        // get the current array of materials
+        var materials = objectRenderer.materials;
+        // exchange one material
+        materials[1] = wantedMaterial;
+        // reassign the materials to the renderer
+        objectRenderer.materials = materials;
+
     }
 }
