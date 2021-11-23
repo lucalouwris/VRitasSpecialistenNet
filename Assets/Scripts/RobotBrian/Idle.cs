@@ -25,23 +25,14 @@ public class Idle : BaseState
         // If far away move and rotate brian towards random position close to the player.
         if(Vector3.Distance(goalPos, transform.position) < .3f)
         {
-            Vector2 pos = Random.insideUnitCircle * 2f;
+            Vector2 pos = Random.onUnitSphere * 2.5f;
             goalPos = new Vector3(pos.x, floatHeight, pos.y);
-            goalPos += playerTransform.position;
+            goalPos += playerTransform.position + playerTransform.forward * Random.Range(3f,5f);
             Debug.Log(goalPos);
         }
         transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
         // If close by make sure it's around the vision of the player.
         
-        Vector3[] frustumCorners = new Vector3[4];
-        Camera cam = playerTransform.gameObject.GetComponent<Camera>();
-        cam.CalculateFrustumCorners(new Rect(0, 0, 1, 1), cam.farClipPlane, Camera.MonoOrStereoscopicEye.Mono, frustumCorners);
-        
-        for (int i = 0; i < 4; i++)
-        {
-            var worldSpaceCorner = cam.transform.TransformVector(frustumCorners[i]);
-            Debug.DrawRay(cam.transform.position, worldSpaceCorner, Color.blue);
-        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

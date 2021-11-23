@@ -7,18 +7,20 @@ public class Speaking : BaseState
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float distanceFromPlayer = 1.4f;
     private Vector3 goalPos;
+    private Vector3 offset;
 
     // OnEnable is called when a transition starts and the state machine starts to evaluate this state
-    // public override void OnEnable()
-    // {
-    //     base.OnEnable();
-    // }
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        offset = Vector3.right + Vector3.up;
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     public override void Update()
     {
         //Calculating preferred position.
-        goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer;
+        goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
         transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, goalPos) < .4f)
