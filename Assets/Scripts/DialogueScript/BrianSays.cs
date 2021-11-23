@@ -8,6 +8,7 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textlabel;
     [SerializeField] private DialogueObject[] dialogue;
+    [SerializeField] private StateMachine stateMachine;
 
     private TypeWriter typeWriter;
     private int count = 0;
@@ -45,7 +46,9 @@ public class BrianSays : MonoBehaviour
             this.isPressed = false;
         }
 
+        Debug.Log("reached end" + this.count % dialogue.Length);
         this.CloseDialogeBox();
+        this.gameObject.SetActive(false);
     }
 
     public void handlePressed()
@@ -72,5 +75,11 @@ public class BrianSays : MonoBehaviour
     {
         this.dialogueBox.SetActive(false);
         this.textlabel.text = string.Empty;
+    }
+
+    private void OnDisable()
+    {
+        typeWriter.Stop();
+        stateMachine.SwitchState(stateMachine.States[0]);
     }
 }

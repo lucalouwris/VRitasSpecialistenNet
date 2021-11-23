@@ -23,6 +23,7 @@ public class Speaking : BaseState
         //Calculating preferred position.
         goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
         transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
+        transform.LookAt(playerTransform);
 
         if (Vector3.Distance(transform.position, goalPos) < .4f)
         {
@@ -32,7 +33,11 @@ public class Speaking : BaseState
 
     private void SpeakLine()
     {
-        canvasObject.SetActive(true);
+        if (!canvasObject.activeSelf)
+        {
+            Debug.Log("speakline active");
+            canvasObject.SetActive(true);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
