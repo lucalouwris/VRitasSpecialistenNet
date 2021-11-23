@@ -16,10 +16,18 @@ public class TypeWriter : MonoBehaviour
         {new HashSet<char>(){',', '-', ';', ':'}, 0.3f},
     };
 
-    public Coroutine Run(string textToType, TMP_Text textLabel)
-    {
-       return StartCoroutine(this.TypeText(textToType, textLabel));
+    private Coroutine typeCoroutine;
 
+    public void Run(string textToType, TMP_Text textLabel)
+    {
+       this.typeCoroutine = StartCoroutine(this.TypeText(textToType, textLabel));
+
+    }
+
+    public void Stop()
+    {
+        StopCoroutine(this.typeCoroutine);
+        this.isRunning = false;
     }
 
     private IEnumerator TypeText(string textToType, TMP_Text textLabel)
@@ -40,7 +48,6 @@ public class TypeWriter : MonoBehaviour
 
             for(int i = lastCharIndex; i < charIndex; i++)
             {
-
                 bool isLast = i > textToType.Length - 1;
 
                 textLabel.text = textToType.Substring(0, charIndex);
@@ -51,12 +58,10 @@ public class TypeWriter : MonoBehaviour
                 }
             }
 
-
             yield return null;
         }
 
         this.isRunning = false;
-        textLabel.text = textToType;
     }
 
     private bool IsPunctuation(char charachter, out float waitTime)

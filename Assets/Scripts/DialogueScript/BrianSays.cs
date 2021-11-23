@@ -7,7 +7,7 @@ public class BrianSays : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textlabel;
-    [SerializeField] private DialogueObject testDialogue;
+    [SerializeField] private DialogueObject dialogue;
 
     private TypeWriter typeWriter;
 
@@ -15,7 +15,7 @@ public class BrianSays : MonoBehaviour
     {
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
-        this.ShowDialogue(testDialogue);
+        this.ShowDialogue(dialogue);
 
     }
 
@@ -28,14 +28,29 @@ public class BrianSays : MonoBehaviour
 
     public IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
-        foreach(string dialogue in dialogueObject.Dialogue)
+     for(int i = 0;  i < dialogueObject.Dialogue.Length; i++)
         {
-            yield return this.typeWriter.Run(dialogue, this.textlabel);
+            string dialogue = dialogueObject.Dialogue[i];
 
+            yield return this.RunTypingEffect(dialogue);
+
+            this.textlabel.text = dialogue;
+
+
+            yield return null;
         }
 
-        yield return new WaitForSeconds(1);
         this.CloseDialogeBox();
+    }
+
+    private IEnumerator RunTypingEffect(string dialogue)
+    {
+        this.typeWriter.Run(dialogue, this.textlabel);
+
+        while (this.typeWriter.isRunning)
+        {
+            yield return null;
+        }
     }
 
     private void CloseDialogeBox()
