@@ -1,48 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using Random = UnityEngine.Random;
 
-public class Idle : StateMachineBehaviour
+public class Idle : BaseState
 {
-    // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    private Vector3 goalPos = Vector3.zero;
+    [SerializeField] private float floatHeight = 1f;
 
-    // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    [SerializeField] private Transform playerTransform;
+    
+    //OnEnable is called when a transition starts and the state machine starts to evaluate this state
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        goalPos = transform.position;
+    }
 
-    // OnStateExit is called before OnStateExit is called on any state inside this state machine
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    public override void Update()
+    {
+        // If far away move and rotate brian towards random position close to the player.
+        if(Vector3.Distance(goalPos, transform.position) < .3f)
+        {
+            Vector2 pos = Random.onUnitSphere * 2.5f;
+            goalPos = new Vector3(pos.x, floatHeight, pos.y);
+            goalPos += playerTransform.position + playerTransform.forward * Random.Range(3f,5f);
+            Debug.Log(goalPos);
+        }
+        transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
+        // If close by make sure it's around the vision of the player.
+        
+    }
 
-    // OnStateMove is called before OnStateMove is called on any state inside this state machine
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    // public override void OnDisable()
+    // {
+    //     
+    // }
 
-    // OnStateIK is called before OnStateIK is called on any state inside this state machine
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMachineEnter is called when entering a state machine via its Entry Node
-    //override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
-    //{
-    //    
-    //}
-
-    // OnStateMachineExit is called when exiting a state machine via its Exit Node
-    //override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
-    //{
-    //    
-    //}
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position - playerTransform.position,1f);
+    }
 }
