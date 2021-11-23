@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerChange: 2
-  floatHeight: 2
+  floatHeight: 0.5
   playerTransform: {fileID: 0}
 --- !u!114 &2438190431619714770
 MonoBehaviour:
