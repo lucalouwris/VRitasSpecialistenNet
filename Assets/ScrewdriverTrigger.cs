@@ -45,6 +45,8 @@ public class ScrewdriverTrigger : MonoBehaviour
 
         GetComponent<SwitchCheck>().SwitchShouldWork = true;
 
+        hasbeenFixed = true;
+
     }
 
     //Need this for the lever to check if the machine has been fixed or nah
