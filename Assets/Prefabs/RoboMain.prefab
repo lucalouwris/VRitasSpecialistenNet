@@ -91,9 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8283696349088973202}
   - component: {fileID: 8283696349088973203}
-  - component: {fileID: 4638002395488160104}
-  - component: {fileID: 2415122021266050898}
-  - component: {fileID: 2110876191172181182}
   m_Layer: 0
   m_Name: RoboMain
   m_TagString: Untagged
@@ -130,39 +127,3 @@ CapsuleCollider:
   m_Height: 0.4
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4638002395488160104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8283696349088973201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930dda218380ab846b79ac0191e649a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2415122021266050898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8283696349088973201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d07a687af8477d4da38b08d9c7ddead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2110876191172181182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8283696349088973201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82929bc3ff9c5749b17cbf21086bdda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
