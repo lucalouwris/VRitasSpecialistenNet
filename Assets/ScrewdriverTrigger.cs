@@ -55,6 +55,7 @@ public class ScrewdriverTrigger : MonoBehaviour
 
     private void changeMaterial()
     {
+        Debug.Log("Trying to update the powercell materials");
         // get the current array of materials
         var materials = objectRenderer.materials;
         // exchange one material
