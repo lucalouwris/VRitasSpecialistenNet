@@ -7,16 +7,16 @@ public class BrianSays : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textlabel;
-    [SerializeField] private DialogueObject dialogue;
+    [SerializeField] private DialogueObject[] dialogue;
 
     private TypeWriter typeWriter;
-
-    void Start()
+    private int count = 0;
+    void OnEnable()
     {
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
-        this.ShowDialogue(dialogue);
-
+        this.ShowDialogue(dialogue[count % dialogue.Length]);
+        count ++;
     }
 
 

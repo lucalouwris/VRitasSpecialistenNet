@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: New Dialogue Object
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Hi, I am Brian.
-
-    Nice to meet you:)'
-  - Jij bent een pannekoek!
+  - 'Okay I noticed you got a bit fed up. '
+  - 'Time to do a breathing excersise to calm down. '
   - Some introduction
   - Some introduction

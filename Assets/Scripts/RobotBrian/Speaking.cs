@@ -6,6 +6,7 @@ public class Speaking : BaseState
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float distanceFromPlayer = 1.4f;
+    [SerializeField] private GameObject canvasObject;
     private Vector3 goalPos;
     private Vector3 offset;
 
@@ -13,7 +14,7 @@ public class Speaking : BaseState
     public override void OnEnable()
     {
         base.OnEnable();
-        offset = Vector3.right + Vector3.up;
+        offset = Vector3.right + Vector3.up * .4f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -31,12 +32,12 @@ public class Speaking : BaseState
 
     private void SpeakLine()
     {
-        Debug.Log("I'm speaking right now");
+        canvasObject.SetActive(true);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    // public override void OnDisable()
-    // {
-    //     
-    // }
+    public override void OnDisable()
+    {
+        canvasObject.SetActive(false);
+    }
 }
