@@ -12,7 +12,7 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private Animator ObjectAnimator;
     [SerializeField] private string animatorTrigger;
     public bool shouldUseAnimation;
-    
+
     /// <summary>
     /// Checking the angle to see if the switch code should run 
     /// </summary>
@@ -62,7 +62,8 @@ public class SwitchManager : MonoBehaviour
         }
         else
         {
-            GetComponent<GeneratorStartup>().activateGenerator;
+           this.GetComponent<GeneratorStartup>().activateGenerator();
+            
         }
 
 
