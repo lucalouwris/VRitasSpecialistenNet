@@ -11,12 +11,15 @@ public class BrianSays : MonoBehaviour
 
     private TypeWriter typeWriter;
     private int count = 0;
+    private bool isPressed = false;
+
+
     void OnEnable()
     {
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
-        this.ShowDialogue(dialogue[count % dialogue.Length]);
-        count ++;
+        this.ShowDialogue(dialogue[this.count % dialogue.Length]);
+        this.count ++;
     }
 
 
@@ -26,7 +29,7 @@ public class BrianSays : MonoBehaviour
         StartCoroutine(this.StepThroughDialogue(dialogueObject));
     }
 
-    public IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+   public IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
      for(int i = 0;  i < dialogueObject.Dialogue.Length; i++)
         {
@@ -38,9 +41,16 @@ public class BrianSays : MonoBehaviour
 
 
             yield return null;
+            yield return new WaitUntil(() => this.isPressed == true);
+            this.isPressed = false;
         }
 
         this.CloseDialogeBox();
+    }
+
+    public void handlePressed()
+    {
+        this.isPressed = true;
     }
 
     private IEnumerator RunTypingEffect(string dialogue)
@@ -50,6 +60,11 @@ public class BrianSays : MonoBehaviour
         while (this.typeWriter.isRunning)
         {
             yield return null;
+
+            if(this.isPressed)
+            {
+                this.typeWriter.Stop();
+            }
         }
     }
 
