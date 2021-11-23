@@ -43,7 +43,7 @@ public class ScrewdriverTrigger : MonoBehaviour
         Debug.Log("Trying to apply Rotation and Transform");
         powerCell.transform.Rotate(0f, 0f, 7f, Space.World);
 
-        hasbeenFixed = true;
+        GetComponent<SwitchCheck>().SwitchShouldWork = true;
 
     }
 

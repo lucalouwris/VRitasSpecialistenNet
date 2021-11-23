@@ -24,12 +24,12 @@ public class GeneratorStartup : MonoBehaviour
     }
 
     //This method changes the material of the middle power
-    private void activateGenerator()
+    public void activateGenerator()
     {
         Debug.Log("Updating Generator Materials");
         // get the current array of materials
         var materials = objectRenderer.materials;
-        // exchange both materials
+        // exchange both materials with the activated material version // numbers are switched because unity is weird
         materials[1] = wantedMaterialSecondary;
         materials[2] = wantedMaterialPrimary;
 
@@ -37,10 +37,5 @@ public class GeneratorStartup : MonoBehaviour
         objectRenderer.materials = materials;
 
     }
-
-    //if lever is pulled
-
-    //activate material if it has been fixed
-
 
 }
