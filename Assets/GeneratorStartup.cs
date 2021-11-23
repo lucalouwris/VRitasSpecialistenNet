@@ -9,9 +9,6 @@ public class GeneratorStartup : MonoBehaviour
     [SerializeField] private Material wantedMaterialPrimary;
     [SerializeField] private Material wantedMaterialSecondary;
 
-    private bool first = false;
-
-
 
     // Start is called before the first frame update
     void Start()
