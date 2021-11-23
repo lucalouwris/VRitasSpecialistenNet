@@ -8,10 +8,13 @@ public class ScrewdriverTrigger : MonoBehaviour
     private GameObject powerCell;
     private bool hasbeenFixed = false;
 
+    [SerializeField] private MeshRenderer objectRenderer;
+    [SerializeField] private Material wantedMaterial;
+
     // Start is called before the first frame update
     void Start()
     {
-        powerCell = GameObject.Find("powercell");
+        powerCell = GameObject.Find("powercellempty");
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class ScrewdriverTrigger : MonoBehaviour
             if (!hasbeenFixed)
             {
                 TransformPowerCell();
+                changeMaterial();
             }
         }
     }
@@ -47,5 +51,10 @@ public class ScrewdriverTrigger : MonoBehaviour
     public bool getHasBeenFixed()
     {
         return hasbeenFixed;
+    }
+
+    private void changeMaterial()
+    {
+        objectRenderer.material = wantedMaterial;
     }
 }
