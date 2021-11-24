@@ -26,6 +26,10 @@ public class ControllerInput : MonoBehaviour
     {
         isWalking = true;
     }
+    public void A()
+    {
+        Debug.Log("AAAA");
+    }
 }
 
 [Serializable]
