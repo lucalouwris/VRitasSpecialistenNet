@@ -237,7 +237,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.205051, y: 0.71400005, z: -6.6425495}
+  m_ConnectedAnchor: {x: -1.205051, y: 0.9308, z: -6.6425495}
   m_UseSpring: 0
   m_Spring:
     spring: 1
@@ -774,8 +774,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133567647}
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 1.03, y: 0.16, z: 2.323}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.03, y: 0.349, z: 2.323}
+  m_LocalScale: {x: 1, y: 1.1411, z: 1}
   m_Children:
   - {fileID: 1099048002}
   - {fileID: 264245558}
