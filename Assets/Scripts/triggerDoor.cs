@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class triggerDoor : MonoBehaviour
 {
-    [SerializeField] private openDoor door;
+    
+    [SerializeField] private Animator ObjectAnimator;
+    [SerializeField] private string animatorTrigger;
 
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            door.Starting();
+            ObjectAnimator.SetTrigger(animatorTrigger);
         }
     }
 }
