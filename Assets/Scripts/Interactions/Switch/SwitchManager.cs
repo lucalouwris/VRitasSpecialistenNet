@@ -11,7 +11,8 @@ public class SwitchManager : MonoBehaviour
     private bool taskCompleted;
     [SerializeField] private Animator ObjectAnimator;
     [SerializeField] private string animatorTrigger;
-    
+    public bool shouldUseAnimation;
+
     /// <summary>
     /// Checking the angle to see if the switch code should run 
     /// </summary>
@@ -54,7 +55,18 @@ public class SwitchManager : MonoBehaviour
 
     private void TriggerObject()
     {
-        ObjectAnimator.SetTrigger(animatorTrigger);
+        if (shouldUseAnimation)
+        {
+            ObjectAnimator.SetTrigger(animatorTrigger);
+
+        }
+        else
+        {
+           this.GetComponent<GeneratorStartup>().activateGenerator();
+            
+        }
+
+
         enabled = false;
     }
 }
