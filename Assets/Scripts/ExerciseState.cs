@@ -32,6 +32,7 @@ public class ExerciseState : BaseState
     public override void OnEnable()
     {
         base.OnEnable();
+        canvasObject.SetActive(true);
         offset = Vector3.right + Vector3.up * .4f;
         currentStage = Stages.preparation;
     }
@@ -63,8 +64,6 @@ public class ExerciseState : BaseState
    
     void UpdateExercise()
     {
-        canvasObject.SetActive(true);
-
         if (currentStage == Stages.breathIn)
         {
             leftBar.fillAmount = 1.0f - (timeRemaining / startTime);

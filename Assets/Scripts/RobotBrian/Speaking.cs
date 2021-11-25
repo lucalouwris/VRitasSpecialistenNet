@@ -22,6 +22,7 @@ public class Speaking : BaseState
     {
         //Calculating preferred position.
         goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
+        goalPos.y = playerTransform.position.y + offset.y;
         transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
         transform.LookAt(playerTransform);
 
