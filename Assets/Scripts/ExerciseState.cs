@@ -14,6 +14,7 @@ public class ExerciseState : BaseState
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float distanceFromPlayer = 3.0f;
     [SerializeField] private GameObject canvasObject;
+    [SerializeField] private float timesToRepeat;
 
     float prepTime = 5f;
     float outTime = 4f;
@@ -22,6 +23,7 @@ public class ExerciseState : BaseState
     float timeRemaining;
     float startTime;
     bool startedExercise = false;
+    float count;
 
     private Vector3 goalPos;
     private Vector3 offset;
@@ -51,7 +53,7 @@ public class ExerciseState : BaseState
     {
         //Calculating preferred position.
         goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
-        transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, goalPos, 2 * Time.deltaTime);
         transform.LookAt(playerTransform);
 
         if (Vector3.Distance(transform.position, goalPos) < .4f)
@@ -59,6 +61,10 @@ public class ExerciseState : BaseState
             if (!startedExercise)
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
             UpdateExercise();
+        }
+        if(count >= timesToRepeat)
+        {
+            GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[0]);
         }
     }
    
@@ -96,6 +102,7 @@ public class ExerciseState : BaseState
                         break;
                     case Stages.breathOut:
                         SwitchExercise(pauseTime, pauseTxt, Stages.breathPause);
+                        count++;
                         break;
                     case Stages.breathPause:
                         if (previousStage == Stages.breathIn) 
