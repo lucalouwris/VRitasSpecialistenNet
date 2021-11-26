@@ -2100,7 +2100,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -2802,6 +2802,23 @@ MonoBehaviour:
         - m_Target: {fileID: 8654318760816970890}
           m_TargetAssemblyTypeName: ControllerInput, Assembly-CSharp
           m_MethodName: Walk
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 2
+    pressType: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BrianSays, Assembly-CSharp
+          m_MethodName: handlePressed
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

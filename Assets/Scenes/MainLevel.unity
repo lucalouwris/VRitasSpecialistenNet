@@ -6106,45 +6106,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].button
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].pressType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 832272130}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: handlePressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BrianSays, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
-      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491a6671fa652a442876463806f19a28, type: 3}
 --- !u!114 &362067149 stripped
@@ -13194,65 +13158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78bb947ccdc3e40dd938fe10f8b51f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &831651475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 831651476}
-  - component: {fileID: 831651478}
-  - component: {fileID: 831651477}
-  m_Layer: 0
-  m_Name: Door Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &831651476
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831651475}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -14.57, y: 2.52, z: 6.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1024343929}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &831651477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831651475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804e2cfea0e2b5f42965241a5bfaf883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectAnimator: {fileID: 864110527}
-  animatorTrigger: OpenHangar
---- !u!65 &831651478
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831651475}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 15, y: 5, z: 5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &831979868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15797,11 +15702,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 95f62edd22e84473d8e10d7f9d5e0590, type: 3}
   m_PrefabInstance: {fileID: 1023083451}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1024343929 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3023838124005321270, guid: f42658f32d47be1439d3637345729e01, type: 3}
-  m_PrefabInstance: {fileID: 164926100186802214}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1032789293
 PrefabInstance:
@@ -33997,6 +33897,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 4.505
       objectReference: {fileID: 0}
+    - target: {fileID: 1816417950001558794, guid: f42658f32d47be1439d3637345729e01, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816417950001558794, guid: f42658f32d47be1439d3637345729e01, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.77
+      objectReference: {fileID: 0}
     - target: {fileID: 2546466567498219020, guid: f42658f32d47be1439d3637345729e01, type: 3}
       propertyPath: m_Name
       value: HangarWithCracks
@@ -34152,6 +34060,14 @@ PrefabInstance:
     - target: {fileID: 7967034066024810386, guid: f42658f32d47be1439d3637345729e01, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378679264228040083, guid: f42658f32d47be1439d3637345729e01, type: 3}
+      propertyPath: ObjectAnimator
+      value: 
+      objectReference: {fileID: 864110527}
+    - target: {fileID: 8378679264228040083, guid: f42658f32d47be1439d3637345729e01, type: 3}
+      propertyPath: animatorTrigger
+      value: OpenHangar
       objectReference: {fileID: 0}
     - target: {fileID: 9112869369985497049, guid: f42658f32d47be1439d3637345729e01, type: 3}
       propertyPath: m_LocalPosition.x
