@@ -24,7 +24,6 @@ public class SwitchManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        Debug.Log(switchJoint.limits.max - switchJoint.angle);
         if (switchJoint.limits.max - switchJoint.angle < 10)
         {
             OnSwitchDown();
