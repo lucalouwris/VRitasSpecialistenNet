@@ -23,6 +23,7 @@ public class ExerciseState : BaseState
     float timeRemaining;
     float startTime;
     bool startedExercise = false;
+    bool exerciseEnding = false;
     float count;
 
     private Vector3 goalPos;
@@ -61,10 +62,11 @@ public class ExerciseState : BaseState
             if (!startedExercise)
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
             UpdateExercise();
-        }
-        if(count >= timesToRepeat)
-        {
-            SwitchExercise(prepTime, completedTxt, Stages.completed);
+            if (count >= timesToRepeat && !exerciseEnding)
+            {
+                exerciseEnding = true;
+                SwitchExercise(prepTime, completedTxt, Stages.completed);
+            }
         }
     }
    

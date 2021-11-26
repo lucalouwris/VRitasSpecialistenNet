@@ -226,6 +226,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: completedTxt
+      value: Exercise Complete
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: timesToRepeat
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1148754324}
     - target: {fileID: 2438190431619714770, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: playerTransform
       value: 
