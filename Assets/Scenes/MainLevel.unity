@@ -8730,7 +8730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &550032056
 Transform:
   m_ObjectHideFlags: 0
@@ -12924,11 +12924,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: prepTxt
-      value: Follow along
+      value: Follow Along
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: breathInTxt
+      value: Breath In
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: breathOutTxt
+      value: Breath Out
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: completedTxt
+      value: Well Done. Exercise Complete
       objectReference: {fileID: 0}
     - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: timesToRepeat
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: playerTransform
