@@ -442,7 +442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1833663975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
   - {fileID: 2438190431619714781}
   - {fileID: 2043031419}
   Triggers: 00000000
-  StartState: 0
+  StartState: 2
   currentState: {fileID: 0}
 --- !u!114 &2438190431619714771
 MonoBehaviour:
@@ -813,14 +813,14 @@ MonoBehaviour:
   leftBar: {fileID: 1151044343}
   rightBar: {fileID: 1783661378}
   breathStat: {fileID: 451231956}
-  prepTxt: Get Ready
+  prepTxt: Follow along
   breathInTxt: Breath in
   breathOutTxt: Breath out
   pauseTxt: Hold
   playerTransform: {fileID: 0}
   distanceFromPlayer: 3
   canvasObject: {fileID: 1833663974}
-  timesToRepeat: 0
+  timesToRepeat: 2
 --- !u!1001 &241390296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -836,6 +836,26 @@ PrefabInstance:
       propertyPath: stateMachine
       value: 
       objectReference: {fileID: 2438190431619714769}
+    - target: {fileID: 6578001200692408626, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578001200692408626, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 98d465ee4283fe644ba84b436bde4c74, type: 2}
+    - target: {fileID: 6578001200692408626, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 506b9fd505509ed48b23650e2a8d403b, type: 2}
+    - target: {fileID: 6578001200692408626, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 15d5c884214d2fc4a8c6cbd296d2e4bc, type: 2}
+    - target: {fileID: 6578001200692408626, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6be1f0c5d82e2474882d2d0ca2a3662b, type: 2}
     - target: {fileID: 6578001200692408630, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
