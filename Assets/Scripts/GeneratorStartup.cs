@@ -9,11 +9,19 @@ public class GeneratorStartup : MonoBehaviour
     [SerializeField] private Material wantedMaterialPrimary;
     [SerializeField] private Material wantedMaterialSecondary;
 
+    //Audio data
+    [SerializeField] private AudioClip brokenClip;
+    [SerializeField] private AudioClip fixedClip;
+    [SerializeField] private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (brokenClip != null)
+        {
+            audioSource.clip = brokenClip;
+            audioSource.Play();
+        }        
     }
 
     // Update is called once per frame
@@ -36,6 +44,10 @@ public class GeneratorStartup : MonoBehaviour
         // reassign the materials to the renderer
         objectRenderer.materials = materials;
 
+        // Changing the audio to fixed.
+        audioSource.Stop();
+        audioSource.clip = fixedClip;
+        audioSource.Play();
     }
 
 }
