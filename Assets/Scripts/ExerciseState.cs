@@ -9,7 +9,7 @@ public class ExerciseState : BaseState
     [SerializeField] Image rightBar;
     [SerializeField] Text breathStat;
 
-    [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt;
+    [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt, completedTxt;
 
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float distanceFromPlayer = 3.0f;
@@ -64,7 +64,7 @@ public class ExerciseState : BaseState
         }
         if(count >= timesToRepeat)
         {
-            GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[0]);
+            SwitchExercise(prepTime, completedTxt, Stages.completed);
         }
     }
    
@@ -75,7 +75,7 @@ public class ExerciseState : BaseState
             leftBar.fillAmount = 1.0f - (timeRemaining / startTime);
             rightBar.fillAmount = 1.0f - (timeRemaining / startTime);
         }
-        else if (currentStage == Stages.breathPause || currentStage == Stages.preparation)
+        else if (currentStage == Stages.breathPause || currentStage == Stages.preparation || currentStage == Stages.completed)
         {
             leftBar.fillAmount = leftBar.fillAmount;
             rightBar.fillAmount = rightBar.fillAmount;
@@ -111,6 +111,7 @@ public class ExerciseState : BaseState
                             SwitchExercise(inTime, breathInTxt, Stages.breathIn);
                         break;
                     case Stages.completed:
+                        GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
                         break;
                 }
             }

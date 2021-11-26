@@ -13348,7 +13348,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: prepTxt
-      value: Follow along
+      value: Follow Along
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: breathInTxt
+      value: Breath In
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: breathOutTxt
+      value: Breath Out
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: completedTxt
+      value: Well Done. Exercise Complete
       objectReference: {fileID: 0}
     - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: timesToRepeat
