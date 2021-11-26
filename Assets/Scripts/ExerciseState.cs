@@ -9,11 +9,12 @@ public class ExerciseState : BaseState
     [SerializeField] Image rightBar;
     [SerializeField] Text breathStat;
 
-    [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt;
+    [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt, completedTxt;
 
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float distanceFromPlayer = 3.0f;
     [SerializeField] private GameObject canvasObject;
+    [SerializeField] private float timesToRepeat;
 
     float prepTime = 5f;
     float outTime = 4f;
@@ -22,6 +23,8 @@ public class ExerciseState : BaseState
     float timeRemaining;
     float startTime;
     bool startedExercise = false;
+    bool exerciseEnding = false;
+    float count;
 
     private Vector3 goalPos;
     private Vector3 offset;
@@ -32,6 +35,7 @@ public class ExerciseState : BaseState
     public override void OnEnable()
     {
         base.OnEnable();
+        canvasObject.SetActive(true);
         offset = Vector3.right + Vector3.up * .4f;
         currentStage = Stages.preparation;
     }
@@ -50,7 +54,7 @@ public class ExerciseState : BaseState
     {
         //Calculating preferred position.
         goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
-        transform.position = Vector3.MoveTowards(transform.position, goalPos, .5f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, goalPos, 2 * Time.deltaTime);
         transform.LookAt(playerTransform);
 
         if (Vector3.Distance(transform.position, goalPos) < .4f)
@@ -58,19 +62,22 @@ public class ExerciseState : BaseState
             if (!startedExercise)
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
             UpdateExercise();
+            if (count >= timesToRepeat && !exerciseEnding)
+            {
+                exerciseEnding = true;
+                SwitchExercise(prepTime, completedTxt, Stages.completed);
+            }
         }
     }
    
     void UpdateExercise()
     {
-        canvasObject.SetActive(true);
-
         if (currentStage == Stages.breathIn)
         {
             leftBar.fillAmount = 1.0f - (timeRemaining / startTime);
             rightBar.fillAmount = 1.0f - (timeRemaining / startTime);
         }
-        else if (currentStage == Stages.breathPause || currentStage == Stages.preparation)
+        else if (currentStage == Stages.breathPause || currentStage == Stages.preparation || currentStage == Stages.completed)
         {
             leftBar.fillAmount = leftBar.fillAmount;
             rightBar.fillAmount = rightBar.fillAmount;
@@ -97,6 +104,7 @@ public class ExerciseState : BaseState
                         break;
                     case Stages.breathOut:
                         SwitchExercise(pauseTime, pauseTxt, Stages.breathPause);
+                        count++;
                         break;
                     case Stages.breathPause:
                         if (previousStage == Stages.breathIn) 
@@ -105,6 +113,7 @@ public class ExerciseState : BaseState
                             SwitchExercise(inTime, breathInTxt, Stages.breathIn);
                         break;
                     case Stages.completed:
+                        GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
                         break;
                 }
             }

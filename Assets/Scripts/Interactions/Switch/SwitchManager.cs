@@ -12,13 +12,18 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private Animator ObjectAnimator;
     [SerializeField] private string animatorTrigger;
     public bool shouldUseAnimation;
+    
+    //Audio data
+    [SerializeField] private AudioClip leverClick;
+    [SerializeField] private AudioSource lever;
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioSource audioSource;
 
     /// <summary>
     /// Checking the angle to see if the switch code should run 
     /// </summary>
     private void Update()
     {
-        Debug.Log(switchJoint.limits.max - switchJoint.angle);
         if (switchJoint.limits.max - switchJoint.angle < 10)
         {
             OnSwitchDown();
@@ -58,15 +63,16 @@ public class SwitchManager : MonoBehaviour
         if (shouldUseAnimation)
         {
             ObjectAnimator.SetTrigger(animatorTrigger);
-
         }
         else
         {
-           this.GetComponent<GeneratorStartup>().activateGenerator();
-            
+           GetComponent<GeneratorStartup>().activateGenerator();
         }
 
-
+        if (clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }        
         enabled = false;
     }
 }
