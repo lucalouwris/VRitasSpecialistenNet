@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855d7eb9f3b994b5c9255cc4117b7f97, type: 3}
-  m_Name: breathing
+  m_Name: generatorFixed
   m_EditorClassIdentifier: 
   dialogue:
-  - I see, that your body is not yet used to this environment.
-  - Let's take a couple of steps and then we can start with a breathing exercise
+  - Great Job! It is working again. Your oxygen should start filling up now.
