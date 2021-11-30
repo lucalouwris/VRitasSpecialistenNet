@@ -529,7 +529,8 @@ sysinfo.txt
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-
+/[Aa]ssets\AngleCheck.csv
+/[Aa]ssets\DistanceCheck.csv
 ### VisualStudio ###
 
 # User-specific files
@@ -706,3 +707,4 @@ sysinfo.txt
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,csharp,visualstudio,rider
+Assets/Models/DummySuit.obj.meta
