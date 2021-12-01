@@ -239,7 +239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configFile: {fileID: 11400000, guid: 6094cd8780323354287ab0d455e80195, type: 2}
-  interval: 0.5
+  interval: 3
+  pathToCsv: /Data/
 --- !u!65 &320930760
 BoxCollider:
   m_ObjectHideFlags: 0

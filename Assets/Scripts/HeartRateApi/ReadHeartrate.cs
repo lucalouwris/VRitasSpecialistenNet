@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -9,11 +11,12 @@ public class ReadHeartrate : MonoBehaviour
 {
     [SerializeField] private ConfigFile configFile;
     [SerializeField] private float interval = 0.5f;
-    private HttpClient client;
-
-    [SerializeField] private string time;
-    [SerializeField] private string heartRate;
+    [SerializeField] private string pathToCsv;
     
+    private HttpClient client;
+    private List<float> time = new List<float>();
+    private List<string> heartRate = new List<string>();
+
     private void Start()
     {
         Invoke(nameof(CallGet),interval);
@@ -42,6 +45,8 @@ public class ReadHeartrate : MonoBehaviour
 
             string[] split = localData.Split(',');
             
+            time.Add((int)Time.time);
+            heartRate.Add(split[1]);
             Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
             
             return localData;
@@ -53,11 +58,16 @@ public class ReadHeartrate : MonoBehaviour
         // return response.con.ToString();
     }
     
-    
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        string csv = "";
+
+        for (int i = 0; i < heartRate.Count; i++)
+        {
+            csv += $"{time[i]},{heartRate[i]}\n";
+        }
+
+        string date = DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute;
+        File.WriteAllText(Application.dataPath+pathToCsv+$"heartrateData{date}.csv", csv);
     }
 }
