@@ -845,13 +845,15 @@ GameObject:
   - component: {fileID: 995908606}
   - component: {fileID: 995908605}
   - component: {fileID: 995908604}
+  - component: {fileID: 995908607}
+  - component: {fileID: 995908608}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &995908603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -894,7 +896,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -954,6 +956,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995908602}
   m_CullTransparentMesh: 1
+--- !u!65 &995908607
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995908602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160, y: 30, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &995908608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995908602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f621f1a389095aa4fa5bd22b8c02b50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003996933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1208,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f3c48b40358f24aa0a6c9ce01bf0a9c8, type: 2}
     - target: {fileID: 919132149155446097, guid: 143b0eed434b042dea7981f01e822672, type: 3}
       propertyPath: m_Name
-      value: computer (1)
+      value: Terminal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143b0eed434b042dea7981f01e822672, type: 3}
@@ -1217,6 +1244,7 @@ MonoBehaviour:
   notification: {fileID: 2844786023139057763, guid: 236966975838eab44b9d8ea648a55811, type: 3}
   screen: {fileID: 288231961}
   bg: {fileID: 1276725810}
+  refuel: {fileID: 995908602}
   maxMessages: 25
 --- !u!1 &2005545352
 GameObject:

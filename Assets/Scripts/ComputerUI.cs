@@ -11,29 +11,41 @@ public class ComputerUI : MonoBehaviour
     List<GameObject> messages = new List<GameObject>();
     [SerializeField] GameObject screen;
     [SerializeField] GameObject bg;
-    [SerializeField] int maxMessages = 25;
+    [SerializeField] GameObject refuel;
+    [SerializeField] int maxMessages = 10;
     float interval = 0;
+    bool active = true;
 
     private void Start()
     {
-        interval = Random.Range(1f,5f);
+        interval = Random.Range(1f, 5f);
     }
     // Update is called once per frame
     void Update()
     {
-        if (interval > 0)
+        if (interval > 0 && active)
         {
             interval -= Time.deltaTime;
         }
-        else
+        else if (interval <= 0 && active)
         {
-            interval = Random.Range(0f, 3f);
+            interval = Random.Range(0f, 2f);
             receiveNotif();
         }
     }
+
+    public void Wipe()
+    {
+        active = false;
+        foreach (GameObject message in messages)
+        {
+            Destroy(message.gameObject);
+        }
+        messages.Clear();
+    }
     void receiveNotif()
     {
-        GameObject notif = Instantiate(notification, new Vector3(0,0,0), Quaternion.Euler(0, 180, 0), screen.transform.parent);
+        GameObject notif = Instantiate(notification, new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0), screen.transform.parent);
         notif.transform.SetParent(screen.transform);
         Vector3 spawnPosition = new Vector3(bg.transform.position.x + Random.Range(-0.6f, 0.6f), bg.transform.position.y + Random.Range(-0.4f, 0.4f), screen.transform.position.z);
         notif.transform.position = spawnPosition;
@@ -41,16 +53,17 @@ public class ComputerUI : MonoBehaviour
         Image notifImg = notif.GetComponent<Image>();
         notifImg.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1), 1f);
 
-            for (int i = 0; i < messages.Count; i++)
+        for (int i = 0; i < messages.Count; i++)
+        {
+            if (messages.Count == maxMessages)
             {
-                if(messages.Count == maxMessages)
-                {
-                    messages.RemoveAt(i);
-                    Destroy(messages[i]);
-                }
+                Destroy(messages[i].gameObject);
+                messages.RemoveAt(i);
+                refuel.SetActive(true);
             }
-            messages.Add(notif);
-    } 
+        }
+        messages.Add(notif);
+    } // Other type of messaging which is more structured
     void receiveNotifStructured()
     {
         Vector3 spawnPosition = new Vector3(messagePositions[0].transform.position.x, messagePositions[0].transform.position.y, messagePositions[0].transform.position.z);
@@ -60,26 +73,26 @@ public class ComputerUI : MonoBehaviour
         notifImg.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1), 1f);
 
         notif.name = "0";
-        if(messages.Count > 0)
+        if (messages.Count > 0)
         {
             for (int i = 0; i < messages.Count; i++)
             {
                 int number = int.Parse(messages[i].name);
-                if (number < messagePositions.Count-1)
+                if (number < messagePositions.Count - 1)
                 {
-                    notif.transform.SetParent(messagePositions[number+1].transform);
-                    notif.transform.position = messagePositions[number+1].transform.position;
+                    notif.transform.SetParent(messagePositions[number + 1].transform);
+                    notif.transform.position = messagePositions[number + 1].transform.position;
                     number++;
-                    
+
                     notif.name = number.ToString();
                 }
                 else
                 {
-                    messages.RemoveAt(i-1);
-                    Destroy(messages[i-1]);
+                    messages.RemoveAt(i - 1);
+                    Destroy(messages[i - 1]);
                 }
             }
         }
         messages.Add(notif);
-    } 
+    }
 }

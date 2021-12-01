@@ -5,8 +5,10 @@ using UnityEngine.EventSystems;
 
 public class OnMouseOverNotif : MonoBehaviour
 {
-    public void OnPointerEnter(PointerEventData eventData)
+    ComputerUI ui;
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        ui = GameObject.Find("Terminal").GetComponent<ComputerUI>();
+        ui.Wipe();
     }
 }
