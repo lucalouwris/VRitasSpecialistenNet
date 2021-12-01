@@ -10,18 +10,19 @@ public class ReadHeartrate : MonoBehaviour
     [SerializeField] private ConfigFile configFile;
     [SerializeField] private float interval = 0.5f;
     private HttpClient client;
+
+    [SerializeField] private string time;
+    [SerializeField] private string heartRate;
+    
     private void Start()
     {
         Invoke(nameof(CallGet),interval);
         client = new HttpClient();
-        //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", configFile.Token);
-        //client.DefaultRequestHeaders.Add("Authorization", configFile.Token);
-        //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
     }
 
     public void CallGet()
     {
-        Debug.Log($"Data returned: {Get(configFile.Url)}");
+        Get(configFile.Url);
         Invoke(nameof(CallGet),interval);
     }
 
@@ -31,9 +32,19 @@ public class ReadHeartrate : MonoBehaviour
         {
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", configFile.Token);
             var response = await client.SendAsync(request);
-            string data = await response.Content.ReadAsStringAsync();
-            Debug.Log($"data from task: {data}");
-            return data;
+            string localData = await response.Content.ReadAsStringAsync();
+
+            Debug.Log(localData);
+            
+            localData = localData.Replace("{\"measured_at\":", "");
+            localData = localData.Replace("\"data\":{\"heart_rate\":", "");
+            localData = localData.Replace("}}", "");
+
+            string[] split = localData.Split(',');
+            
+            Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
+            
+            return localData;
         }
         //var result = client.GetStreamAsync(configFile.Url);
         //result.Result.ToString();
