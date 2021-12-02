@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HeartrateGet
   m_EditorClassIdentifier: 
   Url: https://dev.pulsoid.net/api/v1/data/heart_rate/latest
-  Token: a6fcd049-f95b-40b5-84ca-70e5cec585ee
+  Token: Fill With Token
