@@ -16,11 +16,12 @@ public class ExerciseState : BaseState
     [SerializeField] private GameObject canvasObject;
     [SerializeField] private float timesToRepeat;
 
+    [SerializeField] private float boxTime;
 
-    [SerializeField] float prepTime = 5f;
-    [SerializeField] float outTime = 3.5f;
-    [SerializeField] float inTime = 3.5f;
-    [SerializeField] float pauseTime = 3.5f;
+    float prepTime = 5f;
+    float outTime;
+    float inTime;
+    float pauseTime;
     float timeRemaining;
     float startTime;
     bool startedExercise = false;
@@ -35,6 +36,9 @@ public class ExerciseState : BaseState
 
     public override void OnEnable()
     {
+        pauseTime = boxTime;
+        outTime = boxTime;
+        inTime = boxTime;
         base.OnEnable();
         canvasObject.SetActive(true);
         offset = Vector3.right + Vector3.up * .4f;
