@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08451951, g: 0.08497134, b: 0.5451982, a: 1}
+  m_IndirectSpecularColor: {r: 0.08451851, g: 0.08497031, b: 0.54519695, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4400,13 +4400,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 816273495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33fba4016d200343a4599645f517f2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 1120413631}
-  wantedState: 1
-  TagCheck: Player
-  shouldDisable: 0
+  dialogueObject: {fileID: 11400000, guid: c8df97e832817084eb0ff9962b99dd01, type: 2}
 --- !u!65 &816273498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8006,13 +8003,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1549278471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33fba4016d200343a4599645f517f2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 1120413631}
-  wantedState: 3
-  TagCheck: Player
-  shouldDisable: 1
+  dialogueObject: {fileID: 11400000, guid: 506b9fd505509ed48b23650e2a8d403b, type: 2}
 --- !u!65 &1549278474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8300,13 +8294,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1590642486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33fba4016d200343a4599645f517f2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 1120413631}
-  wantedState: 1
-  TagCheck: Player
-  shouldDisable: 0
+  dialogueObject: {fileID: 11400000, guid: 98d465ee4283fe644ba84b436bde4c74, type: 2}
 --- !u!65 &1590642489
 BoxCollider:
   m_ObjectHideFlags: 0
