@@ -11,9 +11,11 @@ public class ReadHeartrate : MonoBehaviour
     [SerializeField] private ConfigFile configFile;
     [SerializeField] private float interval = 0.5f;
     [SerializeField] private string pathToCsv;
+    [SerializeField] private Rigidbody player;
     
     private HttpClient client;
-    private List<float> time = new List<float>();
+    private List<int> time = new List<int>();
+    private List<float> velocity = new List<float>();
     private List<string> heartRate = new List<string>();
 
     private void Start()
@@ -45,6 +47,7 @@ public class ReadHeartrate : MonoBehaviour
             string[] split = localData.Split(',');
             
             time.Add((int)Time.time);
+            velocity.Add(player.velocity.magnitude);
             heartRate.Add(split[1]);
             Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
             
@@ -58,7 +61,7 @@ public class ReadHeartrate : MonoBehaviour
 
         for (int i = 0; i < heartRate.Count; i++)
         {
-            csv += $"{time[i]},{heartRate[i]}\n";
+            csv += $"{time[i]},{velocity[i]},{heartRate[i]}\n";
         }
 
         string date = DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute;
