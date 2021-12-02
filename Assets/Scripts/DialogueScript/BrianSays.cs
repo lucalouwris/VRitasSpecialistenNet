@@ -14,6 +14,8 @@ public class BrianSays : MonoBehaviour
     private int count = 0;
     private bool isPressed = false;
 
+    public bool isOpen { get; private set; }
+
 
     void OnEnable()
     {
@@ -26,6 +28,7 @@ public class BrianSays : MonoBehaviour
 
    public void ShowDialogue(DialogueObject dialogueObject)
     {
+        this.isOpen = true;
         this.dialogueBox.SetActive(true);
         StartCoroutine(this.StepThroughDialogue(dialogueObject));
     }
@@ -73,6 +76,7 @@ public class BrianSays : MonoBehaviour
 
     private void CloseDialogeBox()
     {
+        this.isOpen = false;
         this.dialogueBox.SetActive(false);
         this.textlabel.text = string.Empty;
     }

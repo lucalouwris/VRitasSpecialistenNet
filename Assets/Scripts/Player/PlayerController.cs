@@ -10,6 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody playerBody;
     [SerializeField] private GameObject playerHead;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private BrianSays brianSays;
+
+    public BrianSays BrianSays => brianSays;
+
+    public IInteractable Interactable { get; set; }
+
     private XRRig rig;
 
     private void Start()
@@ -25,6 +31,11 @@ public class PlayerController : MonoBehaviour
         // If grounded then don't use gravity on player.
         bool isGrounded = Grounded();
         playerBody.useGravity = !isGrounded;
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Interactable?.Interact(this);
+        }
     }
     
     /// <summary>
