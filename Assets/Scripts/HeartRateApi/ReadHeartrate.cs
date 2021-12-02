@@ -1,5 +1,6 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -9,19 +10,21 @@ public class ReadHeartrate : MonoBehaviour
 {
     [SerializeField] private ConfigFile configFile;
     [SerializeField] private float interval = 0.5f;
+    [SerializeField] private string pathToCsv;
+    
     private HttpClient client;
+    private List<float> time = new List<float>();
+    private List<string> heartRate = new List<string>();
+
     private void Start()
     {
         Invoke(nameof(CallGet),interval);
         client = new HttpClient();
-        //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", configFile.Token);
-        //client.DefaultRequestHeaders.Add("Authorization", configFile.Token);
-        //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
     }
 
     public void CallGet()
     {
-        Debug.Log($"Data returned: {Get(configFile.Url)}");
+        Get(configFile.Url);
         Invoke(nameof(CallGet),interval);
     }
 
@@ -31,22 +34,34 @@ public class ReadHeartrate : MonoBehaviour
         {
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", configFile.Token);
             var response = await client.SendAsync(request);
-            string data = await response.Content.ReadAsStringAsync();
-            Debug.Log($"data from task: {data}");
-            return data;
-        }
-        //var result = client.GetStreamAsync(configFile.Url);
-        //result.Result.ToString();
+            string localData = await response.Content.ReadAsStringAsync();
 
-        // var response = await client.SendAsync(configFile.Url);
-        // return response.con.ToString();
+            Debug.Log(localData);
+            
+            localData = localData.Replace("{\"measured_at\":", "");
+            localData = localData.Replace("\"data\":{\"heart_rate\":", "");
+            localData = localData.Replace("}}", "");
+
+            string[] split = localData.Split(',');
+            
+            time.Add((int)Time.time);
+            heartRate.Add(split[1]);
+            Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
+            
+            return localData;
+        }
     }
     
-    
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        string csv = "";
+
+        for (int i = 0; i < heartRate.Count; i++)
+        {
+            csv += $"{time[i]},{heartRate[i]}\n";
+        }
+
+        string date = DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute;
+        File.WriteAllText(Application.dataPath+pathToCsv+$"heartrateData{date}.csv", csv);
     }
 }
