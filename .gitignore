@@ -529,8 +529,7 @@ sysinfo.txt
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-/[Aa]ssets\AngleCheck.csv
-/[Aa]ssets\DistanceCheck.csv
+/[Aa]ssets/[Ss]cripts/HeartRateApi/HeartrateGet.asset
 ### VisualStudio ###
 
 # User-specific files
