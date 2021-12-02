@@ -16,9 +16,9 @@ public class ExerciseState : BaseState
     [SerializeField] private GameObject canvasObject;
     [SerializeField] private float timesToRepeat;
 
+    [SerializeField] private float prepTime = 2f;
     [SerializeField] private float boxTime;
 
-    float prepTime = 5f;
     float outTime;
     float inTime;
     float pauseTime;
@@ -41,7 +41,7 @@ public class ExerciseState : BaseState
         inTime = boxTime;
         base.OnEnable();
         canvasObject.SetActive(true);
-        offset = Vector3.right + Vector3.up * .4f;
+        offset = Vector3.down * .3f;
         currentStage = Stages.preparation;
     }
     public void SwitchExercise(float time, string activeText, Stages nextStage)
@@ -59,6 +59,8 @@ public class ExerciseState : BaseState
     {
         //Calculating preferred position.
         goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
+        goalPos = Vector3.Scale(goalPos , (Vector3.forward + Vector3.right));
+        goalPos += Vector3.up * playerTransform.position.y;
         transform.position = Vector3.MoveTowards(transform.position, goalPos, 2 * Time.deltaTime);
         transform.LookAt(playerTransform);
 

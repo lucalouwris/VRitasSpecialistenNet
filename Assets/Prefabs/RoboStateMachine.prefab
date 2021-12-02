@@ -119,7 +119,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Breath out
+  m_Text: '
+
+'
 --- !u!1 &823058219
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +824,7 @@ MonoBehaviour:
   distanceFromPlayer: 3
   canvasObject: {fileID: 1833663974}
   timesToRepeat: 5
+  boxTime: 0
 --- !u!1001 &241390296
 PrefabInstance:
   m_ObjectHideFlags: 0
