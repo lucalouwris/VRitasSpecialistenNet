@@ -11,7 +11,6 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private StateMachine stateMachine;
 
     private TypeWriter typeWriter;
-    private int count = 0;
     private bool isPressed = false;
 
     public bool isOpen { get; private set; }
@@ -21,8 +20,6 @@ public class BrianSays : MonoBehaviour
     {
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
-        this.ShowDialogue(dialogue[this.count % dialogue.Length]);
-        this.count ++;
     }
 
 
@@ -49,7 +46,6 @@ public class BrianSays : MonoBehaviour
             this.isPressed = false;
         }
 
-        Debug.Log("reached end" + this.count % dialogue.Length);
         this.CloseDialogeBox();
         this.gameObject.SetActive(false);
     }

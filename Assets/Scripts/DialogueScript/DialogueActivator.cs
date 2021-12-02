@@ -7,6 +7,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 
     public void Interact(PlayerController player)
     {
+        GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
         player.BrianSays.ShowDialogue(dialogueObject);
     }
 }
