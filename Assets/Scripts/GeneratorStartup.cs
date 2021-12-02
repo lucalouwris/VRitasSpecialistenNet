@@ -47,6 +47,7 @@ public class GeneratorStartup : MonoBehaviour
         // Changing the audio to fixed.
         audioSource.Stop();
         audioSource.clip = fixedClip;
+        audioSource.loop = false;
         audioSource.Play();
     }
 
