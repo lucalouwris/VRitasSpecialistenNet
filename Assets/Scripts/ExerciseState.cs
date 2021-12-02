@@ -16,10 +16,11 @@ public class ExerciseState : BaseState
     [SerializeField] private GameObject canvasObject;
     [SerializeField] private float timesToRepeat;
 
-    float prepTime = 5f;
-    float outTime = 3f;
-    float inTime = 3f;
-    float pauseTime = 3f;
+
+    [SerializeField] float prepTime = 5f;
+    [SerializeField] float outTime = 3.5f;
+    [SerializeField] float inTime = 3.5f;
+    [SerializeField] float pauseTime = 3.5f;
     float timeRemaining;
     float startTime;
     bool startedExercise = false;
