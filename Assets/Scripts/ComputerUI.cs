@@ -12,13 +12,17 @@ public class ComputerUI : MonoBehaviour
     [SerializeField] GameObject screen;
     [SerializeField] GameObject bg;
     [SerializeField] GameObject refuel;
+    AudioSource audioSource;
+    [SerializeField] AudioClip clip;
     [SerializeField] int maxMessages = 10;
+    [SerializeField] float volume = 0.5f;
     float interval = 0;
     bool active = true;
 
     private void Start()
     {
         interval = Random.Range(1f, 5f);
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -45,9 +49,12 @@ public class ComputerUI : MonoBehaviour
     }
     void receiveNotif()
     {
+        audioSource.PlayOneShot(clip, volume);
+        float width = Random.Range(-0.55f * transform.localScale.x, 0.55f * transform.localScale.x);
+        float height = Random.Range(-0.4f * transform.localScale.y, 0.4f * transform.localScale.y);
         GameObject notif = Instantiate(notification, new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0), screen.transform.parent);
         notif.transform.SetParent(screen.transform);
-        Vector3 spawnPosition = new Vector3(bg.transform.position.x + Random.Range(-0.6f, 0.6f), bg.transform.position.y + Random.Range(-0.4f, 0.4f), screen.transform.position.z);
+        Vector3 spawnPosition = new Vector3(bg.transform.position.x + width, bg.transform.position.y + height, screen.transform.position.z);
         notif.transform.position = spawnPosition;
         notif.transform.localScale = new Vector3(0.0025f, 0.0025f, 1);
         Image notifImg = notif.GetComponent<Image>();
