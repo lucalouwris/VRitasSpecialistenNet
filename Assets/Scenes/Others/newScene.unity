@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08451951, g: 0.08497134, b: 0.5451982, a: 1}
+  m_IndirectSpecularColor: {r: 0.084518686, g: 0.08497043, b: 0.5451972, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -949,6 +949,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 462485295, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: fixedClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bf84de31768a44a1eb081fde3ea425a9, type: 3}
     - target: {fileID: 1217297069, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -8.979249
@@ -961,6 +965,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 14.80555
       objectReference: {fileID: 0}
+    - target: {fileID: 5088618706256488905, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d5e5fb395e6cf4b9ea71d39934107b59, type: 3}
     - target: {fileID: 5907194228164422547, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: m_RootOrder
       value: 10
