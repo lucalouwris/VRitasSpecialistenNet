@@ -821,7 +821,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   distanceFromPlayer: 3
   canvasObject: {fileID: 1833663974}
-  timesToRepeat: 4
+  timesToRepeat: 5
 --- !u!1001 &241390296
 PrefabInstance:
   m_ObjectHideFlags: 0

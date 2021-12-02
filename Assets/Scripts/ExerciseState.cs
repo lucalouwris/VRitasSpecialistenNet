@@ -17,9 +17,9 @@ public class ExerciseState : BaseState
     [SerializeField] private float timesToRepeat;
 
     float prepTime = 5f;
-    float outTime = 4f;
-    float inTime = 2.5f;
-    float pauseTime = 1f;
+    float outTime = 3f;
+    float inTime = 3f;
+    float pauseTime = 3f;
     float timeRemaining;
     float startTime;
     bool startedExercise = false;
