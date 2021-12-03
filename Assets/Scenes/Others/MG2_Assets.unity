@@ -1580,11 +1580,15 @@ MonoBehaviour:
   - {fileID: 1003996933}
   - {fileID: 966894197}
   - {fileID: 2005545352}
+  clips:
+  - {fileID: 8300000, guid: 5f313eaec18e503458087aaf7d889da4, type: 3}
+  - {fileID: 8300000, guid: f6feba38a844a1d46a7f0fef22d0861b, type: 3}
+  - {fileID: 8300000, guid: 0e59c34f1e4fc9845baf7144083fe666, type: 3}
+  - {fileID: 8300000, guid: f6139451b4fc2cf46a15da77208beecc, type: 3}
   notification: {fileID: 2844786023139057763, guid: 236966975838eab44b9d8ea648a55811, type: 3}
   screen: {fileID: 288231961}
   bg: {fileID: 1276725810}
   refuel: {fileID: 995908602}
-  clip: {fileID: 8300000, guid: 49437a8f0946aed4fa056a73992afe07, type: 3}
   maxMessages: 25
   volume: 0.3
 --- !u!82 &1637860586
@@ -1705,7 +1709,6 @@ MonoBehaviour:
   offset: {x: 0, y: -1, z: 0}
   cam: {fileID: 1007108631}
   blink: 1
-  active: 1
   blinkInterval: 0.25
 --- !u!1 &1913245515
 GameObject:

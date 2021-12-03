@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ComputerUI : MonoBehaviour
 {
     [SerializeField] List<GameObject> messagePositions;
+    [SerializeField] AudioClip[] clips;
 
     [SerializeField] GameObject notification;
     List<GameObject> messages = new List<GameObject>();
@@ -13,7 +14,7 @@ public class ComputerUI : MonoBehaviour
     [SerializeField] GameObject bg;
     [SerializeField] GameObject refuel;
     AudioSource audioSource;
-    [SerializeField] AudioClip clip;
+    AudioClip clip;
     [SerializeField] int maxMessages = 10;
     [SerializeField] float volume = 0.5f;
     float interval = 0;
@@ -49,6 +50,7 @@ public class ComputerUI : MonoBehaviour
     }
     void receiveNotif()
     {
+        clip = clips[Random.Range(0, clips.Length)];
         audioSource.PlayOneShot(clip, volume);
         float width = Random.Range(-0.55f * transform.localScale.x, 0.55f * transform.localScale.x);
         float height = Random.Range(-0.4f * transform.localScale.y, 0.4f * transform.localScale.y);
