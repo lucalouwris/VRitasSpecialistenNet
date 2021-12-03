@@ -1704,6 +1704,9 @@ MonoBehaviour:
   target: {fileID: 48914931}
   offset: {x: 0, y: -1, z: 0}
   cam: {fileID: 1007108631}
+  blink: 1
+  active: 1
+  blinkInterval: 0.25
 --- !u!1 &1913245515
 GameObject:
   m_ObjectHideFlags: 0
