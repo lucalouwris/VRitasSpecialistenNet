@@ -9,6 +9,7 @@ public class triggerDoor : MonoBehaviour
     [SerializeField] private string animatorTrigger;
     [SerializeField] private AudioSource doorSoundSource;
     [SerializeField] private AudioClip openDoorSound;
+    [SerializeField] AudioController audioController;
 
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class triggerDoor : MonoBehaviour
             ObjectAnimator.SetTrigger(animatorTrigger);
             doorSoundSource.PlayOneShot(openDoorSound);
             this.gameObject.SetActive(false);
+            audioController.playPressure();
         }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08451951, g: 0.08497134, b: 0.5451982, a: 1}
+  m_IndirectSpecularColor: {r: 0.084518686, g: 0.08497043, b: 0.5451972, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5039,11 +5039,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4345301448378834099, guid: ef754d8c7193c494cb7e4ab25c675a6f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345301448378834099, guid: ef754d8c7193c494cb7e4ab25c675a6f, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef754d8c7193c494cb7e4ab25c675a6f, type: 3}
+--- !u!1 &903555024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4345301448378834096, guid: ef754d8c7193c494cb7e4ab25c675a6f, type: 3}
+  m_PrefabInstance: {fileID: 903555023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &903555025 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4345301448378834099, guid: ef754d8c7193c494cb7e4ab25c675a6f, type: 3}
+  m_PrefabInstance: {fileID: 903555023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &903555026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903555024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a8e70fb0f3b496da0000e641ccff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundSource: {fileID: 903555025}
+  backgroundMusic: {fileID: 8300000, guid: 0c8e0cb739f5787429a93e765b04b6f7, type: 3}
+  backgroundPressureMusic: {fileID: 8300000, guid: eb8e3da77afd84fa0ac275b9183f56d4, type: 3}
 --- !u!4 &904414937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1206551423418494413, guid: af3ba839b37364c4f93bf31edbad3320, type: 3}
