@@ -10,13 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855d7eb9f3b994b5c9255cc4117b7f97, type: 3}
-  m_Name: IntroductionDialogue
+  m_Name: fixedTheLever
   m_EditorClassIdentifier: 
-  dialogue:
-  - 'Hello Pilot! My name is Brian. Continue this conversation by pressing the red
-    Button!
-
-'
-  - Great Job! Remember to always press that trigger after you talked to me!
-  - 'Let''s get you moving! Press and hold the blue button. Then perform a walking
-    motion without moving your feet! '
+  dialogue: []

@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody playerBody;
     [SerializeField] private GameObject playerHead;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private BrianSays brianSays;
+
+    public BrianSays BrianSays => brianSays;
+
     private XRRig rig;
 
     private void Start()
@@ -21,12 +26,12 @@ public class PlayerController : MonoBehaviour
     {
         // Match collider with headset pos.
         FollowHeadset();
-        
+
         // If grounded then don't use gravity on player.
         bool isGrounded = Grounded();
         playerBody.useGravity = !isGrounded;
     }
-    
+
     /// <summary>
     /// Adding the 6DOF by changing the position of the collider based on where the player is in real space.
     /// </summary>
