@@ -14,6 +14,11 @@ public class GeneratorStartup : MonoBehaviour
     [SerializeField] private AudioClip fixedClip;
     [SerializeField] private AudioSource audioSource;
 
+    [SerializeField] private GameObject firstStates;
+    [SerializeField] private GameObject secondStates;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +54,13 @@ public class GeneratorStartup : MonoBehaviour
         audioSource.clip = fixedClip;
         audioSource.loop = false;
         audioSource.Play();
+
+        this.renderNewStates();
     }
 
+    public void renderNewStates()
+    {
+        firstStates.SetActive(false);
+        secondStates.SetActive(true);
+    }
 }
