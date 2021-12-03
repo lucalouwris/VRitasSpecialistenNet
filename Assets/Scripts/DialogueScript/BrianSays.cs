@@ -12,6 +12,8 @@ public class BrianSays : MonoBehaviour
     private TypeWriter typeWriter;
     private bool isPressed = false;
 
+    public DialogueObject playThis;
+
     public bool isOpen { get; private set; }
 
 
@@ -19,6 +21,7 @@ public class BrianSays : MonoBehaviour
     {
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
+        ShowDialogue(playThis);
     }
 
 

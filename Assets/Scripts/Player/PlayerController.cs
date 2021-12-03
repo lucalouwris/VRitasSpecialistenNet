@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +15,6 @@ public class PlayerController : MonoBehaviour
 
     public BrianSays BrianSays => brianSays;
 
-    public IInteractable Interactable { get; set; }
-
     private XRRig rig;
 
     private void Start()
@@ -27,14 +26,12 @@ public class PlayerController : MonoBehaviour
     {
         // Match collider with headset pos.
         FollowHeadset();
-        
+
         // If grounded then don't use gravity on player.
         bool isGrounded = Grounded();
         playerBody.useGravity = !isGrounded;
-
-        Interactable?.Interact(this);
     }
-    
+
     /// <summary>
     /// Adding the 6DOF by changing the position of the collider based on where the player is in real space.
     /// </summary>
