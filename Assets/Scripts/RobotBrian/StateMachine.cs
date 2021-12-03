@@ -9,6 +9,7 @@ public class StateMachine : MonoBehaviour
     public bool[] Triggers;
     [SerializeField] private int StartState;
     [SerializeField] private BaseState currentState;
+    [SerializeField] BrianPointer pointer;
 
     private void Start()
     {
@@ -18,6 +19,10 @@ public class StateMachine : MonoBehaviour
 
     public void SwitchState(BaseState newState)
     {
+        if (newState == GetComponent<Idle>())
+            pointer.blink = false;
+        else
+            pointer.blink = true;
         Triggers[newState.TriggerChange] = false;
         currentState.enabled = false;
         newState.enabled = true;
