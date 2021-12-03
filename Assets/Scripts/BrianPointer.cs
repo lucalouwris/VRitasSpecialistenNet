@@ -9,19 +9,19 @@ public class BrianPointer : MonoBehaviour
     public Transform target;
     public Vector3 offset;
     [SerializeField] Camera cam;
-    [HideInInspector] public bool active;
+    [HideInInspector] public bool blink;
     [SerializeField] float blinkInterval = 0.5f;
     float currentInterval;
 
     private void Start()
     {
-        active = false;
+        blink = false;
         currentInterval = blinkInterval;
     }
 
     private void Update()
     {
-        if (active)
+        if (blink)
         {
             if (!img.gameObject.activeSelf)
                 img.gameObject.SetActive(true);
@@ -34,7 +34,7 @@ public class BrianPointer : MonoBehaviour
             Vector2 pos = cam.WorldToScreenPoint(target.position + offset);
             float distance = Vector3.Distance(target.position, transform.position);
 
-            img.rectTransform.localScale = new Vector3(1f / (distance / 2f), 1f / (distance / 2f), 1f);
+            img.rectTransform.localScale = new Vector3(1f / distance, 1f / distance, 1f);
             if (Vector3.Dot((target.position - transform.position), transform.forward) < 0)
             {
                 if (pos.x < Screen.width / 2)
