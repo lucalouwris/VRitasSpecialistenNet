@@ -9,7 +9,7 @@ public class triggerDoor : MonoBehaviour
     [SerializeField] private string animatorTrigger;
     [SerializeField] private AudioSource doorSoundSource;
     [SerializeField] private AudioClip openDoorSound;
-    [SerializeField] AudioController audioController;
+    AudioController audioController;
 
 
     // Update is called once per frame

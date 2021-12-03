@@ -19,12 +19,14 @@ public class AudioController : MonoBehaviour
     
     public void PlayPressure()
     {
+        backgroundSource.Stop();
         backgroundSource.clip = backgroundPressureMusic;
         backgroundSource.Play();
     }
 
     public void PlayBackground()
     {
+        backgroundSource.Stop();
         backgroundSource.clip = backgroundMusic;
         backgroundSource.Play();
     }
