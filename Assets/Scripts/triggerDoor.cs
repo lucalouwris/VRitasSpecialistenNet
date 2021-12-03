@@ -20,7 +20,7 @@ public class triggerDoor : MonoBehaviour
             ObjectAnimator.SetTrigger(animatorTrigger);
             doorSoundSource.PlayOneShot(openDoorSound);
             this.gameObject.SetActive(false);
-            audioController.playPressure();
+            audioController.PlayPressure();
         }
     }
 }

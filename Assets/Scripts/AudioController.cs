@@ -6,26 +6,26 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-[SerializeField] private static AudioSource backgroundSource;
-[SerializeField] private static AudioClip backgroundMusic;
-[SerializeField] private static AudioClip backgroundPressureMusic;
-
-
+[SerializeField] private AudioSource backgroundSource;
+[SerializeField] private AudioClip backgroundMusic;
+[SerializeField] private AudioClip backgroundPressureMusic;
 
     // Start is called before the first frame update
     void Start()
     {
-        backgroundSource.PlayOneShot(backgroundMusic);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        backgroundSource.clip = backgroundMusic;
+        backgroundSource.Play();
     }
     
-    public static void playPressure()
+    public void PlayPressure()
     {
-        backgroundSource.PlayOneShot(backgroundPressureMusic);
+        backgroundSource.clip = backgroundPressureMusic;
+        backgroundSource.Play();
+    }
+
+    public void PlayBackground()
+    {
+        backgroundSource.clip = backgroundMusic;
+        backgroundSource.Play();
     }
 }
