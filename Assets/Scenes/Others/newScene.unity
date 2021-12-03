@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08451951, g: 0.08497134, b: 0.5451982, a: 1}
+  m_IndirectSpecularColor: {r: 0.08451851, g: 0.08497031, b: 0.54519695, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -973,6 +973,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1c699177737184fb68fa12d78f045eaa, type: 2}
+    - target: {fileID: 5088618706256488905, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 68b88bee430154a61a243e5a897935e4, type: 3}
     - target: {fileID: 5907194228164422547, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1020,6 +1024,10 @@ PrefabInstance:
     - target: {fileID: 6174615472216647713, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442284224688520844, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 6535076512814215465, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: m_Name
@@ -2318,6 +2326,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 53f39385b6451464f937d839981d279b, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &443396857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2984,6 +2993,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 506b9fd505509ed48b23650e2a8d403b, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: -9.3, y: 0.722, z: 12.62}
 --- !u!65 &550032058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4485,6 +4495,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: c8df97e832817084eb0ff9962b99dd01, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0.36, y: 3.37, z: -8.54}
 --- !u!65 &816273498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4620,15 +4631,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5990817434369855309, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.02
+      value: -1.23
       objectReference: {fileID: 0}
     - target: {fileID: 5990817434369855309, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.214
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 5990817434369855309, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.79
+      value: -7.99
       objectReference: {fileID: 0}
     - target: {fileID: 5990817434369855309, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4663,6 +4674,14 @@ PrefabInstance:
       value: RoboSpeaker
       objectReference: {fileID: 0}
     - target: {fileID: 6578001200858162154, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 68b88bee430154a61a243e5a897935e4, type: 3}
+    - target: {fileID: 6578001200858162154, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1583671758}
+    - target: {fileID: 6578001200858162154, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 858925239}
@@ -4673,7 +4692,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6578001200858162154, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
   m_PrefabInstance: {fileID: 832272129}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1583671757}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec90fe5d0630f4ee2a31857deed1fe9a, type: 3}
@@ -7905,6 +7924,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: c46b14b3fc212e04ba05f44167201118, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: -10.58, y: 0.722, z: 17.47}
 --- !u!65 &1489172076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8436,6 +8456,152 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6157cf60b9ac04944b605e6cae0a7a79, type: 3}
   m_PrefabInstance: {fileID: 401143141}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1583671757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6578001200858162153, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+  m_PrefabInstance: {fileID: 832272129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1583671758
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583671757}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5363551363077031998, guid: ef6457b620d75064a9ae895882fc7cb0, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 68b88bee430154a61a243e5a897935e4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 25
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.02
+      value: 1
+      inSlope: -7.7540483
+      outSlope: -7.7540483
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.25390524
+    - serializedVersion: 3
+      time: 0.09168915
+      value: 0.5
+      inSlope: -14.277122
+      outSlope: -14.277122
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15051475
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.13168915
+      value: 0.25
+      inSlope: -3.126245
+      outSlope: -3.126245
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.21168914
+      value: 0.125
+      inSlope: -0.78156126
+      outSlope: -0.78156126
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.37168914
+      value: 0.0625
+      inSlope: -0.19539031
+      outSlope: -0.19539031
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.64
+      value: 0.03125
+      inSlope: -0.04884758
+      outSlope: -0.04884758
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9977417
+      value: 0
+      inSlope: -0.020007975
+      outSlope: -0.020007975
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1584682291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7400553582213641044, guid: 53148877082954aa5b287b5f8d2bee21, type: 3}
@@ -8488,6 +8654,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 98d465ee4283fe644ba84b436bde4c74, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: -1.432, y: 0.722, z: -12.54}
 --- !u!65 &1590642489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10814,6 +10981,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 15d5c884214d2fc4a8c6cbd296d2e4bc, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: -9.3, y: 0.722, z: 12.62}
 --- !u!65 &2016415058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11134,6 +11302,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 67d59de4212d4f44bb8598d21bd0ada7, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &2053794591
 BoxCollider:
   m_ObjectHideFlags: 0
