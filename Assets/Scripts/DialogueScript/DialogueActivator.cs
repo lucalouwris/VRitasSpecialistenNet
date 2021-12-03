@@ -4,6 +4,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 {
 
     [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private GameObject brian;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +29,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 
     public void Interact(PlayerController player)
     {
-        GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
+        brian.GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
         player.BrianSays.ShowDialogue(dialogueObject);
     }
 }

@@ -32,10 +32,7 @@ public class PlayerController : MonoBehaviour
         bool isGrounded = Grounded();
         playerBody.useGravity = !isGrounded;
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Interactable?.Interact(this);
-        }
+        Interactable?.Interact(this);
     }
     
     /// <summary>

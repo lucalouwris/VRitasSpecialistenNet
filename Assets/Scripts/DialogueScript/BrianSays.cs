@@ -7,7 +7,6 @@ public class BrianSays : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textlabel;
-    [SerializeField] private DialogueObject[] dialogue;
     [SerializeField] private StateMachine stateMachine;
 
     private TypeWriter typeWriter;
@@ -70,7 +69,7 @@ public class BrianSays : MonoBehaviour
         }
     }
 
-    private void CloseDialogeBox()
+    public void CloseDialogeBox()
     {
         this.isOpen = false;
         this.dialogueBox.SetActive(false);
