@@ -10,6 +10,8 @@ public class ScrewdriverTrigger : MonoBehaviour
 
     [SerializeField] private MeshRenderer objectRenderer;
     [SerializeField] private Material wantedMaterial;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip snapSound;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class ScrewdriverTrigger : MonoBehaviour
             {
                 TransformPowerCell();
                 changeMaterial();
+                audioSource.PlayOneShot(snapSound);
             }
         }
     }
