@@ -18,7 +18,8 @@ public class ControllerInput : MonoBehaviour
     Vector3 watchOriginalScale = new Vector3(0.01f, 0.01f, 0.01f);
     Vector3 watchFocusScale = new Vector3(0.02f, 0.02f, 0.02f);
     float yRotation = 70;
-    float zRotation = 230;
+    float zRotationMax = 230;
+    float zRotationMin = 140;
     float feedbackStrength = 0.8f;
     float feedbackLength = 0.75f;
     bool hasLookedAtWatch = false;
@@ -38,7 +39,7 @@ public class ControllerInput : MonoBehaviour
 
         if (Watch != null)
         {
-            if (transform.localEulerAngles.y > yRotation && transform.localEulerAngles.z < zRotation && transform.localScale != watchFocusScale)
+            if (transform.eulerAngles.y > yRotation && transform.eulerAngles.z < zRotationMax && transform.eulerAngles.z > zRotationMin && transform.localScale != watchFocusScale)
             {
                 hasLookedAtWatch = true;
                 Watch.transform.localScale = watchFocusScale;
