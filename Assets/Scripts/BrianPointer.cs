@@ -28,7 +28,6 @@ public class BrianPointer : MonoBehaviour
             if (!pointer.activeSelf)
                 pointer.SetActive(true);
 
-
             Vector3 relativePos = target.transform.position - transform.position;
             Quaternion LookAtRotation = Quaternion.LookRotation(relativePos);
 
@@ -36,9 +35,6 @@ public class BrianPointer : MonoBehaviour
 
             pointer.transform.rotation = LookAtRotationXY;
 
-            
-            float distance = Vector3.Distance(target.transform.position, transform.position);
-            
                 if (currentInterval > 0)
                     currentInterval -= Time.deltaTime;
                 else
