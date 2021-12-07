@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawningManager : MonoBehaviour
@@ -7,7 +5,9 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] GameObject objectToSpawn;
     [SerializeField] Transform spawnPoints;
     private Transform[] spawnPointList;
-    private bool thisistrue = true;
+    [SerializeField] private Transform alienParent;
+    [SerializeField] private int amountToSpawn = 3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,56 +24,33 @@ public class SpawningManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    [ContextMenu("Spawn 3 aliens")]
+    void SpawnFromInspector()
     {
-
-        if (thisistrue)
-        {
-            spawnAliens(3);
-            thisistrue = false;
-        }
-
-
-
+        spawnAliens(amountToSpawn);
     }
 
     //call this method to spawn x amount of Aliens
     public void spawnAliens(int amountOfAliens)
     {
-        int aliensspawned = 0;
-
         if (amountOfAliens <= -1)
         {
-            Debug.Log("Very funny, trying to spawn " + amountOfAliens + " Alien(s)");
+            Debug.LogError("Very funny, trying to spawn " + amountOfAliens + " Alien(s)");
         }
         else
         {
-            // for the amount of aliens loop through the array step by step and spawn an alien at every spawnpoint
-            while (aliensspawned != amountOfAliens)
+            for (int i = 0; i < amountOfAliens; i++)
             {
-                foreach (Transform t in spawnPointList)
-                {
-                    if (aliensspawned == amountOfAliens)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        spawnObject(t);
-                        Debug.Log("Spawning Alien for " + t);
-                        aliensspawned++;
-                    }
-                    
-                }
+                Debug.Log($"Spawn {i}");
+                spawnObject(spawnPointList[i% spawnPointList.Length]);
             }
-
         }
 
     }
     void spawnObject(Transform spawnPoint)
     {
         Debug.Log("Trying to Spawn an " + objectToSpawn + " @ " + spawnPoint);
-        Instantiate(objectToSpawn, spawnPoint);
+        Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation, alienParent);
         //spawningEnabled = false
     }
 
