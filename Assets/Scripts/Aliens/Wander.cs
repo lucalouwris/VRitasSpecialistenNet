@@ -28,8 +28,7 @@ public class Wander : MonoBehaviour
         if(timer < wanderTimer)
             timer += Time.deltaTime;
 
-        else
-        {
+        
             if(Vector3.Distance(transform.position, player.transform.position) < lookingDistance)
             {
                 Vector3 relativePos = player.transform.position - transform.position;
@@ -37,13 +36,12 @@ public class Wander : MonoBehaviour
                 Quaternion LookAtRotationY = Quaternion.Euler(transform.rotation.eulerAngles.x, LookAtRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
                 transform.rotation = LookAtRotationY;
             }
-            else
+            else if (Vector3.Distance(transform.position, player.transform.position) > lookingDistance && timer >= wanderTimer)
             {
                 Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
                 agent.SetDestination(newPos);
                 timer = 0;
             }
-        }
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
