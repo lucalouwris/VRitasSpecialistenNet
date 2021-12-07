@@ -18,6 +18,7 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private AudioSource lever;
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource audioSource;
+    private bool leverDown =false;
 
     /// <summary>
     /// Checking the angle to see if the switch code should run 
@@ -26,7 +27,15 @@ public class SwitchManager : MonoBehaviour
     {
         if (switchJoint.limits.max - switchJoint.angle < 10)
         {
-            OnSwitchDown();
+            if (!leverDown)
+            {
+                OnSwitchDown();
+            }
+            leverDown = true;
+        }
+        else
+        {
+            leverDown = false;
         }
         if (switchJoint.angle < 2)
         {
@@ -46,6 +55,9 @@ public class SwitchManager : MonoBehaviour
             taskCompleted = true;
         }
 
+
+        lever.PlayOneShot(leverClick);
+        
         // If its completed, run task and make sure it doesn't spring back. Else it should spring back to make clear it didn't work.
         if (taskCompleted)
         {
@@ -70,7 +82,7 @@ public class SwitchManager : MonoBehaviour
         }
 
         if (clip != null)
-        {
+        {            
             audioSource.PlayOneShot(clip);
         }        
         enabled = false;
