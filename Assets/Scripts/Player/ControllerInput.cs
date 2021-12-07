@@ -18,7 +18,7 @@ public class ControllerInput : MonoBehaviour
     Vector3 watchOriginalScale = new Vector3(0.01f, 0.01f, 0.01f);
     Vector3 watchFocusScale = new Vector3(0.02f, 0.02f, 0.02f);
     float yRotation = 70;
-    float zRotation = 220;
+    float zRotation = 230;
     float feedbackStrength = 0.8f;
     float feedbackLength = 0.75f;
     bool hasLookedAtWatch = false;
