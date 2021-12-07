@@ -17,7 +17,8 @@ public class ControllerInput : MonoBehaviour
     [SerializeField] GameObject Watch;
     Vector3 watchOriginalScale = new Vector3(0.01f, 0.01f, 0.01f);
     Vector3 watchFocusScale = new Vector3(0.02f, 0.02f, 0.02f);
-    float speed = 0.00005f;
+    float yRotation = 70;
+    float zRotation = 220;
     float feedbackStrength = 0.8f;
     float feedbackLength = 0.75f;
     bool hasLookedAtWatch = false;
@@ -37,7 +38,7 @@ public class ControllerInput : MonoBehaviour
 
         if (Watch != null)
         {
-            if (transform.localEulerAngles.z < 220 && transform.localEulerAngles.y > 70 && transform.localScale != watchFocusScale)
+            if (transform.localEulerAngles.y > yRotation && transform.localEulerAngles.z < zRotation && transform.localScale != watchFocusScale)
             {
                 hasLookedAtWatch = true;
                 Watch.transform.localScale = watchFocusScale;
