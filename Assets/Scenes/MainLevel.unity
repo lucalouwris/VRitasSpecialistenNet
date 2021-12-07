@@ -1318,6 +1318,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].button
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].pressType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 832272130}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: handlePressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BrianSays, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279795, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1370,6 +1410,10 @@ PrefabInstance:
       propertyPath: brianSays
       value: 
       objectReference: {fileID: 832272130}
+    - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: bindings.Array.data[1].button
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
