@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR;
@@ -13,6 +14,20 @@ public class ControllerInput : MonoBehaviour
     [HideInInspector] public bool isWalking;
     [SerializeField] XRInteractorLineVisual line;
 
+    [SerializeField] GameObject Watch;
+    Vector3 watchOriginalScale = new Vector3(0.01f, 0.01f, 0.01f);
+    Vector3 watchFocusScale = new Vector3(0.02f, 0.02f, 0.02f);
+    float yRotation = 70;
+    float zRotationMax = 230;
+    float zRotationMin = 140;
+    float feedbackStrength = 0.8f;
+    float feedbackLength = 0.75f;
+    bool hasLookedAtWatch = false;
+
+    private void Start()
+    {
+        Feedback();
+    }
 
     private void Update()
     {
@@ -21,14 +36,35 @@ public class ControllerInput : MonoBehaviour
 
         foreach (var binding in bindings)
             binding.Update(controller.inputDevice);
+
+        if (Watch != null)
+        {
+            if (transform.eulerAngles.y > yRotation && transform.eulerAngles.z < zRotationMax && transform.eulerAngles.z > zRotationMin && transform.localScale != watchFocusScale)
+            {
+                hasLookedAtWatch = true;
+                Watch.transform.localScale = watchFocusScale;
+            }
+            else
+                Watch.transform.localScale = watchOriginalScale;
+        }
     }
     public void Walk()
     {
         isWalking = true;
     }
-    public void A()
+    public void Feedback()
     {
-        Debug.Log("AAAA");
+        if (!hasLookedAtWatch && Watch != null)
+            StartCoroutine(Haptic());
+    }
+    IEnumerator Haptic()
+    {
+        while (!hasLookedAtWatch)
+        {
+            controller.SendHapticImpulse(feedbackStrength, feedbackLength);
+            yield return new WaitForSeconds(feedbackLength + 2f);
+        }
+        yield return null;
     }
 }
 
@@ -56,6 +92,7 @@ public class XRBinding
 
         if (active) OnActive.Invoke();
         wasPressed = isPressed;
+
     }
 }
 
