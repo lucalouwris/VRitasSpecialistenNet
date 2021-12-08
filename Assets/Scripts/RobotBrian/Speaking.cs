@@ -5,7 +5,7 @@ using UnityEngine;
 public class Speaking : BaseState
 {
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private float distanceFromPlayer = 1.4f;
+    [SerializeField] private float distanceFromPlayer = 1f;
     [SerializeField] private GameObject canvasObject;
     private Vector3 goalPos;
     private Vector3 offset;
@@ -14,7 +14,7 @@ public class Speaking : BaseState
     public override void OnEnable()
     {
         base.OnEnable();
-        offset = Vector3.right + Vector3.up * .4f;
+        offset = Vector3.right + Vector3.up * .1f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

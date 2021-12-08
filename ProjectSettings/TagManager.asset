@@ -6,6 +6,7 @@ TagManager:
   tags:
   - correctTool
   - Lever
+  - brokenPiece
   - breathingExerciseArea
   layers:
   - Default
