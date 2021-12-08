@@ -8,6 +8,9 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textlabel;
     [SerializeField] private StateMachine stateMachine;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip sound;
+
 
     private TypeWriter typeWriter;
     private bool isPressed = false;
@@ -19,6 +22,8 @@ public class BrianSays : MonoBehaviour
 
     void OnEnable()
     {
+
+        this.source.PlayOneShot(this.sound);
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
         ShowDialogue(playThis);
