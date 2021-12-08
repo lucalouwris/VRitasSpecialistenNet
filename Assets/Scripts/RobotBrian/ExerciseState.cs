@@ -19,6 +19,12 @@ public class ExerciseState : BaseState
     [SerializeField] private float prepTime = 2f;
     [SerializeField] private float boxTime;
 
+    [SerializeField] private DialogueObject[] dialogueObjects;
+    [SerializeField] private BrianSays speaker;
+
+    private int dialogueCount = 0;
+
+
     float outTime;
     float inTime;
     float pauseTime;
@@ -121,6 +127,8 @@ public class ExerciseState : BaseState
                         break;
                     case Stages.completed:
                         GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
+                        this.speaker.playThis = dialogueObjects[dialogueCount];
+                        dialogueCount++;
                         break;
                 }
             }
