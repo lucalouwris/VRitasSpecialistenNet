@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855d7eb9f3b994b5c9255cc4117b7f97, type: 3}
-  m_Name: secondMinigameIntroduction
+  m_Name: postBreathingExercise
   m_EditorClassIdentifier: 
   dialogue:
-  - This is the introduction to the second minigame
+  - 'Great Job! Your body seems to adapt quickly to the environment. '
+  - 'We should  refill the spaceship now. But we need to enable the systems on this
+    planet first. '
+  - 'Check your left wrist, your oxygen levels are running low. '
+  - 'We have to fix the generator quickly, that enables us to refill your oxygen
+    levels! '
