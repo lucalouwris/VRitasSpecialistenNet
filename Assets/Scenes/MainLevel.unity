@@ -7785,7 +7785,7 @@ Transform:
   m_GameObject: {fileID: 1422092520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.049999952, z: 0.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 426548042}
   m_Father: {fileID: 376558098}
@@ -9963,7 +9963,7 @@ MonoBehaviour:
   target: {fileID: 799571027}
   offset: {x: 0, y: 0, z: 0}
   cam: {fileID: 1739179076}
-  blink: 0
+  isActive: 0
   blinkInterval: 0.25
 --- !u!20 &1739179076 stripped
 Camera:

@@ -11,19 +11,19 @@ public class BrianPointer : MonoBehaviour
     public GameObject target;
     public Vector3 offset;
     [SerializeField] Camera cam;
-    [HideInInspector] public bool blink;
+    [HideInInspector] public bool isActive;
     [SerializeField] float blinkInterval = 0.5f;
     float currentInterval;
 
     private void Start()
     {
-        blink = true;
+        isActive = true;
         currentInterval = blinkInterval;
     }
 
     private void Update()
     {
-        if (blink)
+        if (isActive)
         {
             if (!pointer.activeSelf)
                 pointer.SetActive(true);
@@ -40,7 +40,7 @@ public class BrianPointer : MonoBehaviour
                 else
                 {
                     if (mat.color.a == 1f)
-                        mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, 0);
+                        mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, 0.75f);
                     else
                         mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, 1);
 
