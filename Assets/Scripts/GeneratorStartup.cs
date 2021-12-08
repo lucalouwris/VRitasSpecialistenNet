@@ -16,6 +16,7 @@ public class GeneratorStartup : MonoBehaviour
 
     [SerializeField] private GameObject firstStates;
     [SerializeField] private GameObject secondStates;
+    [SerializeField] private AudioController audioController;
 
 
 
@@ -50,6 +51,7 @@ public class GeneratorStartup : MonoBehaviour
         objectRenderer.materials = materials;
 
         // Changing the audio to fixed.
+        audioController.PlayAlien();
         audioSource.Stop();
         audioSource.clip = fixedClip;
         audioSource.loop = false;
