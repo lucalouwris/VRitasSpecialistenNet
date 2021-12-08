@@ -1362,6 +1362,10 @@ PrefabInstance:
       propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8654318760002279793, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279795, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_RootOrder
       value: 13
