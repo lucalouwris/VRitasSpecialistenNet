@@ -1414,6 +1414,10 @@ PrefabInstance:
       propertyPath: brianSays
       value: 
       objectReference: {fileID: 832272130}
+    - target: {fileID: 8654318760002279806, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: cCollider
+      value: 
+      objectReference: {fileID: 746203109}
     - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: bindings.Array.data[1].button
       value: 0
@@ -4202,6 +4206,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ec2c3aa105f476aa20e7f9815ab851, type: 3}
+--- !u!136 &746203109 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 8654318760002279805, guid: 491a6671fa652a442876463806f19a28, type: 3}
+  m_PrefabInstance: {fileID: 303196783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &747034268
 PrefabInstance:
   m_ObjectHideFlags: 0
