@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855d7eb9f3b994b5c9255cc4117b7f97, type: 3}
-  m_Name: Intro2
+  m_Name: fixedLever
   m_EditorClassIdentifier: 
   dialogue:
-  - Great! You can grab onto levers by pressing and holding the red button.
+  - Great! You fixed the generator! You should try pulling the lever again.
