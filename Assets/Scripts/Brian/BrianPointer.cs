@@ -34,7 +34,7 @@ public class BrianPointer : MonoBehaviour
             Quaternion LookAtRotationXY = Quaternion.Euler(LookAtRotation.eulerAngles.x, LookAtRotation.eulerAngles.y, 0f);
 
             pointer.transform.rotation = LookAtRotationXY;
-
+            /*
                 if (currentInterval > 0)
                     currentInterval -= Time.deltaTime;
                 else
@@ -45,7 +45,7 @@ public class BrianPointer : MonoBehaviour
                         mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, 1);
 
                     currentInterval = blinkInterval;
-                }
+                }*/
         }
         else
             pointer.SetActive(false);
