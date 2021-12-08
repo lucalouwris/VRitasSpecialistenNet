@@ -143,3 +143,4 @@ MonoBehaviour:
   backgroundSource: {fileID: 4345301448378834099}
   backgroundMusic: {fileID: 8300000, guid: 0c8e0cb739f5787429a93e765b04b6f7, type: 3}
   backgroundPressureMusic: {fileID: 8300000, guid: 04d9e6177d89a40f2a1d69ddf91fa2f7, type: 3}
+  backgroundAlienMusic: {fileID: 8300000, guid: 907a5460e4d6d4f26829db20d87d899d, type: 3}
