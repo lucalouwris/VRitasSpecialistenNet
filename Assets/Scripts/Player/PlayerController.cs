@@ -1,5 +1,4 @@
 using System;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private CapsuleCollider collider;
+    [SerializeField] private CapsuleCollider cCollider;
     [SerializeField] private Rigidbody playerBody;
     [SerializeField] private GameObject playerHead;
     [SerializeField] private LayerMask groundMask;
@@ -37,9 +36,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FollowHeadset()
     {
-        collider.height = rig.cameraInRigSpaceHeight;
+        cCollider.height = rig.cameraInRigSpaceHeight;
         Vector3 capsuleCenter = transform.InverseTransformPoint(rig.cameraGameObject.transform.position);
-        collider.center = new Vector3(capsuleCenter.x, collider.height / 2, capsuleCenter.z);
+        cCollider.center = new Vector3(capsuleCenter.x, cCollider.height / 2, capsuleCenter.z);
     }
 
     /// <summary>
@@ -49,6 +48,6 @@ public class PlayerController : MonoBehaviour
     private bool Grounded()
     {
         Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
-        return Physics.SphereCast(checkGroundedPos, 0.2f, Vector3.down, out RaycastHit hit, collider.height + 0.01f, groundMask);
+        return Physics.SphereCast(checkGroundedPos, 0.2f, Vector3.down, out RaycastHit hit, cCollider.height + 0.01f, groundMask);
     }
 }
