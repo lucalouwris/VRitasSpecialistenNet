@@ -1319,6 +1319,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: Watch
+      value: 
+      objectReference: {fileID: 303196784}
+    - target: {fileID: 8654318759103765489, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: bindings.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1404,7 +1408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279796, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_Name
-      value: XR Rig (1)
+      value: XR Rig
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279806, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: brianSays
@@ -1424,6 +1428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491a6671fa652a442876463806f19a28, type: 3}
+--- !u!1 &303196784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3201696687223182758, guid: 491a6671fa652a442876463806f19a28, type: 3}
+  m_PrefabInstance: {fileID: 303196783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &337789685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2370,6 +2379,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 53f39385b6451464f937d839981d279b, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &443396857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3085,6 +3095,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 506b9fd505509ed48b23650e2a8d403b, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &550032058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4619,6 +4630,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: c8df97e832817084eb0ff9962b99dd01, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &816273498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8049,6 +8061,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: c46b14b3fc212e04ba05f44167201118, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &1489172076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8869,6 +8882,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 98d465ee4283fe644ba84b436bde4c74, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &1590642489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11288,6 +11302,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 15d5c884214d2fc4a8c6cbd296d2e4bc, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &2016415058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11609,6 +11624,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 67d59de4212d4f44bb8598d21bd0ada7, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &2053794591
 BoxCollider:
   m_ObjectHideFlags: 0
