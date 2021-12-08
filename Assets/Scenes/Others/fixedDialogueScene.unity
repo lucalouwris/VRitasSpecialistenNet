@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08451851, g: 0.08497031, b: 0.54519695, a: 1}
+  m_IndirectSpecularColor: {r: 0.08451951, g: 0.08497134, b: 0.5451982, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1032,6 +1032,46 @@ PrefabInstance:
     - target: {fileID: 6535076512814215465, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: m_Name
       value: generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.3565772
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7472033
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.096256524
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0010720477
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0010677946
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.010046552
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.124
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171835460455545864, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.151
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
@@ -2323,10 +2363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 0}
+  dialogueObject: {fileID: 11400000, guid: fb0d179fa269d4530867b7701b70d08f, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
-  position: {x: 0, y: 0, z: 0}
+  position: {x: 16.256, y: 11.87, z: -40.848}
 --- !u!65 &443396857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2946,67 +2986,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6157cf60b9ac04944b605e6cae0a7a79, type: 3}
---- !u!1 &550032055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 550032056}
-  - component: {fileID: 550032058}
-  - component: {fileID: 550032057}
-  m_Layer: 0
-  m_Name: 'minigameOne '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &550032056
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550032055}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.841, y: 12.22, z: -29.38}
-  m_LocalScale: {x: 3.5, y: 2.9, z: 2.66}
-  m_Children: []
-  m_Father: {fileID: 1731976599}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &550032057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550032055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 506b9fd505509ed48b23650e2a8d403b, type: 2}
-  brian: {fileID: 1120413631}
-  speaker: {fileID: 832272130}
-  position: {x: -9.3, y: 0.722, z: 12.62}
---- !u!65 &550032058
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550032055}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &561851957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8077,7 +8056,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1731976599}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 13.6, z: 0}
 --- !u!114 &1489172075
 MonoBehaviour:
@@ -9680,7 +9659,6 @@ Transform:
   - {fileID: 816273496}
   - {fileID: 1590642487}
   - {fileID: 1549278472}
-  - {fileID: 550032056}
   - {fileID: 2016415056}
   - {fileID: 2053794589}
   - {fileID: 1489172074}
@@ -11147,7 +11125,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1731976599}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -30.617, z: 0}
 --- !u!114 &2016415057
 MonoBehaviour:
@@ -11468,7 +11446,7 @@ Transform:
   m_LocalScale: {x: 5.2300005, y: 1.8, z: 4.7}
   m_Children: []
   m_Father: {fileID: 1731976599}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -0.4, z: 0}
 --- !u!114 &2053794590
 MonoBehaviour:
