@@ -957,6 +957,10 @@ PrefabInstance:
       propertyPath: secondStates
       value: 
       objectReference: {fileID: 1569573803}
+    - target: {fileID: 462485295, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 903555024}
     - target: {fileID: 1217297069, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -8.979249
@@ -2370,6 +2374,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 53f39385b6451464f937d839981d279b, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &443396857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2470,7 +2475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3085,6 +3090,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 506b9fd505509ed48b23650e2a8d403b, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &550032058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4619,6 +4625,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: c8df97e832817084eb0ff9962b99dd01, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &816273498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8049,6 +8056,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: c46b14b3fc212e04ba05f44167201118, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &1489172076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8869,6 +8877,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 98d465ee4283fe644ba84b436bde4c74, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &1590642489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11288,6 +11297,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 15d5c884214d2fc4a8c6cbd296d2e4bc, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &2016415058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11609,6 +11619,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 67d59de4212d4f44bb8598d21bd0ada7, type: 2}
   brian: {fileID: 1120413631}
   speaker: {fileID: 832272130}
+  position: {x: 0, y: 0, z: 0}
 --- !u!65 &2053794591
 BoxCollider:
   m_ObjectHideFlags: 0
