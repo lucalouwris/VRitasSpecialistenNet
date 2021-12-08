@@ -6,6 +6,7 @@ TagManager:
   tags:
   - correctTool
   - Lever
+  - breathingExerciseArea
   layers:
   - Default
   - TransparentFX
