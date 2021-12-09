@@ -46,7 +46,6 @@ public class Speaking : BaseState
     {
         if (!canvasObject.activeSelf)
         {
-            Debug.Log("speakline active");
             canvasObject.SetActive(true);
         }
     }
@@ -55,25 +54,47 @@ public class Speaking : BaseState
     {
         RaycastHit ForwardHit;
         //Vector2 pos = Random.onUnitSphere * 2.5f;
-        Vector3 newPos = playerTransform.position; //new Vector3(pos.x, .5f, pos.y) + 
+        Vector3 calculatedPos = playerTransform.position; //new Vector3(pos.x, .5f, pos.y) + 
         Vector3 direction = new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z).normalized;
-        Debug.Log(newPos);
 
-        newPos = newPos + direction * distanceFromPlayer;
-        RaycastHit hit;
-        if (Physics.Raycast(newPos, Vector3.down, out hit, 10f))
+        calculatedPos += direction;
+        Vector3 wantedPos = calculatedPos;
+        
+        if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
         {
-            NavMeshHit myNavHit;
-            if(NavMesh.SamplePosition(hit.point, out myNavHit, 100f,NavMesh.AllAreas))
-            {
-                newPos = myNavHit.position;
-            }
+            Debug.Log($"Hit object {ForwardHit.distance} from player");
+            wantedPos += direction * (ForwardHit.distance * .75f);
+            wantedPos = CheckDown(wantedPos);
         }
-        
-        
-        
+        else
+        {
+            wantedPos += direction * distanceFromPlayer;
+            wantedPos = CheckDown(wantedPos);
+        }
 
-        return newPos;
+        return wantedPos;
+    }
+
+    private Vector3 CheckDown(Vector3 checkPos)
+    {
+        RaycastHit downHit;
+        checkPos.y -= 0.1f;
+        if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
+        {
+            Debug.Log($"Hit object {downHit.distance} from origin");
+            return SampleHit(downHit.point);
+        }
+        return SampleHit(checkPos);
+    }
+    private Vector3 SampleHit(Vector3 checkPos)
+    {
+        NavMeshHit myNavHit;
+        if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
+        {
+            Debug.Log("Found correct spawn");
+            return myNavHit.position;
+        }
+        return checkPos;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

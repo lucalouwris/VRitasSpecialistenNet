@@ -4486,7 +4486,7 @@ PrefabInstance:
       objectReference: {fileID: 1904279806}
     - target: {fileID: 2438190431619714770, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: distanceFromPlayer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2438190431619714771, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: navAgent
@@ -6483,7 +6483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279795, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.53
+      value: 4.16
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279795, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6527,7 +6527,7 @@ PrefabInstance:
       objectReference: {fileID: 832272130}
     - target: {fileID: 8654318760520630911, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.071
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760816970890, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11795,6 +11795,14 @@ PrefabInstance:
     - target: {fileID: 8401150548452776451, guid: b237cb75a38e91145becbeb9a86be51d, type: 3}
       propertyPath: m_LayerMask.m_Bits
       value: 1536
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401150549191663684, guid: b237cb75a38e91145becbeb9a86be51d, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -1.2590004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401150549191663684, guid: b237cb75a38e91145becbeb9a86be51d, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -25.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b237cb75a38e91145becbeb9a86be51d, type: 3}
