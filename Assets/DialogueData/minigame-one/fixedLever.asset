@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: fixedLever
   m_EditorClassIdentifier: 
   dialogue:
-  - Great! You fixed the generator! You should try pulling the lever again.
+  - 'Great! You fixed the generator! You should try pulling the lever again. '

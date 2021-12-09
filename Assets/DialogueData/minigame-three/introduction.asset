@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: introduction
   m_EditorClassIdentifier: 
   dialogue:
-  - Oh, looks like your spaceship attracted some aliens.
-  - If we just walk past them, they won't disturb us..
+  - 'Oh, it looks like your spaceship attracted some aliens. '
+  - 'If we carefully walk past them, they hopefully won''t disturb us.. '

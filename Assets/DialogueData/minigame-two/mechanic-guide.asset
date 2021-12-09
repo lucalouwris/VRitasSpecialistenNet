@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: mechanic-guide
   m_EditorClassIdentifier: 
   dialogue:
-  - We need to turn on this computer. You can do this by pressing the red button.
+  - 'We need to turn on this computer. You can do this by pressing the white button. '

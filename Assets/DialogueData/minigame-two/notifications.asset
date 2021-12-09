@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: notifications
   m_EditorClassIdentifier: 
   dialogue:
-  - Wow! this computer has not been opened in ages!
-  - We need to click through all these notifications to enter the system!
+  - 'Wow! this computer has not been opened in ages! '
+  - 'We need to find the button that says allows us to start refueling. '

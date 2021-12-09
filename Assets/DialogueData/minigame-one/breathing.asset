@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: breathing
   m_EditorClassIdentifier: 
   dialogue:
-  - I see, that your body is not yet used to this environment.
-  - Let's take a couple of steps and then we can start with a breathing exercise
+  - 'I see that your body is not yet used to this environment. '
+  - 'Let''s take a couple of steps and then we can start with a breathing exercise. '

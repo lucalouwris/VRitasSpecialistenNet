@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: generatorFixed
   m_EditorClassIdentifier: 
   dialogue:
-  - Great Job! It is working again. Your oxygen should start filling up now.
-  - That ends the playtest for today! Feel free to stay in the experience, because
-    we have some questions.
+  - 'Great Job! It is working again. Your oxygen should start filling up now. '
+  - 'That ends the playtest for today! Feel free to stay in the experience, because
+    we have some questions. '

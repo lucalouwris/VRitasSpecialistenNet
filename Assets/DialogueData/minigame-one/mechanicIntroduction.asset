@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: mechanicIntroduction
   m_EditorClassIdentifier: 
   dialogue:
-  - Try pulling the top part of the lever.
+  - 'Try pulling the top part of the lever. '

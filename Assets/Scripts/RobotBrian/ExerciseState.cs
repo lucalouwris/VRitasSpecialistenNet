@@ -30,6 +30,7 @@ public class ExerciseState : BaseState
     float pauseTime;
     float timeRemaining;
     float startTime;
+
     bool startedExercise = false;
     bool exerciseEnding = false;
     float count;
@@ -45,6 +46,11 @@ public class ExerciseState : BaseState
         pauseTime = boxTime;
         outTime = boxTime;
         inTime = boxTime;
+        count = 0;
+
+        exerciseEnding = false;
+        startedExercise = false;
+
         base.OnEnable();
         canvasObject.SetActive(true);
         offset = Vector3.down * .3f;
@@ -138,6 +144,7 @@ public class ExerciseState : BaseState
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     public override void OnDisable()
     {
+        breathStat.text = "";
         canvasObject.SetActive(false);
     }
 }

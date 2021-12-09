@@ -20,14 +20,4 @@ public class DialogueActivator : MonoBehaviour
             this.speaker.playThis = dialogueObject;
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-
-        if (other.CompareTag("Player") && other.TryGetComponent(out PlayerController player))
-        {
-      
-        }
-
-    }
 }

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: introduction
   m_EditorClassIdentifier: 
   dialogue:
-  - Now let's get prepare your body for the next task with another breathing exercise.
+  - 'You fixed the generator, great! '
+  - 'Now let''s prepare your body for the next task with another breathing exercise. '

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: findScrewDriver
   m_EditorClassIdentifier: 
   dialogue:
-  - The generator seems to be broken! Looks like we need to find a tool.
-  - Can you look around the generator to see whats broken? Go!
-  - Maybe we can find some tool in the hangar over there.
+  - 'The generator seems to be broken! Looks like we need to find a tool. '
+  - 'Can you look around the generator to see what''s broken? Go! '
+  - 'Maybe we can find some tool in the hangar over there. '
