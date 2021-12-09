@@ -22,6 +22,7 @@ public class GeneratorStartup : MonoBehaviour
     [SerializeField] private StateMachine brian;
     [SerializeField] private BrianSays speaker;
 
+    [SerializeField] private GameObject computerButton;
 
 
     // Start is called before the first frame update
@@ -65,6 +66,9 @@ public class GeneratorStartup : MonoBehaviour
 
         brian.SwitchState(brian.States[1]);
         this.speaker.playThis = dialogueObject;
+
+        // Turn on computer for minigame 2
+        this.computerButton.SetActive(true);
     }
 
     public void renderNewStates()

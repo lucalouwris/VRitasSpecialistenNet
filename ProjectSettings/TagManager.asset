@@ -8,6 +8,7 @@ TagManager:
   - Lever
   - brokenPiece
   - breathingExerciseArea
+  - offButton
   layers:
   - Default
   - TransparentFX

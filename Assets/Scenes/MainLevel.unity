@@ -981,6 +981,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1569573803}
     - target: {fileID: 462485295, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
+      propertyPath: computerButton
+      value: 
+      objectReference: {fileID: 1886163983}
+    - target: {fileID: 462485295, guid: e3a41ecaa0d13461c981c5c571e70ed4, type: 3}
       propertyPath: dialogueObject
       value: 
       objectReference: {fileID: 11400000, guid: fb0d179fa269d4530867b7701b70d08f, type: 2}
@@ -10769,6 +10773,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 877711016008889073, guid: 5408ee2356bbe4a68a6f81b703e6b8a2, type: 3}
   m_PrefabInstance: {fileID: 1286662809}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1886163983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1886163983, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
+  m_PrefabInstance: {fileID: 5598084807265705012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1889096942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12122,7 +12131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2890481333859247286, guid: f42658f32d47be1439d3637345729e01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.53
+      value: 1.495
       objectReference: {fileID: 0}
     - target: {fileID: 2890481333859247286, guid: f42658f32d47be1439d3637345729e01, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12428,6 +12437,14 @@ PrefabInstance:
       propertyPath: speaker
       value: 
       objectReference: {fileID: 832272130}
+    - target: {fileID: 1886163983, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886163983, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1529696863524437427, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
       propertyPath: m_Name
       value: ComputerMG2
