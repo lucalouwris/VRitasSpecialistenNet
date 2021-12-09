@@ -11362,7 +11362,7 @@ GameObject:
   - component: {fileID: 1891232455}
   - component: {fileID: 1891232454}
   m_Layer: 0
-  m_Name: powercellempty
+  m_Name: powercellemptynew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13575,8 +13575,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3490438559689708723}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2910986, y: -0.58434063, z: 0.47645664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.349, y: -0.58434063, z: 0.47645664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891232453}
@@ -13683,7 +13683,7 @@ Transform:
   - {fileID: 6196316315221295067}
   - {fileID: 391504411}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 192.133, z: 0}
 --- !u!1 &6084386874975181316
 GameObject:
@@ -13931,7 +13931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7055807126587837476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1176410373430501814, guid: a797c464564950945a919e25ba4ef288, type: 3}
@@ -13986,7 +13986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7803015909456510525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14026,7 +14026,7 @@ Transform:
   - {fileID: 7420000742968912876}
   - {fileID: 1891232453}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &8161375262271437876
 AudioSource:

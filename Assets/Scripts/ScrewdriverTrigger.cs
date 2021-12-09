@@ -16,7 +16,7 @@ public class ScrewdriverTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        powerCell = GameObject.Find("powercellempty");
+        powerCell = GameObject.Find("powercellemptynew");
     }
 
     // Update is called once per frame
