@@ -11,7 +11,6 @@ public class ExerciseState : BaseState
 
     [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt, completedTxt;
 
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private float distanceFromPlayer = 3.0f;
     [SerializeField] private GameObject canvasObject;
     [SerializeField] private float timesToRepeat;
