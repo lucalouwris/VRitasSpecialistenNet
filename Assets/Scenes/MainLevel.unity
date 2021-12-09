@@ -13020,7 +13020,7 @@ GameObject:
   - component: {fileID: 4105795692120583259}
   - component: {fileID: 4604312451383048691}
   m_Layer: 0
-  m_Name: powercell
+  m_Name: powercelltransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
