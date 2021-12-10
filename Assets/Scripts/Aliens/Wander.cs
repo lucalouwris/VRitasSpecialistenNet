@@ -13,6 +13,7 @@ public class Wander : MonoBehaviour
     private Transform target;
     private NavMeshAgent agent;
     private float timer;
+    bool isLooking = false;
 
     // Use this for initialization
     void OnEnable()
@@ -31,6 +32,8 @@ public class Wander : MonoBehaviour
         
             if(Vector3.Distance(transform.position, player.transform.position) < lookingDistance)
             {
+                if(!isLooking)
+                    agent.SetDestination(transform.position);
                 Vector3 relativePos = player.transform.position - transform.position;
                 Quaternion LookAtRotation = Quaternion.LookRotation(relativePos);
                 Quaternion LookAtRotationY = Quaternion.Euler(transform.rotation.eulerAngles.x, LookAtRotation.eulerAngles.y, transform.rotation.eulerAngles.z);

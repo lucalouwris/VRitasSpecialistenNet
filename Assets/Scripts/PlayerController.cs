@@ -38,18 +38,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FollowHeadset()
     {
-<<<<<<< HEAD:Assets/Scripts/PlayerController.cs
-        cCollider.height = rig.cameraInRigSpaceHeight;
         Vector3 capsuleCenter = transform.InverseTransformPoint(rig.cameraGameObject.transform.position);
-        cCollider.center = new Vector3(capsuleCenter.x, cCollider.height / 2, capsuleCenter.z);
-=======
         meshObstacle.height = rig.cameraInRigSpaceHeight;
-        collider.height = rig.cameraInRigSpaceHeight;
-        Vector3 capsuleCenter = transform.InverseTransformPoint(rig.cameraGameObject.transform.position);
-        Vector3 offset = new Vector3(capsuleCenter.x, collider.height / 2, capsuleCenter.z);
+        Vector3 offset = new Vector3(capsuleCenter.x, cCollider.height / 2, capsuleCenter.z);
         meshObstacle.center = offset;
-        collider.center = offset;
->>>>>>> origin/develop:Assets/Scripts/Player/PlayerController.cs
+        cCollider.center = offset;
     }
 
     /// <summary>
