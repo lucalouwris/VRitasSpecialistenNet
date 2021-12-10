@@ -13,8 +13,7 @@ public class MeshAfterAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (transform.rotation.eulerAngles.x >= 22.65 && !triggered)
+        if (transform.rotation.eulerAngles.x < 70 && !triggered)
         {
             Debug.Log(transform.rotation.eulerAngles.x);
             triggered = true;
