@@ -29,7 +29,8 @@ public class SwitchManager : MonoBehaviour
         {
             if (!leverDown)
             {
-                OnSwitchDown();
+                OnSwitchDown(); 
+                lever.PlayOneShot(leverClick);
             }
             leverDown = true;
         }
@@ -56,7 +57,7 @@ public class SwitchManager : MonoBehaviour
         }
 
 
-        lever.PlayOneShot(leverClick);
+        
         
         // If its completed, run task and make sure it doesn't spring back. Else it should spring back to make clear it didn't work.
         if (taskCompleted)
