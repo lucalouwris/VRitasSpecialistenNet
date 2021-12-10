@@ -20,7 +20,7 @@ public class StateMachine : MonoBehaviour
     public void SwitchState(BaseState newState)
     {
         //if (newState == GetComponent<Idle>())
-        //    pointer.blink = false;
+        //    //pointer.blink = false;
         //else
         //    pointer.blink = true;
         Triggers[newState.TriggerChange] = false;

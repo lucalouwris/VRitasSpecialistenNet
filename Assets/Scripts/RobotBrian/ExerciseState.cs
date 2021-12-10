@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class ExerciseState : BaseState
@@ -11,7 +12,6 @@ public class ExerciseState : BaseState
 
     [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt, completedTxt;
 
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private float distanceFromPlayer = 3.0f;
     [SerializeField] private GameObject canvasObject;
     [SerializeField] private float timesToRepeat;
@@ -19,11 +19,18 @@ public class ExerciseState : BaseState
     [SerializeField] private float prepTime = 2f;
     [SerializeField] private float boxTime;
 
+    [SerializeField] private DialogueObject[] dialogueObjects;
+    [SerializeField] private BrianSays speaker;
+
+    private int dialogueCount = 0;
+
+
     float outTime;
     float inTime;
     float pauseTime;
     float timeRemaining;
     float startTime;
+
     bool startedExercise = false;
     bool exerciseEnding = false;
     float count;
@@ -39,6 +46,11 @@ public class ExerciseState : BaseState
         pauseTime = boxTime;
         outTime = boxTime;
         inTime = boxTime;
+        count = 0;
+
+        exerciseEnding = false;
+        startedExercise = false;
+
         base.OnEnable();
         canvasObject.SetActive(true);
         offset = Vector3.down * .3f;
@@ -57,15 +69,16 @@ public class ExerciseState : BaseState
     // Update is called once per frame
     public override void Update()
     {
-        //Calculating preferred position.
-        goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
-        goalPos = Vector3.Scale(goalPos , (Vector3.forward + Vector3.right));
-        goalPos += Vector3.up * playerTransform.position.y;
-        transform.position = Vector3.MoveTowards(transform.position, goalPos, 2 * Time.deltaTime);
-        transform.LookAt(playerTransform);
-
-        if (Vector3.Distance(transform.position, goalPos) < .4f)
+        // Calculating goalPos
+        if (Vector3.Distance(playerTransform.position, goalPos) > distanceFromPlayer)
         {
+            goalPos = GetRandomPosition();
+            navAgent.SetDestination(goalPos);
+        }
+
+        if (Vector3.Distance(transform.position, goalPos) < 1f)
+        {
+            transform.LookAt(playerTransform);
             if (!startedExercise)
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
             UpdateExercise();
@@ -121,15 +134,62 @@ public class ExerciseState : BaseState
                         break;
                     case Stages.completed:
                         GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
+                        this.speaker.playThis = dialogueObjects[dialogueCount];
+                        dialogueCount++;
                         break;
                 }
             }
         }
     }
+    
+    private Vector3 GetRandomPosition()
+    {
+        RaycastHit ForwardHit;
+        //Vector2 pos = Random.onUnitSphere * 2.5f;
+        Vector3 calculatedPos = playerTransform.position; //new Vector3(pos.x, .5f, pos.y) + 
+        Vector3 direction = new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z).normalized;
+
+        calculatedPos += direction;
+        Vector3 wantedPos = calculatedPos;
+        
+        if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
+        {
+            wantedPos += direction * (ForwardHit.distance * .75f);
+            wantedPos = CheckDown(wantedPos);
+        }
+        else
+        {
+            wantedPos += direction * distanceFromPlayer;
+            wantedPos = CheckDown(wantedPos);
+        }
+
+        return wantedPos;
+    }
+
+    private Vector3 CheckDown(Vector3 checkPos)
+    {
+        RaycastHit downHit;
+        checkPos.y -= 0.1f;
+        if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
+        {
+            return SampleHit(downHit.point);
+        }
+        return SampleHit(checkPos);
+    }
+    private Vector3 SampleHit(Vector3 checkPos)
+    {
+        NavMeshHit myNavHit;
+        if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
+        {
+            return myNavHit.position;
+        }
+        return checkPos;
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     public override void OnDisable()
     {
+        breathStat.text = "";
         canvasObject.SetActive(false);
     }
 }

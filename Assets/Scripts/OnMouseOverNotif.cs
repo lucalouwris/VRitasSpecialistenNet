@@ -6,9 +6,25 @@ using UnityEngine.EventSystems;
 public class OnMouseOverNotif : MonoBehaviour
 {
     ComputerUI ui;
+
+    [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private StateMachine brian;
+    [SerializeField] private BrianSays speaker;
     private void OnTriggerEnter(Collider other)
     {
-        ui = GameObject.Find("Terminal").GetComponent<ComputerUI>();
-        ui.Wipe();
+
+        ui = GameObject.Find("ComputerMG2").GetComponent<ComputerUI>();
+        if (gameObject.name == "Refuel")
+        {
+            ui.Wipe();
+            brian.SwitchState(brian.States[1]);
+            this.speaker.playThis = dialogueObject;
+        }
+        else if (gameObject.name == "OnButton")
+        {
+            ui.TurnOn();
+            brian.SwitchState(brian.States[1]);
+            this.speaker.playThis = dialogueObject;
+        }
     }
 }

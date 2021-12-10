@@ -9,6 +9,7 @@ public class AudioController : MonoBehaviour
 [SerializeField] private AudioSource backgroundSource;
 [SerializeField] private AudioClip backgroundMusic;
 [SerializeField] private AudioClip backgroundPressureMusic;
+[SerializeField] private AudioClip backgroundAlienMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,13 @@ public class AudioController : MonoBehaviour
     {
         backgroundSource.Stop();
         backgroundSource.clip = backgroundMusic;
+        backgroundSource.Play();
+    }
+
+    public void PlayAlien()
+    {
+        backgroundSource.Stop();
+        backgroundSource.clip = backgroundAlienMusic;
         backgroundSource.Play();
     }
 }

@@ -18,6 +18,11 @@ public class GeneratorStartup : MonoBehaviour
     [SerializeField] private GameObject secondStates;
     [SerializeField] private AudioController audioController;
 
+    [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private StateMachine brian;
+    [SerializeField] private BrianSays speaker;
+
+    [SerializeField] private GameObject computerButton;
 
 
     // Start is called before the first frame update
@@ -51,13 +56,19 @@ public class GeneratorStartup : MonoBehaviour
         objectRenderer.materials = materials;
 
         // Changing the audio to fixed.
-        audioController.PlayBackground();
+        audioController.PlayAlien();
         audioSource.Stop();
         audioSource.clip = fixedClip;
         audioSource.loop = false;
         audioSource.Play();
 
         this.renderNewStates();
+
+        brian.SwitchState(brian.States[1]);
+        this.speaker.playThis = dialogueObject;
+
+        // Turn on computer for minigame 2
+        this.computerButton.SetActive(true);
     }
 
     public void renderNewStates()

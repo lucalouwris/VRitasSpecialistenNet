@@ -13,12 +13,14 @@ public class ComputerUI : MonoBehaviour
     [SerializeField] GameObject screen;
     [SerializeField] GameObject bg;
     [SerializeField] GameObject refuel;
+    [SerializeField] GameObject onState;
+    [SerializeField] GameObject offState;
     AudioSource audioSource;
     AudioClip clip;
     [SerializeField] int maxMessages = 10;
     [SerializeField] float volume = 0.5f;
     float interval = 0;
-    bool active = true;
+    bool active = false;
 
     private void Start()
     {
@@ -38,7 +40,12 @@ public class ComputerUI : MonoBehaviour
             receiveNotif();
         }
     }
-
+    public void TurnOn()
+    {
+        offState.SetActive(false);
+        onState.SetActive(true);
+        active = true;
+    }
     public void Wipe()
     {
         active = false;
