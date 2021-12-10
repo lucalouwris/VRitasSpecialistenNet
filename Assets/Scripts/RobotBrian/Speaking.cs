@@ -57,12 +57,11 @@ public class Speaking : BaseState
         Vector3 calculatedPos = playerTransform.position; //new Vector3(pos.x, .5f, pos.y) + 
         Vector3 direction = new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z).normalized;
 
-        calculatedPos += direction;
+        calculatedPos += direction/2;
         Vector3 wantedPos = calculatedPos;
         
         if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
         {
-            Debug.Log($"Hit object {ForwardHit.distance} from player");
             wantedPos += direction * (ForwardHit.distance * .75f);
             wantedPos = CheckDown(wantedPos);
         }
@@ -81,7 +80,6 @@ public class Speaking : BaseState
         checkPos.y -= 0.1f;
         if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
         {
-            Debug.Log($"Hit object {downHit.distance} from origin");
             return SampleHit(downHit.point);
         }
         return SampleHit(checkPos);
@@ -91,7 +89,6 @@ public class Speaking : BaseState
         NavMeshHit myNavHit;
         if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
         {
-            Debug.Log("Found correct spawn");
             return myNavHit.position;
         }
         return checkPos;

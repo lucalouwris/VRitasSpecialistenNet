@@ -70,14 +70,15 @@ public class ExerciseState : BaseState
     public override void Update()
     {
         // Calculating goalPos
-        if (Vector3.Distance(playerTransform.position, goalPos) > 10f)
+        if (Vector3.Distance(playerTransform.position, goalPos) > distanceFromPlayer)
         {
             goalPos = GetRandomPosition();
             navAgent.SetDestination(goalPos);
         }
-
-        if (Vector3.Distance(transform.position, goalPos) < .4f)
+        Debug.Log(Vector3.Distance(transform.position, goalPos));
+        if (Vector3.Distance(transform.position, goalPos) < 1f)
         {
+            Debug.Log("StartBreathing");
             transform.LookAt(playerTransform);
             if (!startedExercise)
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
@@ -154,7 +155,6 @@ public class ExerciseState : BaseState
         
         if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
         {
-            Debug.Log($"Hit object {ForwardHit.distance} from player");
             wantedPos += direction * (ForwardHit.distance * .75f);
             wantedPos = CheckDown(wantedPos);
         }
@@ -173,7 +173,6 @@ public class ExerciseState : BaseState
         checkPos.y -= 0.1f;
         if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
         {
-            Debug.Log($"Hit object {downHit.distance} from origin");
             return SampleHit(downHit.point);
         }
         return SampleHit(checkPos);
@@ -183,7 +182,6 @@ public class ExerciseState : BaseState
         NavMeshHit myNavHit;
         if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
         {
-            Debug.Log("Found correct spawn");
             return myNavHit.position;
         }
         return checkPos;
