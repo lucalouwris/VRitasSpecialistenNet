@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerController : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerHead;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private BrianSays brianSays;
+    [SerializeField] private NavMeshObstacle meshObstacle;
 
     public BrianSays BrianSays => brianSays;
 
@@ -37,9 +39,12 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FollowHeadset()
     {
+        meshObstacle.height = rig.cameraInRigSpaceHeight;
         collider.height = rig.cameraInRigSpaceHeight;
         Vector3 capsuleCenter = transform.InverseTransformPoint(rig.cameraGameObject.transform.position);
-        collider.center = new Vector3(capsuleCenter.x, collider.height / 2, capsuleCenter.z);
+        Vector3 offset = new Vector3(capsuleCenter.x, collider.height / 2, capsuleCenter.z);
+        meshObstacle.center = offset;
+        collider.center = offset;
     }
 
     /// <summary>
