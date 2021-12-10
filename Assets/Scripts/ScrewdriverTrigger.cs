@@ -16,7 +16,7 @@ public class ScrewdriverTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        powerCell = GameObject.Find("powercellempty");
+        powerCell = GameObject.Find("powercelltransform");
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class ScrewdriverTrigger : MonoBehaviour
     private void TransformPowerCell()
     {
         Debug.Log("Trying to apply Rotation and Transform");
-        powerCell.transform.Rotate(0f, 0f, 8f, Space.Self);
+        powerCell.transform.Rotate(0f, 0f, 5.5f, Space.Self);
 
         GetComponent<SwitchCheck>().SwitchShouldWork = true;
 
