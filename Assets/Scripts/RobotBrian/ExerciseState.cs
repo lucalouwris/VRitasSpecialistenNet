@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class ExerciseState : BaseState
@@ -68,15 +69,16 @@ public class ExerciseState : BaseState
     // Update is called once per frame
     public override void Update()
     {
-        //Calculating preferred position.
-        goalPos = playerTransform.position + playerTransform.forward * distanceFromPlayer + offset;
-        goalPos = Vector3.Scale(goalPos , (Vector3.forward + Vector3.right));
-        goalPos += Vector3.up * playerTransform.position.y;
-        transform.position = Vector3.MoveTowards(transform.position, goalPos, 2 * Time.deltaTime);
-        transform.LookAt(playerTransform);
+        // Calculating goalPos
+        if (Vector3.Distance(playerTransform.position, goalPos) > 10f)
+        {
+            goalPos = GetRandomPosition();
+            navAgent.SetDestination(goalPos);
+        }
 
         if (Vector3.Distance(transform.position, goalPos) < .4f)
         {
+            transform.LookAt(playerTransform);
             if (!startedExercise)
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
             UpdateExercise();
@@ -138,6 +140,53 @@ public class ExerciseState : BaseState
                 }
             }
         }
+    }
+    
+    private Vector3 GetRandomPosition()
+    {
+        RaycastHit ForwardHit;
+        //Vector2 pos = Random.onUnitSphere * 2.5f;
+        Vector3 calculatedPos = playerTransform.position; //new Vector3(pos.x, .5f, pos.y) + 
+        Vector3 direction = new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z).normalized;
+
+        calculatedPos += direction;
+        Vector3 wantedPos = calculatedPos;
+        
+        if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
+        {
+            Debug.Log($"Hit object {ForwardHit.distance} from player");
+            wantedPos += direction * (ForwardHit.distance * .75f);
+            wantedPos = CheckDown(wantedPos);
+        }
+        else
+        {
+            wantedPos += direction * distanceFromPlayer;
+            wantedPos = CheckDown(wantedPos);
+        }
+
+        return wantedPos;
+    }
+
+    private Vector3 CheckDown(Vector3 checkPos)
+    {
+        RaycastHit downHit;
+        checkPos.y -= 0.1f;
+        if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
+        {
+            Debug.Log($"Hit object {downHit.distance} from origin");
+            return SampleHit(downHit.point);
+        }
+        return SampleHit(checkPos);
+    }
+    private Vector3 SampleHit(Vector3 checkPos)
+    {
+        NavMeshHit myNavHit;
+        if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
+        {
+            Debug.Log("Found correct spawn");
+            return myNavHit.position;
+        }
+        return checkPos;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
