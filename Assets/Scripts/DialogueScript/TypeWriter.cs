@@ -52,9 +52,12 @@ public class TypeWriter : MonoBehaviour
 
                 textLabel.text = textToType.Substring(0, charIndex);
 
-                if (this.IsPunctuation(textToType[i], out float waitTime) && !isLast && !this.IsPunctuation(textToType[i + 1], out _))
+                if(!isLast)
                 {
-                    yield return new WaitForSeconds(waitTime);
+                    if (this.IsPunctuation(textToType[i], out float waitTime) && !this.IsPunctuation(textToType[i + 1], out _))
+                    {
+                        yield return new WaitForSeconds(waitTime);
+                    }
                 }
             }
 

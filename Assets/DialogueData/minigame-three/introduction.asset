@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855d7eb9f3b994b5c9255cc4117b7f97, type: 3}
-  m_Name: mechanicIntroduction
+  m_Name: introduction
   m_EditorClassIdentifier: 
   dialogue:
-  - Some mechanic introductions
+  - 'Oh, it looks like your spaceship attracted some aliens. '
+  - 'If we carefully walk past them, they hopefully won''t disturb us.. '

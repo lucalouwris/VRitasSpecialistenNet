@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855d7eb9f3b994b5c9255cc4117b7f97, type: 3}
-  m_Name: secondMinigameIntroduction
+  m_Name: end
   m_EditorClassIdentifier: 
   dialogue:
-  - This is the introduction to the second minigame
+  - 'Great job! The spaceship is being refueled! '
+  - 'We can go back to our spaceship to head back to Earth. '

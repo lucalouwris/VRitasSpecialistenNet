@@ -7,14 +7,17 @@ public class TriggerState : MonoBehaviour
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private int wantedState;
     [SerializeField] private string TagCheck;
-    [SerializeField] private bool shouldDisable;
+
     // Start is called before the first frame update
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag(TagCheck))
         {
-            stateMachine.SwitchState(stateMachine.States[wantedState]);
+                stateMachine.SwitchState(stateMachine.States[wantedState]);
+                this.gameObject.SetActive(false);
+            
         }
     }
 }

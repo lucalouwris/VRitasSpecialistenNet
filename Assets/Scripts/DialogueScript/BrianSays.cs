@@ -8,9 +8,14 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textlabel;
     [SerializeField] private StateMachine stateMachine;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip sound;
+
+
 
     private TypeWriter typeWriter;
-    private bool isPressed = false;
+    private bool isPressedRight = false;
+    private bool isPressedLeft = false;
 
     public DialogueObject playThis;
 
@@ -19,6 +24,8 @@ public class BrianSays : MonoBehaviour
 
     void OnEnable()
     {
+
+        this.source.PlayOneShot(this.sound);
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
         ShowDialogue(playThis);
@@ -44,17 +51,30 @@ public class BrianSays : MonoBehaviour
 
 
             yield return null;
-            yield return new WaitUntil(() => this.isPressed == true);
-            this.isPressed = false;
+            yield return new WaitUntil(() => this.isPressedRight == true && this.isPressedLeft == true);
+            this.isPressedRight = false;
+            this.isPressedLeft = false;
         }
 
         this.CloseDialogeBox();
         this.gameObject.SetActive(false);
     }
 
-    public void handlePressed()
+    public void handlePressedRight()
     {
-        this.isPressed = true;
+        this.isPressedRight = true;
+    }
+    public void handlePressedLeft()
+    {
+        this.isPressedLeft = true;
+    }
+    public void handleReleaseRight()
+    {
+        this.isPressedRight = false;
+    }
+    public void handleReleaseLeft()
+    {
+        this.isPressedLeft = false;
     }
 
     private IEnumerator RunTypingEffect(string dialogue)
@@ -65,7 +85,7 @@ public class BrianSays : MonoBehaviour
         {
             yield return null;
 
-            if(this.isPressed)
+            if(this.isPressedLeft && this.isPressedRight)
             {
                 this.typeWriter.Stop();
             }
