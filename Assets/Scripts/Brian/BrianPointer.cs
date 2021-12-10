@@ -17,7 +17,7 @@ public class BrianPointer : MonoBehaviour
 
     private void Start()
     {
-        isActive = true;
+        isActive = false;
         currentInterval = blinkInterval;
     }
 
