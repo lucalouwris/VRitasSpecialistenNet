@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GetConfig
   m_EditorClassIdentifier: 
   Url: https://dev.pulsoid.net/api/v1/data/heart_rate/latest
-  Token: SuperSecretToken
+  Token: 
