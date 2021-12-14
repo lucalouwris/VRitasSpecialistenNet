@@ -75,10 +75,9 @@ public class ExerciseState : BaseState
             goalPos = GetRandomPosition();
             navAgent.SetDestination(goalPos);
         }
-        Debug.Log(Vector3.Distance(transform.position, goalPos));
+
         if (Vector3.Distance(transform.position, goalPos) < 1f)
         {
-            Debug.Log("StartBreathing");
             transform.LookAt(playerTransform);
             if (!startedExercise)
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
