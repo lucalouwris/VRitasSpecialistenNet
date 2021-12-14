@@ -75,6 +75,10 @@ public class ReadHeartrate : MonoBehaviour
                 peak = heartRateFloat;
             }
         }
+        average = average/heartRate.Count;
+
+        csv += $"Average,{average}\n";
+        csv += $"Peak,{peak}\n";
 
         average = average / heartRate.Count;
 
