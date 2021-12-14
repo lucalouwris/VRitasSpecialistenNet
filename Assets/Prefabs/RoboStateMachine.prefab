@@ -765,9 +765,9 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5990817434369855310}
   m_Enabled: 1
-  m_AgentTypeID: -1372625422
+  m_AgentTypeID: 0
   m_Radius: 0.35
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -793,7 +793,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -938,7 +938,7 @@ PrefabInstance:
     - target: {fileID: 6578001200692408626, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
       propertyPath: source
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8362309098005050931}
     - target: {fileID: 6578001200692408626, guid: 730c5dc28435dfc46b17533b468fb4a0, type: 3}
       propertyPath: stateMachine
       value: 
