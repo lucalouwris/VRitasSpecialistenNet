@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0845179, g: 0.084969684, b: 0.54519653, a: 1}
+  m_IndirectSpecularColor: {r: 0.08451951, g: 0.08497134, b: 0.5451982, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,6 +133,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -673,6 +677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienClimbPlantBlue (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -891,6 +899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienClimbPlantBlue (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1101,6 +1113,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -2086,6 +2102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienClimbPlantBlue (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2615,43 +2635,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.635
+      value: 0.2948842
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.976
+      value: 4.990107
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.854
+      value: -14.734901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.95404166
+      value: 0.7925349
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.10402268
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.299674
+      value: 0.5957792
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.07819787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -4.112
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 34.876
+      value: 74.387
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -14.391
       objectReference: {fileID: 0}
     - target: {fileID: -4810287005172720923, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -2667,7 +2687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3175,6 +3195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienClimbPlantBlue (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3308,6 +3332,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -3571,6 +3599,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -3941,6 +3973,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -5165,10 +5201,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 832272132, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: m_Speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 381730718}
+    - target: {fileID: 2438190431619714769, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: pointer
+      value: 
+      objectReference: {fileID: 1801471336}
     - target: {fileID: 2438190431619714770, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: playerTransform
       value: 
@@ -5811,6 +5855,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -6703,6 +6751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienClimbPlantBlue (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6992,6 +7044,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -7876,6 +7932,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -9271,15 +9331,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.356
+      value: 1.516
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.386
+      value: 4.589
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.169
+      value: -1.076
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9323,7 +9383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d46be076959c34c60a102c9ab53ef803, type: 3}
@@ -10308,6 +10368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienClimbPlantPurple
       objectReference: {fileID: 0}
+    - target: {fileID: 285767615942421951, guid: 625d89894d4a347c3a5c84ab1eff1cf2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 629536985039419141, guid: 625d89894d4a347c3a5c84ab1eff1cf2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10396,6 +10460,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
@@ -10714,6 +10782,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
   m_PrefabInstance: {fileID: 561851957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1801471336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 410115012, guid: 491a6671fa652a442876463806f19a28, type: 3}
+  m_PrefabInstance: {fileID: 2095966319}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f010bad24337e2429e16ebdcbcb2160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1813370748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11896,6 +11975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienClimbPlantBlue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -12675,6 +12758,10 @@ PrefabInstance:
     - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_Name
       value: AlienClimbPlantBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497562296159510964, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306011667916094222, guid: 0f030821f7a8c49b5ba55352badae9c0, type: 3}
       propertyPath: m_RootOrder
