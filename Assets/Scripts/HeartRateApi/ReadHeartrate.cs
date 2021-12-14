@@ -62,11 +62,24 @@ public class ReadHeartrate : MonoBehaviour
     private void OnDisable()
     {
         string csv = "";
+        float average = 0;
+        float peak = 0;
 
         for (int i = 0; i < heartRate.Count; i++)
         {
-            csv += $"{time[i]},{gameStates[i]},{velocity[i]},{heartRate[i]}\n";
+            float heartRateFloat = float.Parse(heartRate[i]);
+            csv += $"{time[i]},{gameStates[i]},{velocity[i]},{heartRate[i]}\n";            
+            average += heartRateFloat;
+            if (heartRateFloat > peak)
+            {
+                peak = heartRateFloat;
+            }
         }
+
+        average = average / heartRate.Count;
+
+        csv += $"Average,{average}\n";
+        csv += $"Peak,{peak}\n";
 
         string date = DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute;
         File.WriteAllText(Application.dataPath+pathToCsv+$"heartrateData{date}.csv", csv);
