@@ -1,3 +1,9 @@
+/*
+    The SwitchManager is a script for the lever interaction. 
+    What it does is trigger objects like the hatch of the spaceship and the startup of the generator.
+    For the generator the lever must be able to return to its up rotation when the generator minigame has not been completed yet.
+    If it has then it runs the TriggerObject() function.
+*/
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,11 +26,9 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     private bool leverDown =false;
 
-    /// <summary>
-    /// Checking the angle to see if the switch code should run 
-    /// </summary>
     private void Update()
     {
+        // Checking the angle to see if the switch code should run 
         if (switchJoint.limits.max - switchJoint.angle < 10)
         {
             if (!leverDown)
@@ -35,30 +39,18 @@ public class SwitchManager : MonoBehaviour
             leverDown = true;
         }
         else
-        {
             leverDown = false;
-        }
         if (switchJoint.angle < 2)
-        {
             switchJoint.useSpring = false;
-        }
     }
 
     private void OnSwitchDown()
     {
-        // If there is an object linked to the switch, that should have its state set to true
+        // If there is an object linked to the switch, that should have its state set to true.
         if (ShouldCheckObject)
-        {
             taskCompleted = ObjectCheck.GetComponent<SwitchCheck>().SwitchShouldWork;
-        }
         else
-        {
             taskCompleted = true;
-        }
-
-
-        
-        
         // If its completed, run task and make sure it doesn't spring back. Else it should spring back to make clear it didn't work.
         if (taskCompleted)
         {
@@ -66,26 +58,18 @@ public class SwitchManager : MonoBehaviour
             TriggerObject();
         }
         else
-        {
             switchJoint.useSpring = true;
-        }
     }
 
     private void TriggerObject()
     {
-        if (shouldUseAnimation)
-        {
+        if (shouldUseAnimation) // If there is an animation. Run it.
             ObjectAnimator.SetTrigger(animatorTrigger);
-        }
-        else
-        {
+        else // If it is the generator.
            GetComponent<GeneratorStartup>().activateGenerator();
-        }
 
-        if (clip != null)
-        {            
+        if (clip != null) // If there is a sound to be played.
             audioSource.PlayOneShot(clip);
-        }        
         enabled = false;
     }
 }
