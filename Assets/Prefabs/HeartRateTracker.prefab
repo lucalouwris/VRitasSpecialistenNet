@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7125392279871742454}
   - component: {fileID: 7125392279871742455}
+  - component: {fileID: 128335368427241687}
   m_Layer: 0
   m_Name: HeartRateTracker
   m_TagString: Untagged
@@ -43,7 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6502fcd6caa434c9c26fec4b7d6c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configFile: {fileID: 11400000, guid: d0ff270e1130d5342ad6e23531499622, type: 2}
+  configFile: {fileID: 0}
   interval: 2
   pathToCsv: /data/
   player: {fileID: 0}
+  states: {fileID: 128335368427241687}
+--- !u!114 &128335368427241687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125392279871742452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137bdd974dc94467cbaa77c0cdaf7f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

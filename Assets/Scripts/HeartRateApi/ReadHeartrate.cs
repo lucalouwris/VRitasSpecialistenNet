@@ -6,17 +6,20 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using UnityEngine;
 
+
 public class ReadHeartrate : MonoBehaviour
 {
     [SerializeField] private ConfigFile configFile;
     [SerializeField] private float interval = 0.5f;
     [SerializeField] private string pathToCsv;
     [SerializeField] private Rigidbody player;
+    [SerializeField] private GameStates states;
     
     private HttpClient client;
     private List<int> time = new List<int>();
     private List<float> velocity = new List<float>();
     private List<string> heartRate = new List<string>();
+    private List<GameStateEnum> gameStates = new List<GameStateEnum>();
 
     private void Start()
     {
@@ -49,6 +52,7 @@ public class ReadHeartrate : MonoBehaviour
             time.Add((int)Time.time);
             velocity.Add(player.velocity.magnitude);
             heartRate.Add(split[1]);
+            gameStates.Add(states.getGameStates());
             Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
             
             return localData;
@@ -64,13 +68,19 @@ public class ReadHeartrate : MonoBehaviour
         for (int i = 0; i < heartRate.Count; i++)
         {
             float heartRateFloat = float.Parse(heartRate[i]);
-            csv += $"{time[i]},{velocity[i]},{heartRate[i]}\n";
+            csv += $"{time[i]},{gameStates[i]},{velocity[i]},{heartRate[i]}\n";            
             average += heartRateFloat;
-            if (heartRateFloat> peak){
+            if (heartRateFloat > peak)
+            {
                 peak = heartRateFloat;
             }
         }
         average = average/heartRate.Count;
+
+        csv += $"Average,{average}\n";
+        csv += $"Peak,{peak}\n";
+
+        average = average / heartRate.Count;
 
         csv += $"Average,{average}\n";
         csv += $"Peak,{peak}\n";
