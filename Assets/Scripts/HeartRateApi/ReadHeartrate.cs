@@ -65,7 +65,7 @@ public class ReadHeartrate : MonoBehaviour
 
         for (int i = 0; i < heartRate.Count; i++)
         {
-            csv += $"{time[i]},{velocity[i]},{heartRate[i]}\n";
+            csv += $"{time[i]},{gameStates[i]},{velocity[i]},{heartRate[i]}\n";
         }
 
         string date = DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute;
