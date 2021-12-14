@@ -1,3 +1,11 @@
+/*
+    There are two different ways that messages can pop on the screen. 
+    The first way is that messages pop up all over the screen in a random position in random intervals and sound. 
+    The instantiating of the messages happens in the receiveNotif() function. 
+    There can be a max of 10 messages on the screen. Message 11 deletes the first one and so on. 
+    The more structured messages instantiate in the receiveNotifStructured() function. 
+    This function does much of the same but put the message on the side of the screen with a maximum of 6 messages moving from top to bottom and gets deleted when out of screen.
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,15 +67,15 @@ public class ComputerUI : MonoBehaviour
     {
         clip = clips[Random.Range(0, clips.Length)];
         audioSource.PlayOneShot(clip, volume);
-        float width = Random.Range(-0.55f * transform.localScale.x, 0.55f * transform.localScale.x);
-        float height = Random.Range(-0.4f * transform.localScale.y, 0.4f * transform.localScale.y);
-        GameObject notif = Instantiate(notification, new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0), screen.transform.parent);
+        float width = Random.Range(-0.55f * transform.localScale.x, 0.55f * transform.localScale.x); // Random x on screen.
+        float height = Random.Range(-0.4f * transform.localScale.y, 0.4f * transform.localScale.y); // Random y on screen.
+        GameObject notif = Instantiate(notification, new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0), screen.transform.parent); // Instantiate a new message
         notif.transform.SetParent(screen.transform);
         Vector3 spawnPosition = new Vector3(bg.transform.position.x + width, bg.transform.position.y + height, screen.transform.position.z);
         notif.transform.position = spawnPosition;
         notif.transform.localScale = new Vector3(0.0025f, 0.0025f, 1);
         Image notifImg = notif.GetComponent<Image>();
-        notifImg.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1), 1f);
+        notifImg.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1), 1f); // Random color to the image of the message.
 
         for (int i = 0; i < messages.Count; i++)
         {
@@ -94,7 +102,7 @@ public class ComputerUI : MonoBehaviour
             for (int i = 0; i < messages.Count; i++)
             {
                 int number = int.Parse(messages[i].name);
-                if (number < messagePositions.Count - 1)
+                if (number < messagePositions.Count - 1) // Move messages down the list.
                 {
                     notif.transform.SetParent(messagePositions[number + 1].transform);
                     notif.transform.position = messagePositions[number + 1].transform.position;
@@ -102,7 +110,7 @@ public class ComputerUI : MonoBehaviour
 
                     notif.name = number.ToString();
                 }
-                else
+                else //If message has been pushed out of the last position on screen.
                 {
                     messages.RemoveAt(i - 1);
                     Destroy(messages[i - 1]);
