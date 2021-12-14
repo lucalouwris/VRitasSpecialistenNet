@@ -40,16 +40,16 @@ public class IngameTimer : MonoBehaviour
 
         if (transform.eulerAngles.z < 300 && transform.eulerAngles.z > 200) // Make sure the timer is only seen when the controller has the correct angle.
             timerCanvas.SetActive(true);
-        else
+        else // If not correct angle anymore
             timerCanvas.SetActive(false);
-        if (timerIsRunning)
+        if (timerIsRunning) // If timer value is above 0
         {
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
             }
-            else
+            else // If timer value is at or below 0
             {
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
