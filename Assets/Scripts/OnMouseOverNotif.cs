@@ -10,6 +10,12 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private DialogueObject dialogueObject;
     [SerializeField] private StateMachine brian;
     [SerializeField] private BrianSays speaker;
+
+    [SerializeField] private SpawningManager spawningManager;
+
+    [SerializeField] private int countOfAliens = 1;
+    
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -25,6 +31,7 @@ public class OnMouseOverNotif : MonoBehaviour
             ui.TurnOn();
             brian.SwitchState(brian.States[1]);
             this.speaker.playThis = dialogueObject;
+            this.spawningManager.spawnAliens(countOfAliens);
         }
     }
 }
