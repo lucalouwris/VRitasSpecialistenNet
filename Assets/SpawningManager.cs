@@ -50,7 +50,7 @@ public class SpawningManager : MonoBehaviour
     void spawnObject(Transform spawnPoint)
     {
         Debug.Log("Trying to Spawn an " + objectToSpawn + " @ " + spawnPoint);
-        Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation, alienParent);
+        Instantiate(objectToSpawn, spawnPoint);
         //spawningEnabled = false
     }
 
