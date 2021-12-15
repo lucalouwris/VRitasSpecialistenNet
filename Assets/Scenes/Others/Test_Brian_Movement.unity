@@ -123,6 +123,158 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &11112682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7670468892248255791, guid: e2413da4997c2420d8c32a204ffec825, type: 3}
+  m_PrefabInstance: {fileID: 7400420243786465431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &11112696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11112682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1eac264452ae4147acd367f0ae8b929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointerTarget: {fileID: 1910871468}
+  multiAimConstraintHand:
+    m_ConstrainedObject: {fileID: 342881384}
+    m_SourceObjects:
+      m_Length: 0
+      m_Item0:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item1:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item2:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item3:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item4:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item5:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item6:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item7:
+        transform: {fileID: 0}
+        weight: 0
+    m_Offset: {x: 0, y: 0, z: 0}
+    m_MinLimit: 0
+    m_MaxLimit: 0
+    m_AimAxis: 0
+    m_UpAxis: 0
+    m_WorldUpType: 0
+    m_WorldUpObject: {fileID: 0}
+    m_WorldUpAxis: 0
+    m_MaintainOffset: 0
+    m_ConstrainedAxes:
+      x: 0
+      y: 0
+      z: 0
+  multiAimConstraintHead:
+    m_ConstrainedObject: {fileID: 743538652}
+    m_SourceObjects:
+      m_Length: 0
+      m_Item0:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item1:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item2:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item3:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item4:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item5:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item6:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item7:
+        transform: {fileID: 0}
+        weight: 0
+    m_Offset: {x: 0, y: 0, z: 0}
+    m_MinLimit: 0
+    m_MaxLimit: 0
+    m_AimAxis: 0
+    m_UpAxis: 0
+    m_WorldUpType: 0
+    m_WorldUpObject: {fileID: 0}
+    m_WorldUpAxis: 0
+    m_MaintainOffset: 0
+    m_ConstrainedAxes:
+      x: 0
+      y: 0
+      z: 0
+  multiAimConstraintBody:
+    m_ConstrainedObject: {fileID: 1827105928}
+    m_SourceObjects:
+      m_Length: 0
+      m_Item0:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item1:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item2:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item3:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item4:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item5:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item6:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item7:
+        transform: {fileID: 0}
+        weight: 0
+    m_Offset: {x: 0, y: 0, z: 0}
+    m_MinLimit: 0
+    m_MaxLimit: 0
+    m_AimAxis: 0
+    m_UpAxis: 0
+    m_WorldUpType: 0
+    m_WorldUpObject: {fileID: 0}
+    m_WorldUpAxis: 0
+    m_MaintainOffset: 0
+    m_ConstrainedAxes:
+      x: 0
+      y: 0
+      z: 0
+  bodyWeightFactor: 0.6
+--- !u!4 &342881384 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 342881384, guid: e2413da4997c2420d8c32a204ffec825, type: 3}
+  m_PrefabInstance: {fileID: 7400420243786465431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &743538652 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 743538652, guid: e2413da4997c2420d8c32a204ffec825, type: 3}
+  m_PrefabInstance: {fileID: 7400420243786465431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1096727438
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +481,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1827105928 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1827105928, guid: e2413da4997c2420d8c32a204ffec825, type: 3}
+  m_PrefabInstance: {fileID: 7400420243786465431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1910871467
 GameObject:
   m_ObjectHideFlags: 0
