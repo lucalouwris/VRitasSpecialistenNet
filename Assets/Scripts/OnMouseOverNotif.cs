@@ -10,9 +10,10 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private DialogueObject dialogueObject;
     [SerializeField] private StateMachine brian;
     [SerializeField] private BrianSays speaker;
+
     [SerializeField] private SpawningManager spawningManager;
 
-    public int countOfAliens = 1;
+    [SerializeField] private int countOfAliens = 1;
     
 
     private void OnTriggerEnter(Collider other)
