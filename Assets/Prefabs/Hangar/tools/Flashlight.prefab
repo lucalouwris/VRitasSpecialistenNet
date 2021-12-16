@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597107095070995508}
   - component: {fileID: 5619416822861580737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 3453672076203581061}
   - component: {fileID: 1379705465634934819}
   - component: {fileID: 1506970935826995268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 170535095964040813}
   - component: {fileID: 8403580390122231214}
   - component: {fileID: 7426167770753169723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 2497823150406337706}
   - component: {fileID: 2378260099335102639}
   - component: {fileID: 5108541697992454457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,16 +281,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8594453436557634963}
-  m_LocalRotation: {x: -0.031328168, y: -0.73182946, z: -0.6801445, w: -0.029115636}
+  m_LocalRotation: {x: 0.031322356, y: 0.73182774, z: 0.68014663, w: 0.029116955}
   m_LocalPosition: {x: 5.8098526, y: -4.23204, z: -0.18718147}
-  m_LocalScale: {x: 0.018749982, y: 0.018749995, z: 0.018749988}
+  m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
   m_Children:
   - {fileID: 170535095964040813}
   - {fileID: 3453672076203581061}
   - {fileID: 166137290247493500}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 4.193, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -83.553, y: 130.623, z: 49.556}
 --- !u!65 &2497823150406337706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 166137290247493500}
   - component: {fileID: 8695574898300221314}
   - component: {fileID: 4414615397562179671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

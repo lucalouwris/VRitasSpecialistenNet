@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6047426234884196655}
   - component: {fileID: 391857958492203973}
   - component: {fileID: 522302827533666718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: brokenScrewdriver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6032872033548240504}
-  m_LocalRotation: {x: -2.3283059e-10, y: 0.000000089406946, z: -0.999085, w: -0.0427688}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9990852, w: 0.042765014}
   m_LocalPosition: {x: 3.577719, y: -0.36254895, z: -0.16626479}
-  m_LocalScale: {x: 0.74999946, y: 0.7499996, z: 0.7499998}
+  m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 175.098}
 --- !u!33 &8024598833566012263
 MeshFilter:
   m_ObjectHideFlags: 0

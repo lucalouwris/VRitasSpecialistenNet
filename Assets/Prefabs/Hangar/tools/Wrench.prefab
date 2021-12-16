@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2424950246667717706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wrench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3093119492529608432}
-  m_LocalRotation: {x: -0.030242158, y: -0.70645976, z: -0.70645976, w: -0.030242158}
+  m_LocalRotation: {x: 0.030239493, y: 0.7064599, z: 0.7064599, w: 0.030239493}
   m_LocalPosition: {x: 3.9597645, y: -2.9015765, z: -0.9162643}
   m_LocalScale: {x: 0.7499996, y: 0.7499999, z: 0.74999964}
   m_Children:
@@ -31,7 +31,7 @@ Transform:
   - {fileID: 5239224767983867363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -85.098, y: 90, z: 90}
 --- !u!1 &3288188031053289925
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4254090611170543583}
   - component: {fileID: 1983949424956810055}
   - component: {fileID: 7033732204132187711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5239224767983867363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}

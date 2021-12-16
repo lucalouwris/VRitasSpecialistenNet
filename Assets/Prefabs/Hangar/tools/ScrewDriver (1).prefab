@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7422632967225903097}
   - component: {fileID: 4201832355454707906}
   - component: {fileID: 3207334996493619465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ScrewDriver (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260199553225268091}
-  m_LocalRotation: {x: -0.60691184, y: -0.36284685, z: -0.3628468, w: -0.6069121}
+  m_LocalRotation: {x: 0.60691136, y: 0.36284786, z: 0.36284786, w: 0.60691136}
   m_LocalPosition: {x: 5.966, y: -1.519, z: -0.179}
-  m_LocalScale: {x: 0.015749991, y: 0.015749997, z: 0.015749993}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 3334729635892320932}
   - {fileID: 8296932549025994856}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3334729635892320932}
   - component: {fileID: 6321373270017387578}
   - component: {fileID: 2502887127026856165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1147244352230340322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Empty.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8296932549025994856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}

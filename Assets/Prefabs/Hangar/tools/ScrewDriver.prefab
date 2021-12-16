@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3074700272888272693}
   - component: {fileID: 3601224709215789982}
   - component: {fileID: 813872800350699100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ScrewDriver
-  m_TagString: Untagged
+  m_TagString: correctTool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,16 +26,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216636339110811447}
-  m_LocalRotation: {x: -0.06563758, y: -0.70405376, z: -0.70405376, w: -0.06563758}
+  m_LocalRotation: {x: 0.06563537, y: 0.704054, z: 0.704054, w: 0.06563537}
   m_LocalPosition: {x: 5.842527, y: -2.6487885, z: -0.1789999}
-  m_LocalScale: {x: 0.015749993, y: 0.015749997, z: 0.015749993}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 3447552190187919080}
   - {fileID: 8267444177890120740}
   - {fileID: 1041642355202079406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -5.75, z: 0}
+  m_LocalEulerAnglesHint: {x: -79.348, y: 90, z: 90}
 --- !u!65 &3074700272888272693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3447552190187919080}
   - component: {fileID: 6207503879737188470}
   - component: {fileID: 2531997193163013289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1041642355202079406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Empty.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8267444177890120740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
