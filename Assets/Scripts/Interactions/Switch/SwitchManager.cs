@@ -60,7 +60,7 @@ public class SwitchManager : MonoBehaviour
             switchJoint.useSpring = false;
             TriggerGenerator();
         }
-        else if (leverType == "Ship Hatch" && minigameTwo != null)
+        else if (leverType == "Hatch" && minigameTwo != null)
         {
             switchJoint.useSpring = true;
             TriggerHatch();

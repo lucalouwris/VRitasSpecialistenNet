@@ -614,12 +614,13 @@ MonoBehaviour:
   ShouldCheckObject: 0
   ObjectCheck: {fileID: 0}
   ObjectAnimator: {fileID: 1882001539}
-  animatorTrigger: DoorOpens
   shouldUseAnimation: 1
   leverClick: {fileID: 8300000, guid: 1700a8d3638c5d44db5f3e93bf2a2c5e, type: 3}
   lever: {fileID: 73518488}
   clip: {fileID: 8300000, guid: 571949a220b246d478bfcc589bbb138b, type: 3}
   audioSource: {fileID: 1882001536}
+  minigameTwo: {fileID: 5598084807265705013}
+  leverType: Hatch
 --- !u!1 &80245725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,6 +3322,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: bf84de31768a44a1eb081fde3ea425a9, type: 3}
+    - target: {fileID: 8004378674942453305, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: leverType
+      value: Generator
+      objectReference: {fileID: 0}
     - target: {fileID: 8004378674942453305, guid: fda091c2d817a3047a87c634b793a430, type: 3}
       propertyPath: audioSource
       value: 
@@ -15439,6 +15444,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
+--- !u!114 &5598084807265705013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1225088378, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
+  m_PrefabInstance: {fileID: 5598084807265705012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafa7769f65bde04c9966cba6674fa4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5626835527579788273
 PrefabInstance:
   m_ObjectHideFlags: 0
