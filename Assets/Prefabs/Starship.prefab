@@ -1631,12 +1631,13 @@ MonoBehaviour:
   ShouldCheckObject: 0
   ObjectCheck: {fileID: 0}
   ObjectAnimator: {fileID: 5923355589805912680}
-  animatorTrigger: DoorOpens
   shouldUseAnimation: 1
   leverClick: {fileID: 8300000, guid: 1700a8d3638c5d44db5f3e93bf2a2c5e, type: 3}
   lever: {fileID: 5923355591219638131}
   clip: {fileID: 8300000, guid: 571949a220b246d478bfcc589bbb138b, type: 3}
   audioSource: {fileID: 5923355589805912683}
+  minigameTwo: {fileID: 0}
+  leverType: 
 --- !u!82 &5923355591219638131
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2028,6 +2029,7 @@ GameObject:
   - component: {fileID: 6177045312248075634}
   - component: {fileID: 5923355589805912725}
   - component: {fileID: 5923355589805912724}
+  - component: {fileID: 1070399964944140286}
   m_Layer: 0
   m_Name: Starship
   m_TagString: Untagged
@@ -2104,6 +2106,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaces:
   - {fileID: 5923355589805912725}
+--- !u!95 &1070399964944140286
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6841694986782216136}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8898034757461223709
 GameObject:
   m_ObjectHideFlags: 0
