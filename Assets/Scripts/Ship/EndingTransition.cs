@@ -5,14 +5,15 @@ using UnityEngine;
 public class EndingTransition : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private Animator transition;
+    [SerializeField] private Animator credits;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject creditsObject;
     bool isFlying = false;
     private void Update()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && isFlying)
         {  //If normalizedTime is 0 to 1 means animation is playing, if greater than 1 means finished
-            CreditsTransition();
+            Credits();
             isFlying = false;
         }
     }
@@ -22,8 +23,8 @@ public class EndingTransition : MonoBehaviour
         anim.SetTrigger("FlyTheShip");
         isFlying = true;
     }
-    public void CreditsTransition()
+    public void Credits()
     {
-        transition.SetTrigger("Fade");
+        credits.SetTrigger("Play");
     }
 }
