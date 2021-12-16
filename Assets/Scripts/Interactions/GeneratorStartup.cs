@@ -56,7 +56,7 @@ public class GeneratorStartup : MonoBehaviour
         objectRenderer.materials = materials;
 
         // Changing the audio to fixed.
-        audioController.PlayAlien();
+        audioController.PlayBackground();
         audioSource.Stop();
         audioSource.clip = fixedClip;
         audioSource.loop = false;
