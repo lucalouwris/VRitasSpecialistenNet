@@ -29,6 +29,7 @@ public class ComputerUI : MonoBehaviour
     [SerializeField] float volume = 0.5f;
     float interval = 0;
     bool active = false;
+    [HideInInspector] public bool completed = false;
 
     private void Start()
     {
@@ -48,13 +49,13 @@ public class ComputerUI : MonoBehaviour
             receiveNotif();
         }
     }
-    public void TurnOn()
+    public void TurnOn() // Turn on computer.
     {
         offState.SetActive(false);
         onState.SetActive(true);
         active = true;
     }
-    public void Wipe()
+    public void Wipe() // Clear the screen and complete the minigame.
     {
         active = false;
         foreach (GameObject message in messages)
@@ -62,6 +63,7 @@ public class ComputerUI : MonoBehaviour
             Destroy(message.gameObject);
         }
         messages.Clear();
+        completed = true;
     }
     void receiveNotif()
     {

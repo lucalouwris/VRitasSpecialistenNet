@@ -18,7 +18,7 @@ public class MeshAfterAnimation : MonoBehaviour
             Debug.Log(transform.rotation.eulerAngles.x);
             triggered = true;
             wait();
-            meshUpdater.UpdateAllMeshes();
+            //meshUpdater.UpdateAllMeshes();
             Debug.Log("UpdateMesh");
         }
     }

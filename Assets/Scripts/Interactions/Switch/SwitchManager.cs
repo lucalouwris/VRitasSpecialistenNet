@@ -16,7 +16,6 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private GameObject ObjectCheck;
     private bool taskCompleted;
     [SerializeField] private Animator ObjectAnimator;
-    [SerializeField] private string animatorTrigger;
     public bool shouldUseAnimation;
     
     //Audio data
@@ -24,7 +23,11 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private AudioSource lever;
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource audioSource;
-    private bool leverDown =false;
+    private bool leverDown = false;
+    private bool hatchDown = false;
+
+    [SerializeField] ComputerUI minigameTwo;
+    [SerializeField] string leverType;
 
     private void Update()
     {
@@ -52,21 +55,42 @@ public class SwitchManager : MonoBehaviour
         else
             taskCompleted = true;
         // If its completed, run task and make sure it doesn't spring back. Else it should spring back to make clear it didn't work.
-        if (taskCompleted)
+        if (taskCompleted && leverType != "Ship Hatch")
         {
             switchJoint.useSpring = false;
-            TriggerObject();
+            TriggerGenerator();
+        }
+        else if(leverType == "Ship Hatch")
+        {
+            switchJoint.useSpring = true;
+            TriggerHatch();
         }
         else
             switchJoint.useSpring = true;
     }
 
-    private void TriggerObject()
+    private void TriggerGenerator()
     {
-        if (shouldUseAnimation) // If there is an animation. Run it.
-            ObjectAnimator.SetTrigger(animatorTrigger);
-        else // If it is the generator.
-           GetComponent<GeneratorStartup>().activateGenerator();
+        GetComponent<GeneratorStartup>().activateGenerator();
+
+        if (clip != null) // If there is a sound to be played.
+            audioSource.PlayOneShot(clip);
+        enabled = false;
+    }
+    private void TriggerHatch()
+    {
+        if (!hatchDown)
+        {
+            ObjectAnimator.ResetTrigger("DoorCloses");
+            ObjectAnimator.SetTrigger("DoorOpens");
+            hatchDown = true;
+        }
+        else if(hatchDown && minigameTwo.completed)
+        {
+            ObjectAnimator.ResetTrigger("DoorOpens");
+            ObjectAnimator.SetTrigger("DoorCloses");
+            hatchDown = false;
+        }
 
         if (clip != null) // If there is a sound to be played.
             audioSource.PlayOneShot(clip);
