@@ -84,15 +84,14 @@ public class SwitchManager : MonoBehaviour
             ObjectAnimator.ResetTrigger("DoorCloses");
             ObjectAnimator.SetTrigger("DoorOpens");
             hatchDown = true;
+            audioSource.PlayOneShot(clip);
         }
         else if(hatchDown && minigameTwo.completed)
         {
             ObjectAnimator.ResetTrigger("DoorOpens");
             ObjectAnimator.SetTrigger("DoorCloses");
             hatchDown = false;
-        }
-
-        if (clip != null) // If there is a sound to be played.
             audioSource.PlayOneShot(clip);
+        }
     }
 }
