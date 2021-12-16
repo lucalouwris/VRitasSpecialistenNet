@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -9,6 +6,9 @@ public class MovementController : MonoBehaviour
     [SerializeField] Transform PointerTarget;
     [SerializeField] Rig LookAt;
     [SerializeField] Rig PointAt;
+    [SerializeField] float transition = 0.01f;
+    private bool LookShouldIncrease = true;
+    private bool PointShouldIncrease = false;
 
     public void ChangePoint(Vector3 newPosition)
     {
@@ -16,57 +16,53 @@ public class MovementController : MonoBehaviour
         PointerTarget.position = newPosition;
     }
 
-    public void ResetPoint(Rig rig)
+    public void ResetRigWeight(Rig rig)
     {
-        //Sets the weight of the pointing to 0 the arm just runs the animation
-        rig.weight = 0f;
-        // WeightedTransformArray weightedTransforms = multiAimConstraintHand.sourceObjects;
-        // WeightedTransform weighted = weightedTransforms[0];
-        // weighted.weight = 0f;
-        // weightedTransforms[0] = weighted;
-        // multiAimConstraintHand.sourceObjects = weightedTransforms;
+        //Sets the weight of the pointing to 0 the arm just runs the animation        
+        if (rig == PointAt)
+        {
+            PointShouldIncrease = false;           
+        } else if (rig == LookAt)
+        {
+            LookShouldIncrease = false;
+        }
     }
 
-    public void AddPoint(Rig rig)
+    public void SetRigWeight(Rig rig)
     {
-        //Sets the weight of the pointing to 1
-        rig.weight = 1f;
-        // WeightedTransformArray weightedTransforms = multiAimConstraintHand.sourceObjects;
-        // WeightedTransform weighted = weightedTransforms[0];
-        // weighted.weight = 1f;
-        // weightedTransforms[0] = weighted;
-        // multiAimConstraintHand.sourceObjects = weightedTransforms;
+        //Sets the weight of the pointing to 1        
+        if(rig == PointAt)
+        {
+            PointShouldIncrease = true;
+        } else if (rig == LookAt)
+        {
+            LookShouldIncrease = true;
+        }
     }
 
-    // public void changeLook(float weight)
-    // {
-    //     if(weight > 1f)
-    //     {
-    //         weight = 1f;
-    //     } else if (weight<0f)
-    //     {
-    //         weight = 0f;
-    //     }
-    //
-    //     //Changing the weight of Brian looking at the player
-    //     WeightedTransformArray weightedTransformsHead = multiAimConstraintHead.sourceObjects;
-    //     WeightedTransform weightedHead = weightedTransformsHead[0];
-    //     weightedHead.weight = weight;
-    //     weightedTransformsHead[0] = weightedHead;
-    //     multiAimConstraintHead.sourceObjects = weightedTransformsHead;
-    //
-    //     //Change the weight of the weight of the body as a percentage of the weight of the head
-    //     float bodyweight = weight * bodyWeightFactor;
-    //
-    //     WeightedTransformArray weightedTransformsBody = multiAimConstraintBody.sourceObjects;
-    //     WeightedTransform weightedBody = weightedTransformsBody[0];
-    //     weightedBody.weight = bodyweight;
-    //     weightedTransformsBody[0] = weightedBody;
-    //     multiAimConstraintBody.sourceObjects = weightedTransformsBody;
-    // }
+    private void Update()
+    {
+        if (PointShouldIncrease && PointAt.weight < 1)
+        {
+            PointAt.weight += transition*Time.deltaTime;
+        } else if (!PointShouldIncrease && PointAt.weight > 0)
+        {
+            PointAt.weight -= transition * Time.deltaTime;
+        }
+
+
+        if (LookShouldIncrease && LookAt.weight < 1)
+        {
+            LookAt.weight += transition * Time.deltaTime;
+        }
+        else if (!LookShouldIncrease && LookAt.weight > 0)
+        {
+            LookAt.weight -= transition * Time.deltaTime;
+        }
+    }
 
     // Update is called once per frame
-    
+
     [ContextMenu("Change Point")]
     void RandomPoint()
     {
@@ -74,26 +70,26 @@ public class MovementController : MonoBehaviour
     }
 
     [ContextMenu("Set Pointing")]
-    void SetPoint()
+    void Point()
     {
-        AddPoint(PointAt);
+        SetRigWeight(PointAt);
     }
 
     [ContextMenu("Clear Pointing")]
     void RemovePoint()
     {
-        ResetPoint(PointAt);
+        ResetRigWeight(PointAt);
     }
 
     [ContextMenu("Set looking")]
-    void ModifyPoint()
+    void Look()
     {
-        AddPoint(LookAt);
+        SetRigWeight(LookAt);
     }
     
     [ContextMenu("Clear looking")]
     void RemoveLook()
     {
-        ResetPoint(LookAt);
+        ResetRigWeight(LookAt);
     }
 }
