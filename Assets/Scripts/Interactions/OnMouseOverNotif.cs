@@ -16,6 +16,7 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private DialogueObject dialogueObject;
     [SerializeField] private StateMachine brian;
     [SerializeField] private BrianSays speaker;
+    [SerializeField] private AudioController audioController;
 
     [SerializeField] private SpawningManager spawningManager;
 
@@ -31,6 +32,7 @@ public class OnMouseOverNotif : MonoBehaviour
             ui.Wipe();
             brian.SwitchState(brian.States[1]);
             this.speaker.playThis = dialogueObject;
+            audioController.PlayAlien();
         }
         else if (gameObject.name == "OnButton") // The button to turn the computer on.
         {
