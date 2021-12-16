@@ -55,12 +55,12 @@ public class SwitchManager : MonoBehaviour
         else
             taskCompleted = true;
         // If its completed, run task and make sure it doesn't spring back. Else it should spring back to make clear it didn't work.
-        if (taskCompleted && leverType != "Ship Hatch")
+        if (taskCompleted && leverType == "Generator")
         {
             switchJoint.useSpring = false;
             TriggerGenerator();
         }
-        else if(leverType == "Ship Hatch")
+        else if (leverType == "Ship Hatch" && minigameTwo != null)
         {
             switchJoint.useSpring = true;
             TriggerHatch();
