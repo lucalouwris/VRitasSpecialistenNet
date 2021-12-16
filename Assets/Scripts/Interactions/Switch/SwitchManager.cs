@@ -94,6 +94,5 @@ public class SwitchManager : MonoBehaviour
 
         if (clip != null) // If there is a sound to be played.
             audioSource.PlayOneShot(clip);
-        enabled = false;
     }
 }
