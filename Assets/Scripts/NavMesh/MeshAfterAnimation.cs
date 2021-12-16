@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 
 public class MeshAfterAnimation : MonoBehaviour
 {
-    [SerializeField] private float delay = .5f;
+    [SerializeField] private float delay = 3f;
     [SerializeField] private UpdateNavMesh meshUpdater;
 
     private bool triggered = false;
@@ -25,6 +25,6 @@ public class MeshAfterAnimation : MonoBehaviour
 
     IEnumerator wait()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delay + 1f);
     }
 }
