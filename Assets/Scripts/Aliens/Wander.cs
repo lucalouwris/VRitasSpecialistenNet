@@ -21,7 +21,7 @@ public class Wander : MonoBehaviour
     private NavMeshAgent agent;
     private float timer;
     bool isLooking = false;
-    float speed = 1.0f;
+    float speed = 2.0f;
 
     // Use this for initialization
     void OnEnable()
