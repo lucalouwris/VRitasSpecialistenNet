@@ -12,7 +12,8 @@ public class EndingTransition : MonoBehaviour
 
     public void Fly()
     {
-        StartCoroutine(DoFadeOutTakeOff());
+        TakeOffObject.gameObject.SetActive(false);
+        StartCoroutine(DoFadeInCredits());
         player.transform.SetParent(this.transform);
         anim.SetTrigger("FlyTheShip");
     }
@@ -28,18 +29,5 @@ public class EndingTransition : MonoBehaviour
             creditsObject.alpha = Mathf.Lerp(0f, 1f, counter / fadeDuration);
             yield return null;
         }
-    }
-    public IEnumerator DoFadeOutTakeOff() // Fade the new menu in by activating the menu and increasing the alpha value of the canvas.
-    {
-        float counter = 0f;
-
-        while (counter < fadeDuration)
-        {
-            counter += Time.deltaTime;
-            TakeOffObject.alpha = Mathf.Lerp(1f, 0f, (counter / fadeDuration) / 2f);
-            yield return null;
-        }
-        TakeOffObject.gameObject.SetActive(false);
-        StartCoroutine(DoFadeInCredits());
     }
 }
