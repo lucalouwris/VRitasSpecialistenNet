@@ -17,6 +17,7 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private StateMachine brian;
     [SerializeField] private BrianSays speaker;
     [SerializeField] private AudioController audioController;
+    [SerializeField] private EndingTransition end;
 
     [SerializeField] private GameObject secondState;
     [SerializeField] private GameObject thirdState;
@@ -45,6 +46,8 @@ public class OnMouseOverNotif : MonoBehaviour
             this.spawningManager.spawnAliens(countOfAliens); // Spawn the aliens for minigame 3
             this.renderNewStates();
         }
+        else if (gameObject.name == "TakeOff") 
+            end.Fly();
     }
 
     public void renderNewStates()
