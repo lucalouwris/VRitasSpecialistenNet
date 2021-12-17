@@ -8,23 +8,13 @@ public class EndingTransition : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] CanvasGroup creditsObject;
     [SerializeField] CanvasGroup TakeOffObject;
-    bool isFlying = false;
     public float fadeDuration = 2.5f;
 
-    private void Update()
-    {
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && isFlying)
-        {  //If normalizedTime is 0 to 1 means animation is playing, if greater than 1 means finished
-            StartCoroutine(DoFadeInCredits());
-            isFlying = false;
-        }
-    }
     public void Fly()
     {
         StartCoroutine(DoFadeOutTakeOff());
         player.transform.SetParent(this.transform);
         anim.SetTrigger("FlyTheShip");
-        isFlying = true;
     }
 
     public IEnumerator DoFadeInCredits() // Fade the new menu in by activating the menu and increasing the alpha value of the canvas.
@@ -46,9 +36,10 @@ public class EndingTransition : MonoBehaviour
         while (counter < fadeDuration)
         {
             counter += Time.deltaTime;
-            TakeOffObject.alpha = Mathf.Lerp(1f, 0f, counter / fadeDuration);
+            TakeOffObject.alpha = Mathf.Lerp(1f, 0f, (counter / fadeDuration) / 2f);
             yield return null;
         }
         TakeOffObject.gameObject.SetActive(false);
+        StartCoroutine(DoFadeInCredits());
     }
 }

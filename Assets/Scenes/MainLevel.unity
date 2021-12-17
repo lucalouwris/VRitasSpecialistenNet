@@ -14900,7 +14900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 919132147814509860}
   player: {fileID: 1120318038}
-  creditsObject: {fileID: 679086727}
+  creditsObject: {fileID: 679086733}
   TakeOffObject: {fileID: 1991237163}
   fadeDuration: 2.5
 --- !u!23 &1007210427607631627
