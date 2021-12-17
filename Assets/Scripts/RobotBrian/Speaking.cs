@@ -29,13 +29,14 @@ public class Speaking : BaseState
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     public override void Update()
     {
-        if (Vector3.Distance(transform.position, goalPos) < 1f)
+        //Debug.Log(Vector3.Distance(transform.position, 5f));
+        if (Vector3.Distance(transform.position, goalPos) < 5f)
         {
             transform.LookAt(playerTransform);
             SpeakLine();
         }
 
-        if (Vector3.Distance(playerTransform.position, goalPos) > 10)
+        if (Vector3.Distance(playerTransform.position, transform.position) > distanceFromPlayer)
         {
             goalPos = GetRandomPosition();
             navAgent.SetDestination(goalPos);
@@ -102,6 +103,6 @@ public class Speaking : BaseState
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(tempPos, .5f);
+        Gizmos.DrawSphere(goalPos, .5f);
     }
 }
