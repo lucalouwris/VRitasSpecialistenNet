@@ -18,6 +18,9 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private BrianSays speaker;
     [SerializeField] private AudioController audioController;
 
+    [SerializeField] private GameObject secondState;
+    [SerializeField] private GameObject thirdState;
+
     [SerializeField] private SpawningManager spawningManager;
 
     [SerializeField] private int countOfAliens = 1;
@@ -40,6 +43,13 @@ public class OnMouseOverNotif : MonoBehaviour
             brian.SwitchState(brian.States[1]);
             this.speaker.playThis = dialogueObject;
             this.spawningManager.spawnAliens(countOfAliens); // Spawn the aliens for minigame 3
+            this.renderNewStates();
         }
+    }
+
+    public void renderNewStates()
+    {
+        secondState.SetActive(false);
+        thirdState.SetActive(true);
     }
 }

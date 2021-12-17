@@ -49,7 +49,7 @@ public class Speaking : BaseState
             canvasObject.SetActive(true);
         }
     }
-    
+    Vector3 tempPos;
     private Vector3 GetRandomPosition()
     {
         RaycastHit ForwardHit;
@@ -63,6 +63,7 @@ public class Speaking : BaseState
         if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
         {
             wantedPos += direction * (ForwardHit.distance * .75f);
+            tempPos = wantedPos;
             wantedPos = CheckDown(wantedPos);
         }
         else
@@ -77,7 +78,6 @@ public class Speaking : BaseState
     private Vector3 CheckDown(Vector3 checkPos)
     {
         RaycastHit downHit;
-        checkPos.y -= 0.1f;
         if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
         {
             return SampleHit(downHit.point);
@@ -102,6 +102,6 @@ public class Speaking : BaseState
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(goalPos, .5f);
+        Gizmos.DrawSphere(tempPos, .5f);
     }
 }

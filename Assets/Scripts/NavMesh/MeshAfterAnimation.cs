@@ -16,15 +16,17 @@ public class MeshAfterAnimation : MonoBehaviour
         if (transform.rotation.eulerAngles.x < 70 && !triggered)
         {
             Debug.Log(transform.rotation.eulerAngles.x);
-            triggered = true;
-            wait();
-            //meshUpdater.UpdateAllMeshes();
-            Debug.Log("UpdateMesh");
+            StartCoroutine("wait");
+            meshUpdater.UpdateAllMeshes();
         }
     }
 
     IEnumerator wait()
     {
+        triggered = true;
         yield return new WaitForSeconds(delay);
+        Debug.Log("UpdateMesh");
+
+        yield return null;
     }
 }
