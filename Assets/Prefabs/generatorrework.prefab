@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737102194760048757}
-  m_LocalRotation: {x: -0, y: 0.9971035, z: -0, w: 0.076056965}
+  m_LocalRotation: {x: 0, y: 0.9971034, z: 0, w: 0.07605786}
   m_LocalPosition: {x: -8.533426, y: 0.23975062, z: 15.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -178,7 +178,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 5363551363077031998, guid: ef6457b620d75064a9ae895882fc7cb0, type: 2}
   m_audioClip: {fileID: 8300000, guid: 68b88bee430154a61a243e5a897935e4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.437
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -332,13 +332,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6874116591355449487}
-  m_LocalRotation: {x: 0.017978555, y: -0.0000000074505797, z: -3.4924594e-10, w: 0.9998384}
-  m_LocalPosition: {x: 2.296006, y: -0.5841133, z: 0.45501816}
+  m_LocalRotation: {x: 0.01324353, y: -0.00001298636, z: -0.0007218448, w: 0.999912}
+  m_LocalPosition: {x: 2.2951646, y: -0.58406454, z: 0.46054304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8004378673207848697}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 2.06, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.518, y: -0.003, z: -0.083}
 --- !u!33 &6336552114236483687
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 707049470694094278, guid: 21833a067a4e140bb8d2c5099282aec0, type: 3}
-  - {fileID: 2100000, guid: 1c699177737184fb68fa12d78f045eaa, type: 2}
+  - {fileID: 2100000, guid: d95a3d01bb9314b0c9806cd329cc1fbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -436,8 +436,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.32695532, y: 0.06953651, z: 0.09231663}
-  m_Center: {x: 2.4481804, y: 0.57799864, z: 0.46184587}
+  m_Size: {x: 0.4753602, y: 0.059526563, z: 0.10668229}
+  m_Center: {x: 2.5223887, y: 0.57300115, z: 0.46903825}
 --- !u!65 &8004378673207848693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -449,8 +449,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3338759, y: 0.96718955, z: 1}
-  m_Center: {x: 2.4095488, y: -0.016405225, z: 0}
+  m_Size: {x: 0.37668642, y: 0.96718955, z: 0.34050494}
+  m_Center: {x: 2.430965, y: -0.016405225, z: 0.47175893}
 --- !u!114 &8004378673207848692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,8 +466,8 @@ MonoBehaviour:
   tagToCheck: correctTool
   objectRenderer: {fileID: 5832317894442483151}
   wantedMaterial: {fileID: 2100000, guid: 70c99b8064c324d008b18fa6be75f473, type: 2}
-  audioSource: {fileID: 0}
-  snapSound: {fileID: 0}
+  audioSource: {fileID: 4279921985532468793}
+  snapSound: {fileID: 8300000, guid: d5e5fb395e6cf4b9ea71d39934107b59, type: 3}
 --- !u!114 &8004378673207848699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,7 +731,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -9.1239605, y: 0.20920224, z: 13.67782}
+  m_ConnectedAnchor: {x: -6.1857023, y: 0.9594516, z: 13.758676}
   m_UseSpring: 0
   m_Spring:
     spring: 1
@@ -996,12 +996,13 @@ MonoBehaviour:
   ShouldCheckObject: 1
   ObjectCheck: {fileID: 8004378673207848696}
   ObjectAnimator: {fileID: 0}
-  animatorTrigger: DoorOpens
   shouldUseAnimation: 0
   leverClick: {fileID: 8300000, guid: 1700a8d3638c5d44db5f3e93bf2a2c5e, type: 3}
   lever: {fileID: 2186009923717216264}
-  clip: {fileID: 0}
-  audioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: bf84de31768a44a1eb081fde3ea425a9, type: 3}
+  audioSource: {fileID: 4279921985532468793}
+  minigameTwo: {fileID: 0}
+  leverType: Generator
 --- !u!114 &8004378674942453286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1024,7 @@ MonoBehaviour:
   firstStates: {fileID: 0}
   secondStates: {fileID: 0}
   audioController: {fileID: 0}
-  dialogueObject: {fileID: 11400000, guid: fb0d179fa269d4530867b7701b70d08f, type: 2}
+  dialogueObject: {fileID: 11400000, guid: 15d5c884214d2fc4a8c6cbd296d2e4bc, type: 2}
   brian: {fileID: 0}
   speaker: {fileID: 0}
   computerButton: {fileID: 0}
