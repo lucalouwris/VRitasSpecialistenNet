@@ -14472,7 +14472,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 381730712, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 381730712, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_Center.y
@@ -14496,7 +14496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279794, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: speedModifier
-      value: 4
+      value: 4.25
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279795, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_RootOrder

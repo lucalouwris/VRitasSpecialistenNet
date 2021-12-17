@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     /// <returns></returns>
     private bool Grounded()
     {
-        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
+        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .05f;
         return Physics.SphereCast(checkGroundedPos, 0.2f, Vector3.down, out RaycastHit hit, cCollider.height + 0.01f, groundMask);
     }
 }
