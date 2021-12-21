@@ -80,11 +80,6 @@ public class ReadHeartrate : MonoBehaviour
         csv += $"Average,{average}\n";
         csv += $"Peak,{peak}\n";
 
-        average = average / heartRate.Count;
-
-        csv += $"Average,{average}\n";
-        csv += $"Peak,{peak}\n";
-
         string date = DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute;
         File.WriteAllText(Application.dataPath+pathToCsv+$"heartrateData{date}.csv", csv);
     }

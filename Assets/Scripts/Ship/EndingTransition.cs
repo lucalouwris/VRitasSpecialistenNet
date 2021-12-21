@@ -5,21 +5,29 @@ using UnityEngine;
 public class EndingTransition : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-    bool isFlying = false;
-    private void Update()
-    {
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && isFlying)
-        {  //If normalizedTime is 0 to 1 means animation is playing, if greater than 1 means finished
-            CreditsTransition();
-        }
-    }
+    [SerializeField] GameObject player;
+    [SerializeField] CanvasGroup creditsObject;
+    [SerializeField] CanvasGroup TakeOffObject;
+    public float fadeDuration = 2.5f;
+
     public void Fly()
     {
+        TakeOffObject.gameObject.SetActive(false);
+        StartCoroutine(DoFadeInCredits());
+        player.transform.SetParent(this.transform);
         anim.SetTrigger("FlyTheShip");
-        isFlying = true;
     }
-    public void CreditsTransition()
-    {
 
+    public IEnumerator DoFadeInCredits() // Fade the new menu in by activating the menu and increasing the alpha value of the canvas.
+    {
+        float counter = 0f;
+        creditsObject.gameObject.SetActive(true);
+
+        while (counter < fadeDuration)
+        {
+            counter += Time.deltaTime;
+            creditsObject.alpha = Mathf.Lerp(0f, 1f, counter / fadeDuration);
+            yield return null;
+        }
     }
 }

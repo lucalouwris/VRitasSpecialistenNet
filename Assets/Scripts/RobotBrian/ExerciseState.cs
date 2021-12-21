@@ -76,7 +76,7 @@ public class ExerciseState : BaseState
             navAgent.SetDestination(goalPos);
         }
 
-        if (Vector3.Distance(transform.position, goalPos) < 1f)
+        if (Vector3.Distance(transform.position, goalPos) < 5f)
         {
             transform.LookAt(playerTransform);
             if (!startedExercise)

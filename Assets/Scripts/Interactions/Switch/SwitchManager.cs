@@ -14,6 +14,7 @@ public class SwitchManager : MonoBehaviour
     [SerializeField] private HingeJoint switchJoint;
     [SerializeField] private bool ShouldCheckObject;
     [SerializeField] private GameObject ObjectCheck;
+    [SerializeField] private GameObject TakeOffCanvas;
     private bool taskCompleted;
     [SerializeField] private Animator ObjectAnimator;
     public bool shouldUseAnimation;
@@ -84,16 +85,15 @@ public class SwitchManager : MonoBehaviour
             ObjectAnimator.ResetTrigger("DoorCloses");
             ObjectAnimator.SetTrigger("DoorOpens");
             hatchDown = true;
+            audioSource.PlayOneShot(clip);
         }
         else if(hatchDown && minigameTwo.completed)
         {
+            TakeOffCanvas.SetActive(true);
             ObjectAnimator.ResetTrigger("DoorOpens");
             ObjectAnimator.SetTrigger("DoorCloses");
             hatchDown = false;
-        }
-
-        if (clip != null) // If there is a sound to be played.
             audioSource.PlayOneShot(clip);
-        enabled = false;
+        }
     }
 }
