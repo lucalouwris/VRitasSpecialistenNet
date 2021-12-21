@@ -52,7 +52,7 @@ public class ReadHeartrate : MonoBehaviour
             time.Add((int)Time.time);
             velocity.Add(player.velocity.magnitude);
             heartRate.Add(split[1]);
-            gameStates.Add(states.name);
+            gameStates.Add(states.getGameStates());
             Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
             
             return localData;
