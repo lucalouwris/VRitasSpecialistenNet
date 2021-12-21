@@ -3,20 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - correctTool
+  - Lever
+  - brokenPiece
+  - breathingExerciseArea
+  - offButton
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Body
   - Water
   - UI
-  - Grab Ignore Ray
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grab
+  - Hands
+  - IgnoreBody
+  - BareGround
+  - Floor
+  - Exterior
   - 
   - 
   - 

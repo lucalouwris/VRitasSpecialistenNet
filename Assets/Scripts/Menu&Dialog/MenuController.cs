@@ -1,3 +1,8 @@
+/*
+    MenuController creates a smooth fading transition between two menus. 
+    In the first sprint it is used to transition between the main menu which contained a start and exit button and the environment menu which allows the player to transition to an environment that contains a specific activity. 
+    The transition happens with two Coroutines that first fades out the CanvasGroup by reducing the alpha of the element and then deactivates it. The second Coroutine enables the other CanvasGroup and then increases the alpha.
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +34,7 @@ public class MenuController : MonoBehaviour
     }
     void CheckMenus()
     {
-        for (int i = 0; i < Menu.Length; i++)
+        for (int i = 0; i < Menu.Length; i++) // Se the correct menu items hidden or visible
         {
             var canvGroup = Menu[i].Menu.GetComponent<CanvasGroup>();
             bool active = Menu[i].active;
@@ -41,7 +46,7 @@ public class MenuController : MonoBehaviour
     {
         
     }
-    public void Next()
+    public void Next() // The menu it is transitioning to.
     {
         if (numMenu <= Menu.Length)
         {
@@ -52,7 +57,7 @@ public class MenuController : MonoBehaviour
                 next.SetActive(false);
         }
     }
-    public void Previous()
+    public void Previous() // The previous menu it is transitioning from.
     {
         if(numMenu > 0)
         {
@@ -63,21 +68,18 @@ public class MenuController : MonoBehaviour
         if(numMenu == 0)
             prev.SetActive(false);
     }
-    public void ExitGame()
+    public void ExitGame() // Exit the Game.
     {
-        //if (Application.isEditor)
-          //  UnityEditor.EditorApplication.isPlaying = false;
-        //else
             Application.Quit();
-    } 
+    }
 
-    public void Fade(Menus menuClose, Menus menuOpen)
+    public void Fade(Menus menuClose, Menus menuOpen) // Start the fade transition
     {
         var canvGroupClose = menuClose.Menu.GetComponent<CanvasGroup>();
         StartCoroutine(DoFadeOut(canvGroupClose, canvGroupClose.alpha, menuClose.active ? 1 : 0, menuClose, menuOpen));
     }
 
-    public IEnumerator DoFadeOut(CanvasGroup canvGroup, float start, float end, Menus menuClose, Menus menuOpen)
+    public IEnumerator DoFadeOut(CanvasGroup canvGroup, float start, float end, Menus menuClose, Menus menuOpen) // Fade the previous menu out by reducing the alpha value of the canvas and then deactivating it.
     {
         float counter = 0f;
         while (counter < fadeDuration)
@@ -92,7 +94,7 @@ public class MenuController : MonoBehaviour
         var canvGroupOpen = menuOpen.Menu.GetComponent<CanvasGroup>();
         StartCoroutine(DoFadeIn(canvGroupOpen, canvGroupOpen.alpha, menuOpen.active ? 1 : 0, menuOpen));
     }
-    public IEnumerator DoFadeIn(CanvasGroup canvGroup, float start, float end, Menus menuOpen)
+    public IEnumerator DoFadeIn(CanvasGroup canvGroup, float start, float end, Menus menuOpen) // Fade the new menu in by activating the menu and increasing the alpha value of the canvas.
     {
         float counter = 0f;
         menuOpen.Menu.SetActive(menuOpen.active);

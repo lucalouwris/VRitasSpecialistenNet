@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials/Arrow.mat.meta
+guid: 41bebe67a121bd74497cb4cbc48ad0ae
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+=======
+guid: fb0d179fa269d4530867b7701b70d08f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>> origin/develop:Assets/DialogueData/minigame-two/introduction.asset.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
