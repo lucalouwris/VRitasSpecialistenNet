@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class BrianSays : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip sound;
-
+    public static Action<string> brianSpeaking;
 
 
     private TypeWriter typeWriter;
@@ -29,6 +30,7 @@ public class BrianSays : MonoBehaviour
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
         ShowDialogue(playThis);
+        brianSpeaking.Invoke(playThis.name);
     }
 
 
