@@ -1,26 +1,33 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameStates : MonoBehaviour
 {
-    private GameStateEnum state = GameStateEnum.Introduction;
+    //private GameStateEnum state = GameStateEnum.Introduction;
+    [SerializeField] public UnityEvent<string> state = new UnityEvent<string>();
 
-    public GameStates(GameStateEnum state)
-    {
-        this.state = state;
-    }
+    //public GameStates(GameStateEnum state)
+    //{
+    //    this.state = state;
+    //}
 
-    public GameStateEnum getGameStates()
-    {
-        return state;
-    }
+    //public GameStateEnum getGameStates()
+    //{
+    //    return state;
+    //}
 
-    public void setGameState(GameStateEnum newState)
+    //public void setGameState(GameStateEnum newState)
+    //{
+    //    state = newState;
+    //}
+
+    public void gameState(string newState)
     {
-        state = newState;
+        state.Invoke(newState);
     }
 }
 
-public enum GameStateEnum
+/*public enum GameStateEnum
 {
     Introduction,
     MiniGameOne,
@@ -29,3 +36,4 @@ public enum GameStateEnum
     Breathing
 }
 
+*/

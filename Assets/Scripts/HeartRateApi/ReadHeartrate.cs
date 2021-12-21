@@ -19,7 +19,7 @@ public class ReadHeartrate : MonoBehaviour
     private List<int> time = new List<int>();
     private List<float> velocity = new List<float>();
     private List<string> heartRate = new List<string>();
-    private List<GameStateEnum> gameStates = new List<GameStateEnum>();
+    private List<string> gameStates = new List<string>();
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class ReadHeartrate : MonoBehaviour
             time.Add((int)Time.time);
             velocity.Add(player.velocity.magnitude);
             heartRate.Add(split[1]);
-            gameStates.Add(states.getGameStates());
+            gameStates.Add(states.name);
             Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
             
             return localData;
