@@ -51,9 +51,13 @@ public class BrianSays : MonoBehaviour
 
 
             yield return null;
+
+            if(this.typeWriter.isRunning)
+            {
             yield return new WaitUntil(() => this.isPressedRight == true && this.isPressedLeft == true);
             this.isPressedRight = false;
             this.isPressedLeft = false;
+            }
         }
 
         this.CloseDialogeBox();
@@ -84,12 +88,9 @@ public class BrianSays : MonoBehaviour
         while (this.typeWriter.isRunning)
         {
             yield return null;
-
-            if(this.isPressedLeft && this.isPressedRight)
-            {
-                this.typeWriter.Stop();
-            }
         }
+
+        this.typeWriter.Stop();
     }
 
     public void CloseDialogeBox()
