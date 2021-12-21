@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 15d5c884214d2fc4a8c6cbd296d2e4bc, type: 2}
+  dialogueObject: {fileID: 11400000, guid: 5364a54ac7f7048c6ac7edef3bd092df, type: 2}
   brian: {fileID: 0}
   speaker: {fileID: 0}
   position: {x: 0, y: 0, z: 0}
