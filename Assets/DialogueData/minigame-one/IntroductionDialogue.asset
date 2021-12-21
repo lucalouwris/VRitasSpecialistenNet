@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - 'Hello Pilot! My name is Brian. Continue this conversation by pressing the red
-    Button! '
+    Buttons! '
   - 'Great Job! Remember to always press that trigger after you have talked to me! '
   - 'Let''s get you moving! Press and hold the blue button. Then perform a walking
     motion without moving your feet! '

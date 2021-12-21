@@ -13,7 +13,7 @@ using UnityEngine.AI;
 public class Wander : MonoBehaviour
 {
     [SerializeField] float wanderRadius;
-    [SerializeField] float wanderTimer;
+    float wanderTimer;
     [SerializeField] float lookingDistance;
     GameObject player;
 
@@ -21,12 +21,14 @@ public class Wander : MonoBehaviour
     private NavMeshAgent agent;
     private float timer;
     bool isLooking = false;
+    float speed = 2.0f;
 
     // Use this for initialization
     void OnEnable()
     {
         player = GameObject.Find("XR Rig");
         agent = GetComponent<NavMeshAgent>();
+        wanderTimer = Random.Range(2,6);
         timer = wanderTimer;
     }
 
@@ -45,12 +47,13 @@ public class Wander : MonoBehaviour
                 isLooking = true;
             }
             Vector3 relativePos = player.transform.position - transform.position;
-            Quaternion LookAtRotation = Quaternion.LookRotation(relativePos);
-            Quaternion LookAtRotationY = Quaternion.Euler(transform.rotation.eulerAngles.x, LookAtRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-            transform.rotation = LookAtRotationY;
+            float singleStep = speed * Time.deltaTime;
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, relativePos, singleStep, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
         }
         else if (Vector3.Distance(transform.position, player.transform.position) > lookingDistance && timer >= wanderTimer) // If the player is not in range of the alien. Walk around.
         {
+            wanderTimer = Random.Range(2,6);
             isLooking = false;
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);

@@ -20,7 +20,7 @@ public class DialogueActivator : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Lever") || other.CompareTag("brokenPiece"))
         {
             // If tag of the object entering the trigger collision has is true for either.
-            brian.transform.position = position; // Move Brian to the correct dialogue position.
+            //brian.transform.position = position; // Move Brian to the correct dialogue position.
             Debug.Log("switchState");
             brian.SwitchState(brian.States[1]); // Brian switches to the dialogue state.
             if (shouldDisable) // Only do this to disable the gameObject that contains the trigger collider.
