@@ -106,5 +106,6 @@ public class BrianSays : MonoBehaviour
     {
         typeWriter.Stop();
         stateMachine.SwitchState(stateMachine.States[0]);
+        brianSpeaking.Invoke("Walkin");
     }
 }
