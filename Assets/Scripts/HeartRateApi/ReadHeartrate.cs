@@ -41,19 +41,10 @@ public class ReadHeartrate : MonoBehaviour
             var response = await client.SendAsync(request);
             string localData = await response.Content.ReadAsStringAsync();
 
-            Debug.Log(localData);
-            
-            localData = localData.Replace("{\"measured_at\":", "");
-            localData = localData.Replace("\"data\":{\"heart_rate\":", "");
-            localData = localData.Replace("}}", "");
-
-            string[] split = localData.Split(',');
-            
             time.Add((int)Time.time);
             velocity.Add(player.velocity.magnitude);
-            heartRate.Add(split[1]);
+            heartRate.Add(localData);
             gameStates.Add(states.getGameStates());
-            Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
             
             return localData;
         }
