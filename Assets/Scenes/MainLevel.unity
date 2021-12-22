@@ -14930,7 +14930,7 @@ PrefabInstance:
       objectReference: {fileID: 832272130}
     - target: {fileID: 8654318760002279806, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: speedModifier
-      value: 2.45
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279806, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: leftController
@@ -14954,7 +14954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279807, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_UseGravity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8654318760002279807, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_Constraints

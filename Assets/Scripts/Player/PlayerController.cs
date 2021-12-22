@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         FollowHeadset();
 
         // If grounded then don't use gravity on player.
-        //playerBody.useGravity = !isGrounded();
+         playerBody.useGravity = !isGrounded();
 
         // Calculate distance travelled of left controller.
         leftController.previousPosition = leftController.transform.position;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
             // If either of the controllers has their grip button pressed. Use the distance travelled to move.
             Vector3 direction = Camera.main.transform.forward;
             slopeMoveDirection = Vector3.ProjectOnPlane(direction, slopeHit.normal);
-            direction.y = 0;
+            //direction.y = 0;
 
             float moveDistance = leftController.c_Movement + rightController.c_Movement;
 
@@ -73,13 +73,13 @@ public class PlayerController : MonoBehaviour
     }
     private bool isGrounded()
     {
-        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .05f;
-        return Physics.Raycast(checkGroundedPos, Vector3.down, out RaycastHit hit, cCollider.height + 0.01f, groundMask);
+        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
+        return Physics.CheckSphere(checkGroundedPos, cCollider.height + 0.01f, groundMask);
     }
 
     private bool OnSlope()
     {
-        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .05f;
+        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
         if (Physics.Raycast(checkGroundedPos, Vector3.down, out slopeHit, cCollider.height + 0.01f, groundMask))
         {
             if (slopeHit.normal != Vector3.up)
