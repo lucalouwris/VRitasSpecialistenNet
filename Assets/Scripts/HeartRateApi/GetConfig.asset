@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191e7ec032392984aae79fdcb1085b6b, type: 3}
   m_Name: GetConfig
   m_EditorClassIdentifier: 
-  Url: https://dev.pulsoid.net/api/v1/data/heart_rate/latest
+  Url: https://dev.pulsoid.net/api/v1/data/heart_rate/latest?response_mode=text_plain_only_heart_rate
   Token: a6fcd049-f95b-40b5-84ca-70e5cec585ee

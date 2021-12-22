@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class BrianSays : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip sound;
-
+    public static Action<string> brianSpeaking;
 
 
     private TypeWriter typeWriter;
@@ -29,6 +30,7 @@ public class BrianSays : MonoBehaviour
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
         ShowDialogue(playThis);
+        brianSpeaking.Invoke(playThis.name);
     }
 
 
@@ -50,10 +52,14 @@ public class BrianSays : MonoBehaviour
             this.textlabel.text = dialogue;
 
 
+
+            if(!this.typeWriter.isRunning)
+            {
             yield return null;
             yield return new WaitUntil(() => this.isPressedRight == true && this.isPressedLeft == true);
             this.isPressedRight = false;
             this.isPressedLeft = false;
+            }
         }
 
         this.CloseDialogeBox();
@@ -84,12 +90,9 @@ public class BrianSays : MonoBehaviour
         while (this.typeWriter.isRunning)
         {
             yield return null;
-
-            if(this.isPressedLeft && this.isPressedRight)
-            {
-                this.typeWriter.Stop();
-            }
         }
+
+        this.typeWriter.Stop();
     }
 
     public void CloseDialogeBox()
@@ -103,5 +106,6 @@ public class BrianSays : MonoBehaviour
     {
         typeWriter.Stop();
         stateMachine.SwitchState(stateMachine.States[0]);
+        brianSpeaking.Invoke("Walkin");
     }
 }

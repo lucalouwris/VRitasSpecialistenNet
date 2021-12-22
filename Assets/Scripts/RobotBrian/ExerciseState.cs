@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using System;
 
 public class ExerciseState : BaseState
 {
@@ -20,6 +21,7 @@ public class ExerciseState : BaseState
 
     [SerializeField] private DialogueObject[] dialogueObjects;
     [SerializeField] private BrianSays speaker;
+    public static Action<string> state;
 
     private int dialogueCount = 0;
 
@@ -51,6 +53,7 @@ public class ExerciseState : BaseState
         canvasObject.SetActive(true);
         offset = Vector3.down * .3f;
         currentStage = Stages.preparation;
+        state.Invoke("Breathing");
     }
     public void SwitchExercise(float time, string activeText, Stages nextStage)
     {
