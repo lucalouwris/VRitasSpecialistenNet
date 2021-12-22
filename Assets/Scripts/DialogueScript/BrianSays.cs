@@ -50,10 +50,10 @@ public class BrianSays : MonoBehaviour
             this.textlabel.text = dialogue;
 
 
-            yield return null;
 
-            if(this.typeWriter.isRunning)
+            if(!this.typeWriter.isRunning)
             {
+            yield return null;
             yield return new WaitUntil(() => this.isPressedRight == true && this.isPressedLeft == true);
             this.isPressedRight = false;
             this.isPressedLeft = false;
