@@ -119,7 +119,7 @@ public class ExerciseState : BaseState
                         SwitchExercise(pauseTime, pauseTxt, Stages.breathPause);
                         break;
                     case Stages.breathOut:
-                        SwitchExercise(pauseTime, pauseTxt, Stages.breathPause);
+                        SwitchExercise(inTime, breathInTxt, Stages.breathIn);
                         count++;
                         break;
                     case Stages.breathPause:
