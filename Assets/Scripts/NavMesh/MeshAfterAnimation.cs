@@ -13,9 +13,9 @@ public class MeshAfterAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.rotation.eulerAngles.x < 69 && !triggered)
+        if (transform.localPosition.y < -4.8f && !triggered)
         {
-            Debug.Log(transform.rotation.eulerAngles.x);
+            Debug.Log(transform.localPosition.y);
             StartCoroutine("wait");
             meshUpdater.UpdateAllMeshes();
         }
