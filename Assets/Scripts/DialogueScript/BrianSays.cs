@@ -52,10 +52,14 @@ public class BrianSays : MonoBehaviour
             this.textlabel.text = dialogue;
 
 
+
+            if(!this.typeWriter.isRunning)
+            {
             yield return null;
             yield return new WaitUntil(() => this.isPressedRight == true && this.isPressedLeft == true);
             this.isPressedRight = false;
             this.isPressedLeft = false;
+            }
         }
 
         this.CloseDialogeBox();
@@ -86,12 +90,9 @@ public class BrianSays : MonoBehaviour
         while (this.typeWriter.isRunning)
         {
             yield return null;
-
-            if(this.isPressedLeft && this.isPressedRight)
-            {
-                this.typeWriter.Stop();
-            }
         }
+
+        this.typeWriter.Stop();
     }
 
     public void CloseDialogeBox()
@@ -105,5 +106,6 @@ public class BrianSays : MonoBehaviour
     {
         typeWriter.Stop();
         stateMachine.SwitchState(stateMachine.States[0]);
+        brianSpeaking.Invoke("Walkin");
     }
 }
