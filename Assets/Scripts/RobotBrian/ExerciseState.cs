@@ -50,10 +50,9 @@ public class ExerciseState : BaseState
         startedExercise = false;
 
         base.OnEnable();
-        canvasObject.SetActive(true);
-        offset = Vector3.down * .3f;
-        currentStage = Stages.preparation;
-        state.Invoke("Breathing");
+        
+        goalPos = GetRandomPosition();
+        navAgent.SetDestination(goalPos);
     }
     public void SwitchExercise(float time, string activeText, Stages nextStage)
     {
@@ -79,7 +78,13 @@ public class ExerciseState : BaseState
         {
             transform.LookAt(playerTransform);
             if (!startedExercise)
+            {
+                canvasObject.SetActive(true);
+                offset = Vector3.down * .3f;
+                currentStage = Stages.preparation;
+                state.Invoke("Breathing");
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
+            }
             UpdateExercise();
             if (count >= timesToRepeat && !exerciseEnding)
             {
@@ -133,7 +138,7 @@ public class ExerciseState : BaseState
                         break;
                     case Stages.completed:
                         GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
-                        this.speaker.playThis = dialogueObjects[dialogueCount];
+                        speaker.playThis = dialogueObjects[dialogueCount];
                         dialogueCount++;
                         break;
                 }

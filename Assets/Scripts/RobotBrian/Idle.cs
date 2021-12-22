@@ -36,7 +36,6 @@ public class Idle : BaseState
 
     private Vector3 GetRandomPosition()
     {
-        RaycastHit ForwardHit;
         Vector2 pos = Random.onUnitSphere * 2.5f;
         Vector3 calculatedPos = playerTransform.position + new Vector3(pos.x, .5f, pos.y);
         Vector3 direction = playerTransform.forward;
@@ -44,9 +43,9 @@ public class Idle : BaseState
         calculatedPos += direction / 2;
         Vector3 wantedPos = calculatedPos;
 
-        if (Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
+        if (Physics.Raycast(calculatedPos, direction, out RaycastHit forwardHit, distanceFromPlayer))
         {
-            wantedPos += direction * (ForwardHit.distance * .75f);
+            wantedPos += direction * (forwardHit.distance * .75f);
             wantedPos = CheckDown(wantedPos);
         }
         else

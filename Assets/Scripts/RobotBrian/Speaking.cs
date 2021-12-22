@@ -13,17 +13,13 @@ public class Speaking : BaseState
     private Vector3 goalPos;
     private Vector3 offset;
 
-    public override void Start()
-    {
-        base.Start();
-        goalPos = GetRandomPosition();
-        navAgent.SetDestination(goalPos);
-    }
-
     // OnEnable is called when a transition starts and the state machine starts to evaluate this state
     public override void OnEnable()
     {
         base.OnEnable();
+        
+        goalPos = GetRandomPosition();
+        navAgent.SetDestination(goalPos);
     }
     
     Vector3 ray1Pos;
