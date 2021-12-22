@@ -25,15 +25,23 @@ public class Speaking : BaseState
     {
         base.OnEnable();
     }
+    
+    Vector3 ray1Pos;
+    Vector3 ray2Pos;
+    Vector3 ray3Pos;
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     public override void Update()
     {
         //Debug.Log(Vector3.Distance(transform.position, 5f));
-        if (Vector3.Distance(transform.position, goalPos) < 5f)
+        if (Vector3.Distance(transform.position, goalPos) < 1f)
         {
             transform.LookAt(playerTransform);
             SpeakLine();
+            
+            ray1Pos = Vector3.zero;
+            ray2Pos = Vector3.zero;
+            ray3Pos = Vector3.zero;
         }
 
         if (Vector3.Distance(playerTransform.position, transform.position) > distanceFromPlayer)
@@ -50,7 +58,6 @@ public class Speaking : BaseState
             canvasObject.SetActive(true);
         }
     }
-    Vector3 tempPos;
     private Vector3 GetRandomPosition()
     {
         RaycastHit ForwardHit;
@@ -64,7 +71,8 @@ public class Speaking : BaseState
         if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
         {
             wantedPos += direction * (ForwardHit.distance * .75f);
-            tempPos = wantedPos;
+            ray1Pos = wantedPos;
+            Debug.Log("Hit Forward");
             wantedPos = CheckDown(wantedPos);
         }
         else
@@ -81,6 +89,8 @@ public class Speaking : BaseState
         RaycastHit downHit;
         if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
         {
+            ray2Pos = downHit.point;
+            Debug.Log("Hit Down");
             return SampleHit(downHit.point);
         }
         return SampleHit(checkPos);
@@ -88,8 +98,10 @@ public class Speaking : BaseState
     private Vector3 SampleHit(Vector3 checkPos)
     {
         NavMeshHit myNavHit;
-        if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(checkPos, out myNavHit, 1f, NavMesh.AllAreas))
         {
+            Debug.Log("SampledPos Down");
+            ray3Pos = myNavHit.position;
             return myNavHit.position;
         }
         return checkPos;
@@ -103,6 +115,13 @@ public class Speaking : BaseState
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.magenta;
         Gizmos.DrawSphere(goalPos, .5f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(ray1Pos, .5f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(ray2Pos, .5f);
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(ray3Pos, .5f);
     }
 }
