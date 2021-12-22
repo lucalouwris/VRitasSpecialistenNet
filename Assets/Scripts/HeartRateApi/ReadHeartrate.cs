@@ -19,7 +19,7 @@ public class ReadHeartrate : MonoBehaviour
     private List<int> time = new List<int>();
     private List<float> velocity = new List<float>();
     private List<string> heartRate = new List<string>();
-    private List<GameStateEnum> gameStates = new List<GameStateEnum>();
+    private List<string> gameStates = new List<string>();
 
     private void Start()
     {
@@ -41,19 +41,10 @@ public class ReadHeartrate : MonoBehaviour
             var response = await client.SendAsync(request);
             string localData = await response.Content.ReadAsStringAsync();
 
-            Debug.Log(localData);
-            
-            localData = localData.Replace("{\"measured_at\":", "");
-            localData = localData.Replace("\"data\":{\"heart_rate\":", "");
-            localData = localData.Replace("}}", "");
-
-            string[] split = localData.Split(',');
-            
             time.Add((int)Time.time);
             velocity.Add(player.velocity.magnitude);
-            heartRate.Add(split[1]);
+            heartRate.Add(localData);
             gameStates.Add(states.getGameStates());
-            Debug.Log($"Received at:{split[0]}, Heartrate:{split[1]}");
             
             return localData;
         }

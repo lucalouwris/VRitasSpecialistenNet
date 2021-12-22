@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChangeState : MonoBehaviour
 {
-    [SerializeField] private GameStates stateEnum;
-    [SerializeField] private GameStateEnum newState;
+    [SerializeField] private GameStates stateEnum;    
+    [SerializeField] private BaseState newState;
 
     private void OnTriggerEnter(Collider other)
     {     
-        stateEnum.setGameState(newState);
+        stateEnum.gameState(newState.name);
     }
 }
