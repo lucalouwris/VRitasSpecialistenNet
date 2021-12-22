@@ -1539,7 +1539,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8654318760002279795}
   - component: {fileID: 8654318760002279793}
-  - component: {fileID: 8654318760002279794}
   - component: {fileID: 8654318760002279806}
   - component: {fileID: 8654318760002279807}
   - component: {fileID: 8654318760002279805}
@@ -1585,22 +1584,6 @@ MonoBehaviour:
   m_CameraYOffset: 1.2
   m_TrackingSpace: 3
   m_TrackingOriginMode: -2147483648
---- !u!114 &8654318760002279794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8654318760002279796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc2a85e6d84a374697326155f94ba9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftController: {fileID: 8654318759103765489}
-  rightController: {fileID: 8654318760816970890}
-  playerBody: {fileID: 8654318760002279807}
-  speedModifier: 4
 --- !u!114 &8654318760002279806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,6 +1604,10 @@ MonoBehaviour:
     m_Bits: 1537
   brianSays: {fileID: 0}
   meshObstacle: {fileID: 381730712}
+  leftController: {fileID: 0}
+  rightController: {fileID: 0}
+  speedModifier: 2
+  slopeMoveDirection: {x: 0, y: 0, z: 0}
 --- !u!54 &8654318760002279807
 Rigidbody:
   m_ObjectHideFlags: 0

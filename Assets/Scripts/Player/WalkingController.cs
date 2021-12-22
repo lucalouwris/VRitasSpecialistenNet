@@ -18,10 +18,10 @@ public class WalkingController : MonoBehaviour
     {
         // Calculate distance travelled of left controller.
         leftController.previousPosition = leftController.transform.position;
-        leftController.c_Movement = (Vector3.Distance(leftController.currentPosition, leftController.previousPosition) / Time.deltaTime) / 100;
+        leftController.c_Movement = (Vector3.Distance(leftController.currentPosition, leftController.previousPosition) / Time.deltaTime);
         // Calculate distance travelled of right controller.
         rightController.previousPosition = rightController.transform.position;
-        rightController.c_Movement = (Vector3.Distance(rightController.currentPosition, rightController.previousPosition) / Time.deltaTime) / 100;
+        rightController.c_Movement = (Vector3.Distance(rightController.currentPosition, rightController.previousPosition) / Time.deltaTime);
 
         if (leftController.isWalking || rightController.isWalking) 
         {
@@ -30,7 +30,7 @@ public class WalkingController : MonoBehaviour
             direction.y = 0;
 
             float moveDistance = leftController.c_Movement + rightController.c_Movement;
-            playerBody.velocity += (direction * moveDistance) * speedModifier;
+            playerBody.AddForce((direction * moveDistance) * speedModifier);
         }
         else
         {
