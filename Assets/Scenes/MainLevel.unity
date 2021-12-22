@@ -15494,7 +15494,7 @@ GameObject:
   - component: {fileID: 1882001535}
   - component: {fileID: 919132147814509860}
   - component: {fileID: 919132147814509861}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Starship
   m_TagString: Untagged
   m_Icon: {fileID: 0}

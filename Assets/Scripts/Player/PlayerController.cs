@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded()
     {
         Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
-        return Physics.CheckSphere(checkGroundedPos, cCollider.height + 0.01f, groundMask);
+        return Physics.Raycast(checkGroundedPos, Vector3.down, out RaycastHit hit, cCollider.height + 0.01f, groundMask);
     }
 
     private bool OnSlope()
