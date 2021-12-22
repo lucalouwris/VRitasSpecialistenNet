@@ -18,7 +18,6 @@ public class ExerciseState : BaseState
     [SerializeField] private float timesToRepeat;
 
     [SerializeField] private float prepTime = 2f;
-    [SerializeField] private float boxTime;
 
     [SerializeField] private DialogueObject[] dialogueObjects;
     [SerializeField] private BrianSays speaker;
@@ -26,10 +25,10 @@ public class ExerciseState : BaseState
 
     private int dialogueCount = 0;
 
+    [SerializeField] private float inTime;
+    [SerializeField] private float outTime;
+    [SerializeField] private float pauseTime;
 
-    float outTime;
-    float inTime;
-    float pauseTime;
     float timeRemaining;
     float startTime;
 
@@ -45,9 +44,6 @@ public class ExerciseState : BaseState
 
     public override void OnEnable()
     {
-        pauseTime = boxTime;
-        outTime = boxTime;
-        inTime = boxTime;
         count = 0;
 
         exerciseEnding = false;
@@ -126,7 +122,7 @@ public class ExerciseState : BaseState
                         SwitchExercise(pauseTime, pauseTxt, Stages.breathPause);
                         break;
                     case Stages.breathOut:
-                        SwitchExercise(pauseTime, pauseTxt, Stages.breathPause);
+                        SwitchExercise(inTime, breathInTxt, Stages.breathIn);
                         count++;
                         break;
                     case Stages.breathPause:

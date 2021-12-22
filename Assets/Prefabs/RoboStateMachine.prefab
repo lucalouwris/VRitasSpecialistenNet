@@ -709,7 +709,7 @@ MonoBehaviour:
   TriggerChange: 0
   navAgent: {fileID: 832272132}
   playerTransform: {fileID: 0}
-  distanceFromPlayer: 5
+  distanceFromPlayer: 4
   canvasObject: {fileID: 6578001200858162153}
 --- !u!114 &2438190431619714781
 MonoBehaviour:
@@ -751,13 +751,15 @@ MonoBehaviour:
   completedTxt: Exercise Complete
   distanceFromPlayer: 4
   canvasObject: {fileID: 1833663974}
-  timesToRepeat: 2
+  timesToRepeat: 6
   prepTime: 2
-  boxTime: 3.75
   dialogueObjects:
   - {fileID: 11400000, guid: 506b9fd505509ed48b23650e2a8d403b, type: 2}
   - {fileID: 11400000, guid: ccc7420eafd6448238da8c15cc98cee2, type: 2}
   speaker: {fileID: 6578001200858162154}
+  inTime: 3
+  outTime: 4
+  pauseTime: 2
 --- !u!195 &832272132
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -776,7 +778,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.2
+  m_Height: 0.8
   m_BaseOffset: 0.6
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

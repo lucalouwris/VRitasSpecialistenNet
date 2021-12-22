@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08451951, g: 0.08497134, b: 0.5451982, a: 1}
+  m_IndirectSpecularColor: {r: 0.010013823, g: 0.25171012, b: 0.5302866, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6371,10 +6371,6 @@ PrefabInstance:
       propertyPath: PointerTarget
       value: 
       objectReference: {fileID: 322061508}
-    - target: {fileID: 832272132, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
-      propertyPath: m_Height
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 871480282, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
       value: 
@@ -6383,10 +6379,6 @@ PrefabInstance:
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
       value: 
       objectReference: {fileID: 203207907}
-    - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
-      propertyPath: boxTime
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2043031419, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: playerTransform
       value: 
@@ -6399,10 +6391,6 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 365835724}
-    - target: {fileID: 2438190431619714770, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
-      propertyPath: distanceFromPlayer
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2438190431619714771, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: playerTransform
       value: 
