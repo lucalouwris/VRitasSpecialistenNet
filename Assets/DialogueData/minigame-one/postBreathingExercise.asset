@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - 'Great Job! Your body seems to adapt quickly to the environment. '
-  - 'We should  refill the spaceship now. But we need to enable the systems on this
+  - 'We should refill the spaceship now. But we need to enable the systems on this
     planet first. '
   - 'Check your left wrist, your oxygen level is running low. '
-  - 'We have to fix the generator quickly, that enables us to refill your oxygen
-    levels! '
+  - 'We have to turn on the generator, that enables us to refill your oxygen levels! '
