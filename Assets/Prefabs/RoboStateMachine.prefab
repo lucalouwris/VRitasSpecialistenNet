@@ -693,7 +693,7 @@ MonoBehaviour:
   navAgent: {fileID: 832272132}
   playerTransform: {fileID: 0}
   floatHeight: 0.5
-  distanceFromPlayer: 6
+  distanceFromPlayer: 8
 --- !u!114 &2438190431619714770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
   TriggerChange: 0
   navAgent: {fileID: 832272132}
   playerTransform: {fileID: 0}
-  distanceFromPlayer: 4
+  distanceFromPlayer: 7
   canvasObject: {fileID: 6578001200858162153}
 --- !u!114 &2438190431619714781
 MonoBehaviour:
@@ -749,7 +749,7 @@ MonoBehaviour:
   breathOutTxt: Breath Out
   pauseTxt: Hold
   completedTxt: Exercise Complete
-  distanceFromPlayer: 4
+  distanceFromPlayer: 7
   canvasObject: {fileID: 1833663974}
   timesToRepeat: 6
   prepTime: 2
