@@ -3,6 +3,8 @@
     The first button you can press is the OnButton which turns the computer on.
     The second button starts the refueling process and destroys all notifications.
     It then ends by calling a dialogue with Brian.
+
+    Additionally this script provides feedback to the player after he finished the second minigame.
 */
 using System.Collections;
 using System.Collections.Generic;
@@ -30,16 +32,8 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private Material wantedMaterial;
 
     [SerializeField] private AudioClip confirmClip;
-    private AudioSource audioSource;
+    AudioSource audioSource;
 
-    void Start()
-    {
-        if (confirmClip != null) 
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -88,11 +82,14 @@ public class OnMouseOverNotif : MonoBehaviour
         var materials = objectRenderer.materials;
         // exchange both materials with the activated material version // numbers are switched because unity is weird
         materials[1] = wantedMaterial;
-         
         objectRenderer.materials = materials;
 
         //Triggering Audio Feedback
-        audioSource.PlayOneShot(confirmClip);
+        audioSource = GameObject.Find("ComputerMG2").GetComponent<AudioSource>();
+        Debug.Log(audioSource);
+        audioSource.clip = confirmClip;
+
+        audioSource.Play();
 
         //Additional Visual Feedback
 
