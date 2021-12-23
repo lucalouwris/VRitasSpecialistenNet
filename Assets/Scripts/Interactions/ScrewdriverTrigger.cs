@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScrewdriverTrigger : MonoBehaviour
 {
     public string tagToCheck;
+    public string wrongToolTag;
     private GameObject powerCell;
     private bool hasbeenFixed = false;
 
@@ -12,6 +13,10 @@ public class ScrewdriverTrigger : MonoBehaviour
     [SerializeField] private Material wantedMaterial;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip snapSound;
+
+    [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private StateMachine brian;
+    [SerializeField] private BrianSays speaker;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +33,13 @@ public class ScrewdriverTrigger : MonoBehaviour
     //This method checks if the colliding obejct has a specific tag
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.gameObject.CompareTag(wrongToolTag))
+        {
+            brian.SwitchState(brian.States[1]); // Brian switches to the dialogue state.
+            this.speaker.playThis = dialogueObject; // Brian speaks the specific dialogue.
+        }
+
         Debug.Log("Collision deteced; checking for this tag:" + tagToCheck);
         if (other.gameObject.CompareTag(tagToCheck))
         {
