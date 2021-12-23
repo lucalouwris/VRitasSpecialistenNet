@@ -29,7 +29,17 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private MeshRenderer objectRenderer;
     [SerializeField] private Material wantedMaterial;
 
+    [SerializeField] private AudioClip confirmClip;
+    private AudioSource audioSource;
 
+    void Start()
+    {
+        if (confirmClip != null) 
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -78,10 +88,11 @@ public class OnMouseOverNotif : MonoBehaviour
         var materials = objectRenderer.materials;
         // exchange both materials with the activated material version // numbers are switched because unity is weird
         materials[1] = wantedMaterial;
-
+         
         objectRenderer.materials = materials;
 
         //Triggering Audio Feedback
+        audioSource.PlayOneShot(confirmClip);
 
         //Additional Visual Feedback
 
