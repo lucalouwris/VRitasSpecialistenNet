@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class BrianSays : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip sound;
+    [SerializeField] private Image controllerHelper;
+
     public static Action<string> brianSpeaking;
 
 
@@ -25,7 +28,7 @@ public class BrianSays : MonoBehaviour
 
     void OnEnable()
     {
-
+        this.controllerHelper.enabled = false;
         this.source.PlayOneShot(this.sound);
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
@@ -55,10 +58,13 @@ public class BrianSays : MonoBehaviour
 
             if(!this.typeWriter.isRunning)
             {
+            this.controllerHelper.enabled = true;
+
             yield return null;
             yield return new WaitUntil(() => this.isPressedRight == true && this.isPressedLeft == true);
             this.isPressedRight = false;
             this.isPressedLeft = false;
+            this.controllerHelper.enabled = false;
             }
         }
 
