@@ -18,14 +18,18 @@ public class OnMouseOverNotif : MonoBehaviour
     [SerializeField] private BrianSays speaker;
     [SerializeField] private AudioController audioController;
     [SerializeField] private EndingTransition end;
-
+  
     [SerializeField] private GameObject secondState;
     [SerializeField] private GameObject thirdState;
 
     [SerializeField] private SpawningManager spawningManager;
 
     [SerializeField] private int countOfAliens = 1;
-    
+
+    [SerializeField] private MeshRenderer objectRenderer;
+    [SerializeField] private Material wantedMaterial;
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -65,9 +69,21 @@ public class OnMouseOverNotif : MonoBehaviour
         thirdState.SetActive(true);
     }
 
+    //This method triggers the different feedback-layers on the computers
     [ContextMenu("Show Completion Feedback!")]
     private void showComputerFeedback()
-    { 
+    {
+        //Changing out the material
+
+        var materials = objectRenderer.materials;
+        // exchange both materials with the activated material version // numbers are switched because unity is weird
+        materials[1] = wantedMaterial;
+
+        objectRenderer.materials = materials;
+
+        //Triggering Audio Feedback
+
+        //Additional Visual Feedback
 
     }
 }
