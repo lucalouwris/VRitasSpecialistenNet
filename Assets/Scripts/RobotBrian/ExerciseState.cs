@@ -44,12 +44,11 @@ public class ExerciseState : BaseState
 
     public override void OnEnable()
     {
+        base.OnEnable();
         count = 0;
 
         exerciseEnding = false;
         startedExercise = false;
-
-        base.OnEnable();
         
         goalPos = GetRandomPosition();
         navAgent.SetDestination(goalPos);
@@ -79,6 +78,7 @@ public class ExerciseState : BaseState
             transform.LookAt(playerTransform);
             if (!startedExercise)
             {
+                startedExercise = true;
                 canvasObject.SetActive(true);
                 offset = Vector3.down * .3f;
                 currentStage = Stages.preparation;
@@ -144,50 +144,6 @@ public class ExerciseState : BaseState
                 }
             }
         }
-    }
-    
-    private Vector3 GetRandomPosition()
-    {
-        RaycastHit ForwardHit;
-        //Vector2 pos = Random.onUnitSphere * 2.5f;
-        Vector3 calculatedPos = playerTransform.position; //new Vector3(pos.x, .5f, pos.y) + 
-        Vector3 direction = new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z).normalized;
-
-        calculatedPos += direction;
-        Vector3 wantedPos = calculatedPos;
-        
-        if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
-        {
-            wantedPos += direction * (ForwardHit.distance * .75f);
-            wantedPos = CheckDown(wantedPos);
-        }
-        else
-        {
-            wantedPos += direction * distanceFromPlayer;
-            wantedPos = CheckDown(wantedPos);
-        }
-
-        return wantedPos;
-    }
-
-    private Vector3 CheckDown(Vector3 checkPos)
-    {
-        RaycastHit downHit;
-        checkPos.y -= 0.1f;
-        if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
-        {
-            return SampleHit(downHit.point);
-        }
-        return SampleHit(checkPos);
-    }
-    private Vector3 SampleHit(Vector3 checkPos)
-    {
-        NavMeshHit myNavHit;
-        if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
-        {
-            return myNavHit.position;
-        }
-        return checkPos;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
