@@ -34,8 +34,9 @@ public class ScrewdriverTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag(wrongToolTag))
+        if (other.CompareTag(wrongToolTag))
         {
+            Debug.Log("BOOOM:" + wrongToolTag);
             brian.SwitchState(brian.States[1]); // Brian switches to the dialogue state.
             this.speaker.playThis = dialogueObject; // Brian speaks the specific dialogue.
         }
