@@ -10,7 +10,7 @@ public class BaseState : MonoBehaviour
     public int TriggerChange = 0;
     public NavMeshAgent navAgent;
     public Transform playerTransform;
-    [SerializeField] private float distanceFromPlayer = 4;
+    public float distanceFromPlayer = 4;
 
     public virtual void Start()
     {

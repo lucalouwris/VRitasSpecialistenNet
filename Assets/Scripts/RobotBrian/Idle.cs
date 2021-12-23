@@ -11,7 +11,6 @@ public class Idle : BaseState
 {
     private Vector3 goalPos = Vector3.zero;
     [SerializeField] private float floatHeight = 1f;
-    [SerializeField] private float distanceFromPlayer = 4;
 
     //OnEnable is called when a transition starts and the state machine starts to evaluate this state
     public override void OnEnable()

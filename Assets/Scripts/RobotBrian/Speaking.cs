@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 
 public class Speaking : BaseState
 {
-    
-    [SerializeField] private float distanceFromPlayer = 1.4f;
     [SerializeField] private GameObject canvasObject;
     private Vector3 goalPos;
     private Vector3 offset;
