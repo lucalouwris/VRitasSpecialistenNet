@@ -9,6 +9,7 @@ TagManager:
   - brokenPiece
   - breathingExerciseArea
   - offButton
+  - wrongTool
   layers:
   - Default
   - TransparentFX

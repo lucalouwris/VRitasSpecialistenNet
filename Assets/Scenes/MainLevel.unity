@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010013823, g: 0.25171012, b: 0.5302866, a: 1}
+  m_IndirectSpecularColor: {r: 0.99999905, g: 0, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3787,6 +3787,14 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8004378673207848692, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: brian
+      value: 
+      objectReference: {fileID: 1120413631}
+    - target: {fileID: 8004378673207848692, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: speaker
+      value: 
+      objectReference: {fileID: 832272130}
+    - target: {fileID: 8004378673207848692, guid: fda091c2d817a3047a87c634b793a430, type: 3}
       propertyPath: snapSound
       value: 
       objectReference: {fileID: 8300000, guid: d5e5fb395e6cf4b9ea71d39934107b59, type: 3}
@@ -3794,6 +3802,14 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1089970180}
+    - target: {fileID: 8004378673207848692, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: wrongToolTag
+      value: wrongTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004378673207848692, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: dialogueObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a2dcf375b648634b8d48fb608635b69, type: 2}
     - target: {fileID: 8004378673207848693, guid: fda091c2d817a3047a87c634b793a430, type: 3}
       propertyPath: m_Size.x
       value: 0.37668642
@@ -6414,6 +6430,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 365835724}
+    - target: {fileID: 2127860540, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2438190431619714769, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
       propertyPath: pointer
       value: 
@@ -6478,6 +6498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoboSpeaker
       objectReference: {fileID: 0}
+    - target: {fileID: 6578001200858162154, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+      propertyPath: controllerHelper
+      value: 
+      objectReference: {fileID: 1248761058}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
 --- !u!114 &832272130 stripped
@@ -8995,6 +9019,17 @@ Transform:
   m_Father: {fileID: 1977901108}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248761058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2127860541, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+  m_PrefabInstance: {fileID: 832272129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1252404500
 GameObject:
   m_ObjectHideFlags: 0
@@ -9168,6 +9203,10 @@ PrefabInstance:
     - target: {fileID: 6032872033548240504, guid: 9653f421502fe454285619384f3517d7, type: 3}
       propertyPath: m_Name
       value: brokenScrewdriver (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032872033548240504, guid: 9653f421502fe454285619384f3517d7, type: 3}
+      propertyPath: m_TagString
+      value: wrongTool
       objectReference: {fileID: 0}
     - target: {fileID: 6409398019186777282, guid: 9653f421502fe454285619384f3517d7, type: 3}
       propertyPath: m_RootOrder
@@ -10230,68 +10269,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25cf0261baf7e7b46acbac6093483ad8, type: 3}
---- !u!1 &1489172073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1489172074}
-  - component: {fileID: 1489172076}
-  - component: {fileID: 1489172075}
-  m_Layer: 0
-  m_Name: fixedLever
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1489172074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489172073}
-  m_LocalRotation: {x: 0, y: 0.11840396, z: 0, w: 0.9929655}
-  m_LocalPosition: {x: 35.548, y: 13.157, z: -26.625}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_Children: []
-  m_Father: {fileID: 1731976599}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 13.6, z: 0}
---- !u!114 &1489172075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489172073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 5364a54ac7f7048c6ac7edef3bd092df, type: 2}
-  brian: {fileID: 1120413631}
-  speaker: {fileID: 832272130}
-  position: {x: 0, y: 0, z: 0}
-  shouldDisable: 1
---- !u!65 &1489172076
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489172073}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1515667269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11663,7 +11640,6 @@ Transform:
   - {fileID: 1590642487}
   - {fileID: 1549278472}
   - {fileID: 2016415056}
-  - {fileID: 1489172074}
   m_Father: {fileID: 1762857587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15238,6 +15214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 800183752}
     m_Modifications:
+    - target: {fileID: 620479844, guid: f42658f32d47be1439d3637345729e01, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2546466567498219020, guid: f42658f32d47be1439d3637345729e01, type: 3}
       propertyPath: m_Name
       value: HangarWithCracks
@@ -15733,6 +15713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wrench
       objectReference: {fileID: 0}
+    - target: {fileID: 3288188031053289925, guid: 0a4119eeaf37d274a9f1a2d4865f5718, type: 3}
+      propertyPath: m_TagString
+      value: wrongTool
+      objectReference: {fileID: 0}
     - target: {fileID: 5239224767983867363, guid: 0a4119eeaf37d274a9f1a2d4865f5718, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -16009,6 +15993,10 @@ PrefabInstance:
     - target: {fileID: 3877945280558197015, guid: 51e6e1f38d348cf438f893b846f7e537, type: 3}
       propertyPath: m_Name
       value: wrench2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877945280558197015, guid: 51e6e1f38d348cf438f893b846f7e537, type: 3}
+      propertyPath: m_TagString
+      value: wrongTool
       objectReference: {fileID: 0}
     - target: {fileID: 4511175275918308269, guid: 51e6e1f38d348cf438f893b846f7e537, type: 3}
       propertyPath: m_RootOrder
@@ -16365,6 +16353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screwdriver1
       objectReference: {fileID: 0}
+    - target: {fileID: 4904977939388495686, guid: a2f68639940b0fd45a744378c615a7a8, type: 3}
+      propertyPath: m_TagString
+      value: wrongTool
+      objectReference: {fileID: 0}
     - target: {fileID: 5717930910034210300, guid: a2f68639940b0fd45a744378c615a7a8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16617,6 +16609,10 @@ PrefabInstance:
     - target: {fileID: 8594453436557634963, guid: efbf6fa83a73387429d1ba5da7108272, type: 3}
       propertyPath: m_Name
       value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594453436557634963, guid: efbf6fa83a73387429d1ba5da7108272, type: 3}
+      propertyPath: m_TagString
+      value: wrongTool
       objectReference: {fileID: 0}
     - target: {fileID: 8939207044382553897, guid: efbf6fa83a73387429d1ba5da7108272, type: 3}
       propertyPath: m_RootOrder
@@ -17047,7 +17043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035115301854941754, guid: bf831da3b054132418da0c2cf80b55f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.32
+      value: -5.314
       objectReference: {fileID: 0}
     - target: {fileID: 1035115301854941754, guid: bf831da3b054132418da0c2cf80b55f5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17508,6 +17504,10 @@ PrefabInstance:
     - target: {fileID: 7676381495463289289, guid: b42b0ad2247ef744e9edb70766afff71, type: 3}
       propertyPath: m_Name
       value: hammermodel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676381495463289289, guid: b42b0ad2247ef744e9edb70766afff71, type: 3}
+      propertyPath: m_TagString
+      value: wrongTool
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b42b0ad2247ef744e9edb70766afff71, type: 3}
