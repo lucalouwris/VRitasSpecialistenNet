@@ -14176,7 +14176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6a8bd8e539c4a44a404d70d9a6899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 8656347375584768920, guid: eb645bcc78aa05943a4fa473047efcbb, type: 3}
+  objectToSpawn: {fileID: 7145631684255100347, guid: 2d2bc17d4390f5e47b5230765cbe1fdd, type: 3}
   spawnPoints: {fileID: 1977901108}
   alienParent: {fileID: 1977901108}
   amountToSpawn: 40

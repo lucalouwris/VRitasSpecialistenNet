@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532712336961418230}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.014162027, y: 1.1337805, z: 0.0000001523334}
+  m_LocalPosition: {x: -0.014162027, y: -1.1337805, z: 0}
   m_LocalScale: {x: 34.572796, y: 34.572796, z: 34.572796}
   m_Children:
   - {fileID: 3440452350452685520}
   m_Father: {fileID: 8316555043397249314}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1582485731010036831
 GameObject:
@@ -781,9 +781,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8316555043397249314}
-  - component: {fileID: 128046074763196165}
   - component: {fileID: -5390393594202081070}
   - component: {fileID: 8953857131664764206}
+  - component: {fileID: 2741974870601009860}
   m_Layer: 0
   m_Name: WalkingAlienFin
   m_TagString: Untagged
@@ -802,30 +802,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1142370510664300988}
   - {fileID: 5123953080136643143}
+  - {fileID: 1142370510664300988}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &128046074763196165
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8656347375584768920}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 062395392435bbc4c8b71e646612a98e, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &-5390393594202081070
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -862,7 +843,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderRadius: 5
   lookingDistance: 6
-  animator: {fileID: 128046074763196165}
+  animator: {fileID: 2741974870601009860}
+--- !u!95 &2741974870601009860
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656347375584768920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 062395392435bbc4c8b71e646612a98e, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8698404704475153222
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,13 +920,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9181868010285202605}
-  m_LocalRotation: {x: -0.7071068, y: 0.00000005338509, z: 0.000000053385097, w: 0.7071067}
-  m_LocalPosition: {x: -0.030396312, y: 0.039960265, z: -0.022221562}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.030396312, y: -0.039960384, z: 0.022221562}
   m_LocalScale: {x: 7.2998176, y: 7.2998176, z: 7.2998176}
   m_Children: []
   m_Father: {fileID: 8316555043397249314}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!137 &13676060625095511
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

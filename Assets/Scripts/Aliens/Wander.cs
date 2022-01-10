@@ -23,6 +23,7 @@ public class Wander : MonoBehaviour
     private float timer;
     bool isLooking = false;
     float speed = 2.0f;
+    Vector3 newPos;
 
     // Use this for initialization
     void OnEnable()
@@ -37,8 +38,14 @@ public class Wander : MonoBehaviour
     void Update()
     {
         if (timer < wanderTimer)
+        {
             timer += Time.deltaTime;
+        }
 
+        if(agent.remainingDistance == 0)
+        {
+            animator.enabled = false;
+        }
 
         if (Vector3.Distance(transform.position, player.transform.position) < lookingDistance) // If the player is in range of the alien. Look at player.
         {
@@ -57,7 +64,7 @@ public class Wander : MonoBehaviour
         {
             wanderTimer = Random.Range(2,6);
             isLooking = false;
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
             timer = 0;
             animator.enabled = true;
