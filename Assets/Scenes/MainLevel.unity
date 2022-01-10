@@ -4964,6 +4964,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5990817434369855310, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
   m_PrefabInstance: {fileID: 832272129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &662652143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2438190431619714771, guid: 769ef00eb6182754bb9ca964684f6cc5, type: 3}
+  m_PrefabInstance: {fileID: 832272129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662652137}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d90c81762e8f794c9b8cf32e33668fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &668681500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6292,7 +6303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateEnum: {fileID: 856982663}
-  newState: {fileID: 0}
+  newState: {fileID: 662652143}
 --- !u!1 &817059588
 GameObject:
   m_ObjectHideFlags: 0
@@ -12079,6 +12090,9 @@ MonoBehaviour:
   thirdState: {fileID: 1996099789}
   spawningManager: {fileID: 1977901107}
   countOfAliens: 80
+  objectRenderer: {fileID: 0}
+  wantedMaterial: {fileID: 0}
+  confirmClip: {fileID: 0}
 --- !u!65 &1763978011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15238,6 +15252,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 800183752}
     m_Modifications:
+    - target: {fileID: 620479844, guid: f42658f32d47be1439d3637345729e01, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2546466567498219020, guid: f42658f32d47be1439d3637345729e01, type: 3}
       propertyPath: m_Name
       value: HangarWithCracks
@@ -16929,14 +16947,6 @@ PrefabInstance:
       propertyPath: speaker
       value: 
       objectReference: {fileID: 832272130}
-    - target: {fileID: 331793811, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
-      propertyPath: thirdState
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 331793811, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
-      propertyPath: secondState
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 331793811, guid: e856aeeb7675a4f4aaf23a4602ff98c0, type: 3}
       propertyPath: audioController
       value: 
