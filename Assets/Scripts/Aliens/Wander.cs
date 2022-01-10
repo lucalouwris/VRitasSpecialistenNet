@@ -16,6 +16,7 @@ public class Wander : MonoBehaviour
     float wanderTimer;
     [SerializeField] float lookingDistance;
     GameObject player;
+    [SerializeField] Animator animator;
 
     private Transform target;
     private NavMeshAgent agent;
@@ -46,6 +47,7 @@ public class Wander : MonoBehaviour
                 agent.SetDestination(transform.position);
                 isLooking = true;
             }
+            animator.enabled = false;
             Vector3 relativePos = player.transform.position - transform.position;
             float singleStep = speed * Time.deltaTime;
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, relativePos, singleStep, 0.0f);
@@ -58,6 +60,7 @@ public class Wander : MonoBehaviour
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
             timer = 0;
+            animator.enabled = true;
         }
     }
 
