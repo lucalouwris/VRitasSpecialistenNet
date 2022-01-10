@@ -33,22 +33,18 @@ public class OnMouseOverNotif : MonoBehaviour
 
     [SerializeField] private AudioClip confirmClip;
     AudioSource audioSource;
-    bool hasBeenTriggeredBefore = false;
 
 
     private void OnTriggerEnter(Collider other)
     {
 
         ui = GameObject.Find("ComputerMG2").GetComponent<ComputerUI>(); // Get the script component of the computer.
-        if (gameObject.name == "Refuel" && !hasBeenTriggeredBefore) // The button to wipe the notifications and start rtefueling.
+        if (gameObject.name == "Refuel") // The button to wipe the notifications and start rtefueling.
         {
             ui.Wipe();
             brian.SwitchState(brian.States[1]);
             this.speaker.playThis = dialogueObject;
             audioController.PlayAlien();
-
-            hasBeenTriggeredBefore = false;
-            showComputerFeedback();
         }
         else if (gameObject.name == "OnButton") // The button to turn the computer on.
         {
