@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010013823, g: 0.25171012, b: 0.5302866, a: 1}
+  m_IndirectSpecularColor: {r: 0.99999905, g: 0, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -941,7 +941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061121877374141577, guid: 1d2ffdace96b642f98ae0f40a1cd5899, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: 4.57
       objectReference: {fileID: 0}
     - target: {fileID: 7061121877374141577, guid: 1d2ffdace96b642f98ae0f40a1cd5899, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1297,7 +1297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061121877374141577, guid: 1d2ffdace96b642f98ae0f40a1cd5899, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.7
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: 7061121877374141577, guid: 1d2ffdace96b642f98ae0f40a1cd5899, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4929,7 +4929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 882841368637491147, guid: 5a51297edc4134aff99f049916cf942d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 882841368637491147, guid: 5a51297edc4134aff99f049916cf942d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15950,7 +15950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 882841368637491147, guid: 5a51297edc4134aff99f049916cf942d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.81
+      value: 8.99
       objectReference: {fileID: 0}
     - target: {fileID: 882841368637491147, guid: 5a51297edc4134aff99f049916cf942d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18061,6 +18061,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 664232b3f47d92d4b8b4744aea7848e5, type: 3}
       propertyPath: m_Name
       value: newLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: 664232b3f47d92d4b8b4744aea7848e5, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5811517544658636179, guid: 664232b3f47d92d4b8b4744aea7848e5, type: 3}
       propertyPath: m_LocalScale.x
