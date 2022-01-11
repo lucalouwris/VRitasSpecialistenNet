@@ -302,6 +302,9 @@ MonoBehaviour:
   thirdState: {fileID: 0}
   spawningManager: {fileID: 0}
   countOfAliens: 1
+  objectRenderer: {fileID: 1025254191801080934}
+  wantedMaterial: {fileID: 2100000, guid: 70c99b8064c324d008b18fa6be75f473, type: 2}
+  confirmClip: {fileID: 8300000, guid: 7e29363d3a618054d8da7a9744e920c4, type: 3}
 --- !u!1 &807276266
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +811,9 @@ MonoBehaviour:
   thirdState: {fileID: 0}
   spawningManager: {fileID: 0}
   countOfAliens: 80
+  objectRenderer: {fileID: 1025254191801080934}
+  wantedMaterial: {fileID: 2100000, guid: 70c99b8064c324d008b18fa6be75f473, type: 2}
+  confirmClip: {fileID: 8300000, guid: 7e29363d3a618054d8da7a9744e920c4, type: 3}
 --- !u!1 &1594927131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,13 +1245,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143b0eed434b042dea7981f01e822672, type: 3}
---- !u!4 &2193608838565291785 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 143b0eed434b042dea7981f01e822672, type: 3}
-  m_PrefabInstance: {fileID: 1872365913041928418}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1529696863524437427 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 143b0eed434b042dea7981f01e822672, type: 3}
+  m_PrefabInstance: {fileID: 1872365913041928418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1025254191801080934 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 143b0eed434b042dea7981f01e822672, type: 3}
+  m_PrefabInstance: {fileID: 1872365913041928418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2193608838565291785 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 143b0eed434b042dea7981f01e822672, type: 3}
   m_PrefabInstance: {fileID: 1872365913041928418}
   m_PrefabAsset: {fileID: 0}
