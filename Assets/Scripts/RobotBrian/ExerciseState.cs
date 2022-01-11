@@ -10,6 +10,7 @@ public class ExerciseState : BaseState
     [SerializeField] Image leftBar;
     [SerializeField] Image rightBar;
     [SerializeField] Text breathStat;
+    [SerializeField] Text countTxt;
 
     [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt, completedTxt;
 
@@ -91,6 +92,11 @@ public class ExerciseState : BaseState
    
     void UpdateExercise()
     {
+        if(count < timesToRepeat)
+            countTxt.text = count+1 + " OUT OF " + timesToRepeat;
+        else
+            countTxt.text = "";
+
         if (currentStage == Stages.breathIn)
         {
             leftBar.fillAmount = 1.0f - (timeRemaining / startTime);
