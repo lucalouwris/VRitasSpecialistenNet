@@ -16,12 +16,14 @@ public class Wander : MonoBehaviour
     float wanderTimer;
     [SerializeField] float lookingDistance;
     GameObject player;
+    [SerializeField] Animator animator;
 
     private Transform target;
     private NavMeshAgent agent;
     private float timer;
     bool isLooking = false;
     float speed = 2.0f;
+    Vector3 newPos;
 
     // Use this for initialization
     void OnEnable()
@@ -36,8 +38,14 @@ public class Wander : MonoBehaviour
     void Update()
     {
         if (timer < wanderTimer)
+        {
             timer += Time.deltaTime;
+        }
 
+        if(agent.remainingDistance == 0)
+        {
+            animator.enabled = false;
+        }
 
         if (Vector3.Distance(transform.position, player.transform.position) < lookingDistance) // If the player is in range of the alien. Look at player.
         {
@@ -46,6 +54,7 @@ public class Wander : MonoBehaviour
                 agent.SetDestination(transform.position);
                 isLooking = true;
             }
+            animator.enabled = false;
             Vector3 relativePos = player.transform.position - transform.position;
             float singleStep = speed * Time.deltaTime;
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, relativePos, singleStep, 0.0f);
@@ -55,9 +64,10 @@ public class Wander : MonoBehaviour
         {
             wanderTimer = Random.Range(2,6);
             isLooking = false;
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
             timer = 0;
+            animator.enabled = true;
         }
     }
 

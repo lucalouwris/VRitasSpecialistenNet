@@ -32,6 +32,7 @@ Transform:
   - {fileID: 715052690236125136}
   - {fileID: 8004378674942453287}
   - {fileID: 8004378673207848697}
+  - {fileID: 2525073566049643481}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 171.276, z: 0}
@@ -65,6 +66,83 @@ MonoBehaviour:
   speaker: {fileID: 0}
   position: {x: 0, y: 0, z: 0}
   shouldDisable: 0
+--- !u!1 &1610404074386890643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2525073566049643481}
+  - component: {fileID: 8427516547809563692}
+  - component: {fileID: 5763856090972614230}
+  - component: {fileID: 5092964871688859484}
+  m_Layer: 0
+  m_Name: lever
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2525073566049643481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610404074386890643}
+  m_LocalRotation: {x: 0, y: -0.9226786, z: -0, w: -0.38556987}
+  m_LocalPosition: {x: 0.97668815, y: -0.36642003, z: 2.1169178}
+  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
+  m_Children: []
+  m_Father: {fileID: 103976583750302415}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -36.69, z: 0}
+--- !u!65 &8427516547809563692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610404074386890643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5763856090972614230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610404074386890643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268d94b2db9684c80918baaf7bfa29c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 15d5c884214d2fc4a8c6cbd296d2e4bc, type: 2}
+  brian: {fileID: 0}
+  speaker: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
+  shouldDisable: 1
+--- !u!114 &5092964871688859484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610404074386890643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d1ba1c5b69f44fd8c311103fcefa13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateEnum: {fileID: 0}
+  newState: {fileID: 0}
 --- !u!1 &3463523050242222073
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,10 +605,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToCheck: correctTool
+  wrongToolTag: 
   objectRenderer: {fileID: 5832317894442483151}
   wantedMaterial: {fileID: 2100000, guid: 70c99b8064c324d008b18fa6be75f473, type: 2}
   audioSource: {fileID: 4279921985532468793}
   snapSound: {fileID: 8300000, guid: d5e5fb395e6cf4b9ea71d39934107b59, type: 3}
+  dialogueObject: {fileID: 0}
+  brian: {fileID: 0}
+  speaker: {fileID: 0}
 --- !u!114 &8004378673207848699
 MonoBehaviour:
   m_ObjectHideFlags: 0
