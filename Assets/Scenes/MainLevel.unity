@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010015332, g: 0.2517117, b: 0.53028834, a: 1}
+  m_IndirectSpecularColor: {r: 0.99999905, g: 0, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3133,6 +3133,18 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5092964871688859484, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: stateEnum
+      value: 
+      objectReference: {fileID: 856982663}
+    - target: {fileID: 5763856090972614230, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: brian
+      value: 
+      objectReference: {fileID: 1120413631}
+    - target: {fileID: 5763856090972614230, guid: fda091c2d817a3047a87c634b793a430, type: 3}
+      propertyPath: speaker
+      value: 
+      objectReference: {fileID: 832272130}
     - target: {fileID: 5832317894442483151, guid: fda091c2d817a3047a87c634b793a430, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -9270,81 +9282,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25cf0261baf7e7b46acbac6093483ad8, type: 3}
---- !u!1 &1549278471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1549278472}
-  - component: {fileID: 1549278474}
-  - component: {fileID: 1549278473}
-  - component: {fileID: 1549278475}
-  m_Layer: 0
-  m_Name: breathingExercise
-  m_TagString: breathingExerciseArea
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1549278472
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549278471}
-  m_LocalRotation: {x: 0, y: -0.13493733, z: 0, w: 0.99085414}
-  m_LocalPosition: {x: 37.5, y: 11.978, z: -39.36}
-  m_LocalScale: {x: 31.81, y: 2.23, z: 4.4}
-  m_Children: []
-  m_Father: {fileID: 1731976599}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: -15.51, z: 0}
---- !u!114 &1549278473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549278471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33fba4016d200343a4599645f517f2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine: {fileID: 1120413631}
-  wantedState: 3
-  TagCheck: Player
---- !u!65 &1549278474
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549278471}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1549278475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549278471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d1ba1c5b69f44fd8c311103fcefa13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateEnum: {fileID: 856982663}
-  newState: {fileID: 0}
 --- !u!1001 &1563414850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9446,7 +9383,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 443396855}
-  - {fileID: 1948079345}
   m_Father: {fileID: 1762857587}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9620,7 +9556,7 @@ GameObject:
   - component: {fileID: 1590642488}
   m_Layer: 0
   m_Name: breathingIntroduction
-  m_TagString: Untagged
+  m_TagString: breathingIntroduction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10368,7 +10304,6 @@ Transform:
   - {fileID: 816273496}
   - {fileID: 2053794589}
   - {fileID: 1590642487}
-  - {fileID: 1549278472}
   m_Father: {fileID: 1762857587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11960,66 +11895,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1189651760758486770, guid: 32e31819afa089e43a74424011d9acbd, type: 3}
   m_PrefabInstance: {fileID: 40399634}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1948079344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1948079345}
-  - component: {fileID: 1948079347}
-  - component: {fileID: 1948079346}
-  m_Layer: 0
-  m_Name: breathingExercise
-  m_TagString: breathingExerciseArea
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1948079345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948079344}
-  m_LocalRotation: {x: 0, y: 0.4687009, z: 0, w: 0.883357}
-  m_LocalPosition: {x: 31.69, y: 11.978, z: -36.66}
-  m_LocalScale: {x: 31.81, y: 2.23, z: 4.4}
-  m_Children: []
-  m_Father: {fileID: 1569573804}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 55.9, z: 0}
---- !u!114 &1948079346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948079344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33fba4016d200343a4599645f517f2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine: {fileID: 1120413631}
-  wantedState: 3
-  TagCheck: Player
---- !u!65 &1948079347
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948079344}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1949307115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1189651760758486770, guid: 32e31819afa089e43a74424011d9acbd, type: 3}
