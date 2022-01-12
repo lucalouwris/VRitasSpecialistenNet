@@ -21,13 +21,17 @@ public class DialogueActivator : MonoBehaviour
         {
             // If tag of the object entering the trigger collision has is true for either.
             //brian.transform.position = position; // Move Brian to the correct dialogue position.
-            Debug.Log("switchState");
             brian.SwitchState(brian.States[1]); // Brian switches to the dialogue state.
             if (shouldDisable) // Only do this to disable the gameObject that contains the trigger collider.
             {
                 this.gameObject.SetActive(false);
             }
             this.speaker.playThis = dialogueObject; // Brian speaks the specific dialogue.
+
+            if(this.tag == "breathingIntroduction")
+            {
+                this.speaker.shouldDoBreathingExercise = true;
+            } 
         }
     }
 }

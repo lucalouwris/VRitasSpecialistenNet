@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class BrianSays : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BrianSays : MonoBehaviour
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip sound;
+    [SerializeField] private Image controllerHelper;
+
     public static Action<string> brianSpeaking;
 
 
@@ -19,13 +22,14 @@ public class BrianSays : MonoBehaviour
     private bool isPressedLeft = false;
 
     public DialogueObject playThis;
+    public bool shouldDoBreathingExercise;
 
     public bool isOpen { get; private set; }
 
 
     void OnEnable()
     {
-
+        this.controllerHelper.enabled = false;
         this.source.PlayOneShot(this.sound);
         this.CloseDialogeBox();
         this.typeWriter = GetComponent<TypeWriter>();
@@ -36,6 +40,7 @@ public class BrianSays : MonoBehaviour
 
    public void ShowDialogue(DialogueObject dialogueObject)
     {
+
         this.isOpen = true;
         this.dialogueBox.SetActive(true);
         StartCoroutine(this.StepThroughDialogue(dialogueObject));
@@ -55,10 +60,13 @@ public class BrianSays : MonoBehaviour
 
             if(!this.typeWriter.isRunning)
             {
+            this.controllerHelper.enabled = true;
+
             yield return null;
             yield return new WaitUntil(() => this.isPressedRight == true && this.isPressedLeft == true);
             this.isPressedRight = false;
             this.isPressedLeft = false;
+            this.controllerHelper.enabled = false;
             }
         }
 
@@ -97,6 +105,7 @@ public class BrianSays : MonoBehaviour
 
     public void CloseDialogeBox()
     {
+  
         this.isOpen = false;
         this.dialogueBox.SetActive(false);
         this.textlabel.text = string.Empty;
@@ -105,7 +114,14 @@ public class BrianSays : MonoBehaviour
     private void OnDisable()
     {
         typeWriter.Stop();
-        stateMachine.SwitchState(stateMachine.States[0]);
-        brianSpeaking.Invoke("Walkin");
+
+        if(this.shouldDoBreathingExercise)
+        {
+           stateMachine.SwitchState(stateMachine.States[3]);
+        } else
+        {
+            stateMachine.SwitchState(stateMachine.States[0]);
+            brianSpeaking.Invoke("Walkin");
+        }
     }
 }

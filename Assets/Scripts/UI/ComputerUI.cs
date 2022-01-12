@@ -29,6 +29,7 @@ public class ComputerUI : MonoBehaviour
     [SerializeField] float volume = 0.5f;
     float interval = 0;
     bool active = false;
+
     [HideInInspector] public bool completed = false;
 
     private void Start()
