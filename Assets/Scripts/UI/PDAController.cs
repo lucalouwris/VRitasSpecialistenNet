@@ -1,62 +1,60 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PDAController : MonoBehaviour
 {
     [SerializeField] private Transform clockHandTransform;
+    [SerializeField] XRController controller;
+    [SerializeField] public float rotationSpeed = 800; //Number of seconds it takes to complete 90 degrees
+    [SerializeField] float feedbackStrength = 0.5f;
+    [SerializeField] float feedbackLength = 0.25f;
+    [SerializeField] float wait = 0.7f;
     private float currRotation;
-    private float rotation = 90;     //90 degrees a secont
-    public float rotationSpeed = 5; //Number of seconds it takes to complete 90 degrees
-    private float resetTime = 20;
-    private float countdownTime;
-    //private float test = 20;
-    private bool Moving = true;
+    private float rotation = 90;     //90 degrees a second
+    private bool empty = false;
 
     private void Start()
     {
-        countdownTime = 600;
+        StartCoroutine(Haptic());
     }
-
     private void Update()
     {
         currRotation = clockHandTransform.localEulerAngles.y;
 
-        if (currRotation <= 315 && currRotation > 180) //Empty
+        if (!(currRotation <= 325 && currRotation > 180))
         {
-            if (Moving)
-            {
-                rotation = 90;
-                rotationSpeed = resetTime;
-            }
-            else //Rotation set to 0, waiting for call for ResetWatch
-            {
-                rotation = 0;
-            }
-            
-        } else if (currRotation > 45 && currRotation < 180) //On full
+            clockHandTransform.localEulerAngles -= new Vector3(0, Time.deltaTime * rotation / rotationSpeed, 0);
+        } else
         {
-            rotation = -90;                                 //Change the direction of the rotation
-            rotationSpeed = countdownTime;                  //Change the speed to the count down time
-            Moving = false;                                 //Set the moving to false so the arrow stops when its empty
+            empty = true;
         }
-
-
-        clockHandTransform.localEulerAngles += new Vector3(0, Time.deltaTime * rotation / rotationSpeed, 0);
-
-        //This is just to test that mu function works
-        /*Debug.Log(rotationSpeed);
-        test -= Time.deltaTime;
-        if (test < 0)
-        {
-            test = 30;
-            ResetClock(10);
-        }*/
-        
     }
 
-    public void ResetClock(float timeUntilEmpty)
+    IEnumerator Haptic()
     {
-        countdownTime = timeUntilEmpty;
-        rotationSpeed = resetTime;
-        Moving = true;
+        while (true)
+        {
+            if (empty)
+            {
+                controller.SendHapticImpulse(feedbackStrength, feedbackLength);
+                yield return new WaitForSeconds(feedbackLength + wait);
+            } else
+            {
+                yield return null;
+            }
+        }
+    }
+    public void fillOxygen()
+    {
+        clockHandTransform.localEulerAngles = new Vector3(0, 45, 0);
+        empty = false;
+    }
+
+    [ContextMenu("Fill oxygen")]
+    void ResetFromInspector()
+    {
+        fillOxygen();
     }
 }
