@@ -12824,6 +12824,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 832272130}
     - target: {fileID: 8654318760002279806, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: playerDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318760002279806, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: speedModifier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318760002279806, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: leftController
       value: 
       objectReference: {fileID: 1117335838}

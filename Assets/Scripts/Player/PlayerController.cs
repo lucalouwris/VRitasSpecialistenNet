@@ -17,8 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ControllerInput leftController;
     [SerializeField] ControllerInput rightController;
     [SerializeField] float speedModifier = 2;
-
-    RaycastHit slopeHit;
+    [SerializeField] float playerDrag;
 
     public BrianSays BrianSays => brianSays;
 
@@ -51,17 +50,13 @@ public class PlayerController : MonoBehaviour
         {
             // If either of the controllers has their grip button pressed. Use the distance travelled to move.
             Vector3 direction = Camera.main.transform.forward;
-            slopeMoveDirection = Vector3.ProjectOnPlane(direction, slopeHit.normal);
-            //direction.y = 0;
+            direction.y = 0f;
 
             float moveDistance = leftController.c_Movement + rightController.c_Movement;
 
-            if(isGrounded() && !OnSlope())
-                playerBody.AddForce((direction * moveDistance) * speedModifier);
-            else if(isGrounded() && OnSlope())
-                playerBody.AddForce((slopeMoveDirection * moveDistance) * speedModifier);
-            else
-                playerBody.AddForce((direction * moveDistance) * speedModifier);
+            playerBody.drag = (playerDrag + playerBody.velocity.magnitude);
+
+            playerBody.AddForce((direction * moveDistance) * speedModifier);
         }
         else
         {
@@ -75,19 +70,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
         return Physics.Raycast(checkGroundedPos, Vector3.down, out RaycastHit hit, cCollider.height + 0.01f, groundMask);
-    }
-
-    private bool OnSlope()
-    {
-        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
-        if (Physics.Raycast(checkGroundedPos, Vector3.down, out slopeHit, cCollider.height + 0.01f, groundMask))
-        {
-            if (slopeHit.normal != Vector3.up)
-                return true;
-            else
-                return false;
-        }
-        return false;
     }
 
     /// <summary>
