@@ -21,6 +21,8 @@ public class ReadHeartrate : MonoBehaviour
     private List<string> heartRate = new List<string>();
     private List<string> gameStates = new List<string>();
 
+    public static float currPulse = 0;
+
     private void Start()
     {
         Invoke(nameof(CallGet),interval);

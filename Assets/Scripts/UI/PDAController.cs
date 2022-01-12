@@ -11,6 +11,7 @@ public class PDAController : MonoBehaviour
     [SerializeField] float feedbackStrength = 0.5f;
     [SerializeField] float feedbackLength = 0.25f;
     [SerializeField] float wait = 0.7f;
+
     private float currRotation;
     private float rotation = 90;     //90 degrees a second
     private bool empty = false;
@@ -39,7 +40,14 @@ public class PDAController : MonoBehaviour
             if (empty)
             {
                 controller.SendHapticImpulse(feedbackStrength, feedbackLength);
-                yield return new WaitForSeconds(feedbackLength + wait);
+               if(ReadHeartrate.currPulse != 0)
+                {
+                    Debug.Log("Current heartrate is: " + ReadHeartrate.currPulse);
+                    yield return new WaitForSeconds(feedbackLength + (60/ReadHeartrate.currPulse));
+                } else
+                {
+                    yield return new WaitForSeconds(feedbackLength + wait);
+                }
             } else
             {
                 yield return null;
