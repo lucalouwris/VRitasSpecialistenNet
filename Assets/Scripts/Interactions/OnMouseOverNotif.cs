@@ -41,6 +41,7 @@ public class OnMouseOverNotif : MonoBehaviour
         ui = GameObject.Find("ComputerMG2").GetComponent<ComputerUI>(); // Get the script component of the computer.
         if (gameObject.name == "Refuel") // The button to wipe the notifications and start rtefueling.
         {
+            this.gameObject.SetActive(false);
             ui.Wipe();
             brian.SwitchState(brian.States[1]);
             this.speaker.playThis = dialogueObject;

@@ -46,7 +46,7 @@ public class ComputerUI : MonoBehaviour
         }
         else if (interval <= 0 && active)
         {
-            interval = Random.Range(0f, 2f);
+            interval = Random.Range(0f, 0.25f);
             receiveNotif();
         }
     }
