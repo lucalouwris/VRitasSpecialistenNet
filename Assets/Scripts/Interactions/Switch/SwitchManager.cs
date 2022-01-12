@@ -46,6 +46,7 @@ public class SwitchManager : MonoBehaviour
             leverDown = false;
         if (switchJoint.angle < 2)
             switchJoint.useSpring = false;
+
     }
 
     private void OnSwitchDown()
