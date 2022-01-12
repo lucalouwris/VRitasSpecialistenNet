@@ -7,7 +7,7 @@ public class PDAController : MonoBehaviour
 {
     [SerializeField] private Transform clockHandTransform;
     [SerializeField] XRController controller;
-    [SerializeField] public float rotationSpeed = 600; //Number of seconds it takes to complete 90 degrees
+    [SerializeField] public float rotationSpeed = 800; //Number of seconds it takes to complete 90 degrees
     [SerializeField] float feedbackStrength = 0.5f;
     [SerializeField] float feedbackLength = 0.25f;
     [SerializeField] float wait = 0.7f;
