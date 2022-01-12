@@ -1,13 +1,18 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PDAController : MonoBehaviour
 {
     [SerializeField] private Transform clockHandTransform;
+    [SerializeField] XRController controller;
+    [SerializeField] public float rotationSpeed = 600; //Number of seconds it takes to complete 90 degrees
+    [SerializeField] float feedbackStrength = 0.8f;
+    [SerializeField] float feedbackLength = 0.75f;
     private float currRotation;
     private float rotation = 90;     //90 degrees a second
-    [SerializeField] public float rotationSpeed = 600; //Number of seconds it takes to complete 90 degrees
    
-
     private void Update()
     {
         currRotation = clockHandTransform.localEulerAngles.y;
@@ -15,9 +20,19 @@ public class PDAController : MonoBehaviour
         if (!(currRotation <= 325 && currRotation > 180))
         {
             clockHandTransform.localEulerAngles -= new Vector3(0, Time.deltaTime * rotation / rotationSpeed, 0);
-        } 
+        } else
+        {
+           StartCoroutine(Haptic()); 
+        }
     }
 
+    IEnumerator Haptic()
+    {
+        controller.SendHapticImpulse(feedbackStrength, feedbackLength);
+        yield return new WaitForSeconds(feedbackLength + 2f);
+  
+        yield return null;
+    }
     public void fillOxygen()
     {
         clockHandTransform.localEulerAngles = new Vector3(0, 45, 0);
