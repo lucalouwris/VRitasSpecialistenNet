@@ -10,10 +10,10 @@ public class ExerciseState : BaseState
     [SerializeField] Image leftBar;
     [SerializeField] Image rightBar;
     [SerializeField] Text breathStat;
+    [SerializeField] Text countTxt;
 
     [SerializeField] string prepTxt, breathInTxt, breathOutTxt, pauseTxt, completedTxt;
 
-    [SerializeField] private float distanceFromPlayer = 3.0f;
     [SerializeField] private GameObject canvasObject;
     [SerializeField] private float timesToRepeat;
 
@@ -44,16 +44,14 @@ public class ExerciseState : BaseState
 
     public override void OnEnable()
     {
+        base.OnEnable();
         count = 0;
 
         exerciseEnding = false;
         startedExercise = false;
-
-        base.OnEnable();
-        canvasObject.SetActive(true);
-        offset = Vector3.down * .3f;
-        currentStage = Stages.preparation;
-        state.Invoke("Breathing");
+        
+        goalPos = GetRandomPosition();
+        navAgent.SetDestination(goalPos);
     }
     public void SwitchExercise(float time, string activeText, Stages nextStage)
     {
@@ -79,7 +77,14 @@ public class ExerciseState : BaseState
         {
             transform.LookAt(playerTransform);
             if (!startedExercise)
+            {
+                startedExercise = true;
+                canvasObject.SetActive(true);
+                offset = Vector3.down * .3f;
+                currentStage = Stages.preparation;
+                state.Invoke("Breathing");
                 SwitchExercise(prepTime, prepTxt, Stages.preparation);
+            }
             UpdateExercise();
             if (count >= timesToRepeat && !exerciseEnding)
             {
@@ -91,6 +96,11 @@ public class ExerciseState : BaseState
    
     void UpdateExercise()
     {
+        if(count < timesToRepeat)
+            countTxt.text = count+1 + " OUT OF " + timesToRepeat;
+        else
+            countTxt.text = "";
+
         if (currentStage == Stages.breathIn)
         {
             leftBar.fillAmount = 1.0f - (timeRemaining / startTime);
@@ -133,56 +143,12 @@ public class ExerciseState : BaseState
                         break;
                     case Stages.completed:
                         GetComponent<StateMachine>().SwitchState(GetComponent<StateMachine>().States[1]);
-                        this.speaker.playThis = dialogueObjects[dialogueCount];
+                        speaker.playThis = dialogueObjects[dialogueCount];
                         dialogueCount++;
                         break;
                 }
             }
         }
-    }
-    
-    private Vector3 GetRandomPosition()
-    {
-        RaycastHit ForwardHit;
-        //Vector2 pos = Random.onUnitSphere * 2.5f;
-        Vector3 calculatedPos = playerTransform.position; //new Vector3(pos.x, .5f, pos.y) + 
-        Vector3 direction = new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z).normalized;
-
-        calculatedPos += direction;
-        Vector3 wantedPos = calculatedPos;
-        
-        if(Physics.Raycast(calculatedPos, direction, out ForwardHit, distanceFromPlayer))
-        {
-            wantedPos += direction * (ForwardHit.distance * .75f);
-            wantedPos = CheckDown(wantedPos);
-        }
-        else
-        {
-            wantedPos += direction * distanceFromPlayer;
-            wantedPos = CheckDown(wantedPos);
-        }
-
-        return wantedPos;
-    }
-
-    private Vector3 CheckDown(Vector3 checkPos)
-    {
-        RaycastHit downHit;
-        checkPos.y -= 0.1f;
-        if (Physics.Raycast(checkPos, Vector3.down, out downHit, 10f))
-        {
-            return SampleHit(downHit.point);
-        }
-        return SampleHit(checkPos);
-    }
-    private Vector3 SampleHit(Vector3 checkPos)
-    {
-        NavMeshHit myNavHit;
-        if (NavMesh.SamplePosition(checkPos, out myNavHit, 100f, NavMesh.AllAreas))
-        {
-            return myNavHit.position;
-        }
-        return checkPos;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
