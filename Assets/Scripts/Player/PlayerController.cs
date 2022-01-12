@@ -14,7 +14,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BrianSays brianSays;
     [SerializeField] private NavMeshObstacle meshObstacle;
 
+    [SerializeField] ControllerInput leftController;
+    [SerializeField] ControllerInput rightController;
+    [SerializeField] float speedModifier = 2;
+    [SerializeField] float playerDrag;
+
     public BrianSays BrianSays => brianSays;
+
+    [HideInInspector] public Vector3 slopeMoveDirection;
 
     private XRRig rig;
 
@@ -23,14 +30,46 @@ public class PlayerController : MonoBehaviour
         rig = GetComponent<XRRig>();
     }
 
+
     private void FixedUpdate()
     {
         // Match collider with headset pos.
         FollowHeadset();
 
         // If grounded then don't use gravity on player.
-        bool isGrounded = Grounded();
-        playerBody.useGravity = !isGrounded;
+         playerBody.useGravity = !isGrounded();
+
+        // Calculate distance travelled of left controller.
+        leftController.previousPosition = leftController.transform.position;
+        leftController.c_Movement = (Vector3.Distance(leftController.currentPosition, leftController.previousPosition) / Time.deltaTime);
+        // Calculate distance travelled of right controller.
+        rightController.previousPosition = rightController.transform.position;
+        rightController.c_Movement = (Vector3.Distance(rightController.currentPosition, rightController.previousPosition) / Time.deltaTime);
+
+        if (leftController.isWalking || rightController.isWalking)
+        {
+            // If either of the controllers has their grip button pressed. Use the distance travelled to move.
+            Vector3 direction = Camera.main.transform.forward;
+            direction.y = 0f;
+
+            float moveDistance = leftController.c_Movement + rightController.c_Movement;
+
+            playerBody.drag = (playerDrag + playerBody.velocity.magnitude);
+
+            playerBody.AddForce((direction * moveDistance) * speedModifier);
+        }
+        else
+        {
+            // Else if no grips are pressed.
+            playerBody.velocity = new Vector3(0, playerBody.velocity.y, 0);
+        }
+        leftController.currentPosition = leftController.transform.position;
+        rightController.currentPosition = rightController.transform.position;
+    }
+    private bool isGrounded()
+    {
+        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .1f;
+        return Physics.Raycast(checkGroundedPos, Vector3.down, out RaycastHit hit, cCollider.height + 0.01f, groundMask);
     }
 
     /// <summary>
@@ -45,13 +84,4 @@ public class PlayerController : MonoBehaviour
         cCollider.center = offset;
     }
 
-    /// <summary>
-    /// Checking if the user is on the ground.
-    /// </summary>
-    /// <returns></returns>
-    private bool Grounded()
-    {
-        Vector3 checkGroundedPos = playerHead.transform.position + Vector3.up * .05f;
-        return Physics.SphereCast(checkGroundedPos, 0.2f, Vector3.down, out RaycastHit hit, cCollider.height + 0.01f, groundMask);
-    }
 }

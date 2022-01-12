@@ -10,7 +10,6 @@ TagManager:
   - breathingExerciseArea
   - offButton
   - wrongTool
-  - breathingIntroduction
   layers:
   - Default
   - TransparentFX
