@@ -47,6 +47,7 @@ public class PDAController : MonoBehaviour
                 } else
                 {
                     yield return new WaitForSeconds(feedbackLength + wait);
+                    Debug.Log("Cant find heartrate");
                 }
             } else
             {

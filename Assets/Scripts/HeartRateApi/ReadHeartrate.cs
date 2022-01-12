@@ -47,6 +47,7 @@ public class ReadHeartrate : MonoBehaviour
             velocity.Add(player.velocity.magnitude);
             heartRate.Add(localData);
             gameStates.Add(states.getGameStates());
+            currPulse = float.Parse(localData);
             
             return localData;
         }
