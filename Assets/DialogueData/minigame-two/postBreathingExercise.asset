@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: postBreathingExercise
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Inside the hangar, there is a computer that controls the fuel system. '
+  - Let's go Inside the hangar, there is a computer that controls the fuel system.

@@ -26,7 +26,6 @@ public class BrianSays : MonoBehaviour
 
     public bool isOpen { get; private set; }
 
-
     void OnEnable()
     {
         this.controllerHelper.enabled = false;

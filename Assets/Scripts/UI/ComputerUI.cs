@@ -29,13 +29,17 @@ public class ComputerUI : MonoBehaviour
     [SerializeField] float volume = 0.5f;
     float interval = 0;
     bool active = false;
+ 
+    [SerializeField] List<string> textMessages = new List<string>();
+    int messagesIndex = 0;
 
     [HideInInspector] public bool completed = false;
 
     private void Start()
     {
-        interval = Random.Range(1f, 5f);
+        interval = Random.Range(1f, 0.25f);
         audioSource = GetComponent<AudioSource>();
+
     }
     // Update is called once per frame
     void Update()
@@ -73,6 +77,7 @@ public class ComputerUI : MonoBehaviour
         float width = Random.Range(-0.55f * transform.localScale.x, 0.55f * transform.localScale.x); // Random x on screen.
         float height = Random.Range(-0.4f * transform.localScale.y, 0.4f * transform.localScale.y); // Random y on screen.
         GameObject notif = Instantiate(notification, new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0), screen.transform.parent); // Instantiate a new message
+        Debug.Log(notif.GetComponentInChildren<Text>().text);
         notif.transform.SetParent(screen.transform);
         Vector3 spawnPosition = new Vector3(bg.transform.position.x + width, bg.transform.position.y + height, screen.transform.position.z);
         notif.transform.position = spawnPosition;
@@ -87,8 +92,12 @@ public class ComputerUI : MonoBehaviour
                 Destroy(messages[i].gameObject);
                 messages.RemoveAt(i);
                 refuel.SetActive(true);
+                notif.GetComponentInChildren<Text>().text = textMessages[Random.Range(0, 25)];
             }
+        notif.GetComponentInChildren<Text>().text = textMessages[i];
         }
+
+
         messages.Add(notif);
     } // Other type of messaging which is more structured
     void receiveNotifStructured()
