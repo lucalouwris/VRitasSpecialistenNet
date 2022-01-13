@@ -37,7 +37,7 @@ public class ComputerUI : MonoBehaviour
 
     private void Start()
     {
-        interval = Random.Range(1f, 0.25f);
+        interval = Random.Range(0.25f, 1f);
         audioSource = GetComponent<AudioSource>();
 
     }
