@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: mechanic-guide
   m_EditorClassIdentifier: 
   dialogue:
-  - 'We need to turn on this computer. You can do this by tapping the screen. '
+  - 'We need to find the button that allows us to start refueling. '
+  - 'First, turn on the computer by tapping the screen. '

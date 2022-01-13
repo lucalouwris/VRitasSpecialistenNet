@@ -13,7 +13,7 @@ using UnityEngine.UI;
 
 public class ComputerUI : MonoBehaviour
 {
-    [SerializeField] List<GameObject> messagePositions;
+    [SerializeField] GameObject[] messagePositions;
     [SerializeField] AudioClip[] clips;
 
     [SerializeField] GameObject notification;
@@ -29,12 +29,17 @@ public class ComputerUI : MonoBehaviour
     [SerializeField] float volume = 0.5f;
     float interval = 0;
     bool active = false;
+
+    [SerializeField] string[] textMessages;
+    int messagesIndex = 0;
+
     [HideInInspector] public bool completed = false;
 
     private void Start()
     {
-        interval = Random.Range(1f, 5f);
+        interval = Random.Range(0.25f, 1f);
         audioSource = GetComponent<AudioSource>();
+
     }
     // Update is called once per frame
     void Update()
@@ -45,7 +50,7 @@ public class ComputerUI : MonoBehaviour
         }
         else if (interval <= 0 && active)
         {
-            interval = Random.Range(0f, 2f);
+            interval = Random.Range(0f, 0.25f);
             receiveNotif();
         }
     }
@@ -72,6 +77,7 @@ public class ComputerUI : MonoBehaviour
         float width = Random.Range(-0.55f * transform.localScale.x, 0.55f * transform.localScale.x); // Random x on screen.
         float height = Random.Range(-0.4f * transform.localScale.y, 0.4f * transform.localScale.y); // Random y on screen.
         GameObject notif = Instantiate(notification, new Vector3(0, 0, 0), Quaternion.Euler(0, 180, 0), screen.transform.parent); // Instantiate a new message
+        notif.GetComponentInChildren<Text>().text = textMessages[Random.Range(0, textMessages.Length)]; // Random messages on the object
         notif.transform.SetParent(screen.transform);
         Vector3 spawnPosition = new Vector3(bg.transform.position.x + width, bg.transform.position.y + height, screen.transform.position.z);
         notif.transform.position = spawnPosition;
@@ -88,6 +94,8 @@ public class ComputerUI : MonoBehaviour
                 refuel.SetActive(true);
             }
         }
+
+
         messages.Add(notif);
     } // Other type of messaging which is more structured
     void receiveNotifStructured()
@@ -104,7 +112,7 @@ public class ComputerUI : MonoBehaviour
             for (int i = 0; i < messages.Count; i++)
             {
                 int number = int.Parse(messages[i].name);
-                if (number < messagePositions.Count - 1) // Move messages down the list.
+                if (number < messagePositions.Length - 1) // Move messages down the list.
                 {
                     notif.transform.SetParent(messagePositions[number + 1].transform);
                     notif.transform.position = messagePositions[number + 1].transform.position;
