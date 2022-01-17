@@ -69,6 +69,7 @@ public class GeneratorStartup : MonoBehaviour
 
         brian.SwitchState(brian.States[1]);
         this.speaker.playThis = dialogueObject;
+        this.speaker.shouldDoBreathingExercise = true;
 
         // Turn on computer for minigame 2
         this.computerButton.SetActive(true);

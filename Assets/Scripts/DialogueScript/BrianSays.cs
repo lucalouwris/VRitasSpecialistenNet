@@ -22,9 +22,9 @@ public class BrianSays : MonoBehaviour
     private bool isPressedLeft = false;
 
     public DialogueObject playThis;
+    public bool shouldDoBreathingExercise;
 
     public bool isOpen { get; private set; }
-
 
     void OnEnable()
     {
@@ -39,6 +39,7 @@ public class BrianSays : MonoBehaviour
 
    public void ShowDialogue(DialogueObject dialogueObject)
     {
+
         this.isOpen = true;
         this.dialogueBox.SetActive(true);
         StartCoroutine(this.StepThroughDialogue(dialogueObject));
@@ -103,6 +104,7 @@ public class BrianSays : MonoBehaviour
 
     public void CloseDialogeBox()
     {
+  
         this.isOpen = false;
         this.dialogueBox.SetActive(false);
         this.textlabel.text = string.Empty;
@@ -111,7 +113,14 @@ public class BrianSays : MonoBehaviour
     private void OnDisable()
     {
         typeWriter.Stop();
-        stateMachine.SwitchState(stateMachine.States[0]);
-        brianSpeaking.Invoke("Walkin");
+
+        if(this.shouldDoBreathingExercise)
+        {
+           stateMachine.SwitchState(stateMachine.States[3]);
+        } else
+        {
+            stateMachine.SwitchState(stateMachine.States[0]);
+            brianSpeaking.Invoke("Walkin");
+        }
     }
 }

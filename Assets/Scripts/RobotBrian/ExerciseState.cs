@@ -155,6 +155,7 @@ public class ExerciseState : BaseState
     public override void OnDisable()
     {
         breathStat.text = "";
+        this.speaker.shouldDoBreathingExercise = false;
         canvasObject.SetActive(false);
     }
 }
