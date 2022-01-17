@@ -44,7 +44,7 @@ public class Wander : MonoBehaviour
 
         if(agent.remainingDistance == 0)
         {
-            animator.enabled = false;
+            animator.SetBool("walking", false);
         }
 
         if (Vector3.Distance(transform.position, player.transform.position) < lookingDistance) // If the player is in range of the alien. Look at player.
@@ -54,7 +54,7 @@ public class Wander : MonoBehaviour
                 agent.SetDestination(transform.position);
                 isLooking = true;
             }
-            animator.enabled = false;
+            animator.SetBool("walking", false);
             Vector3 relativePos = player.transform.position - transform.position;
             float singleStep = speed * Time.deltaTime;
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, relativePos, singleStep, 0.0f);
@@ -67,7 +67,7 @@ public class Wander : MonoBehaviour
             newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
             timer = 0;
-            animator.enabled = true;
+            animator.SetBool("walking", true);
         }
     }
 
