@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010015332, g: 0.2517117, b: 0.53028834, a: 1}
+  m_IndirectSpecularColor: {r: 0.010013823, g: 0.25171012, b: 0.5302866, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12728,6 +12728,38 @@ PrefabInstance:
       propertyPath: bindings.Array.data[2].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 832272130}
+    - target: {fileID: 8654318759606495487, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2424622706892375604, guid: 366eaa62a815eb84494e8754148ac62d, type: 3}
+    - target: {fileID: 8654318759606495487, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759606495487, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 5988350722895372979, guid: 366eaa62a815eb84494e8754148ac62d, type: 3}
+    - target: {fileID: 8654318759606495487, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 7808352848985364844, guid: 366eaa62a815eb84494e8754148ac62d, type: 3}
+    - target: {fileID: 8654318759833211634, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2424622706892375604, guid: 366eaa62a815eb84494e8754148ac62d, type: 3}
+    - target: {fileID: 8654318759833211634, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654318759833211634, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 5988350722895372979, guid: 366eaa62a815eb84494e8754148ac62d, type: 3}
+    - target: {fileID: 8654318759833211634, guid: 491a6671fa652a442876463806f19a28, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 7808352848985364844, guid: 366eaa62a815eb84494e8754148ac62d, type: 3}
     - target: {fileID: 8654318760002279793, guid: 491a6671fa652a442876463806f19a28, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
       value: 2
