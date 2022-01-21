@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - 'Great job! The spaceship is being refueled! '
-  - 'We can go back to our spaceship to head back to Earth. '
+  - 'We can go back to our spaceship to head back to earth. '

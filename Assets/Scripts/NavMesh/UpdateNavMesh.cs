@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UpdateNavMesh : MonoBehaviour
 {
-    [SerializeField] private NavMeshSurface[] surfaces;
+    [SerializeField] NavMeshAgent brian;
+    [SerializeField] GameObject warp;
+    [SerializeField] private Unity.AI.Navigation.NavMeshSurface[] surfaces;
 
     [ContextMenu("Update nav Meshes")]
     public void UpdateAllMeshes()
@@ -15,5 +18,6 @@ public class UpdateNavMesh : MonoBehaviour
         {
             surface.BuildNavMesh();
         }
+        brian.Warp(warp.transform.position);
     }
 }

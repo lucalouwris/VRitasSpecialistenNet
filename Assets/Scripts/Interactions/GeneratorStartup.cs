@@ -24,6 +24,9 @@ public class GeneratorStartup : MonoBehaviour
 
     [SerializeField] private GameObject computerButton;
 
+    //Refill oxygen
+    [SerializeField] private PDAController oxygen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,9 +69,13 @@ public class GeneratorStartup : MonoBehaviour
 
         brian.SwitchState(brian.States[1]);
         this.speaker.playThis = dialogueObject;
+        this.speaker.shouldDoBreathingExercise = true;
 
         // Turn on computer for minigame 2
         this.computerButton.SetActive(true);
+
+        //Refilling oxygen
+        oxygen.fillOxygen();
     }
 
     public void renderNewStates()

@@ -44,15 +44,16 @@ public class OnMouseOverNotif : MonoBehaviour
             ui.Wipe();
             brian.SwitchState(brian.States[1]);
             this.speaker.playThis = dialogueObject;
+            showComputerFeedback();
             audioController.PlayAlien();
+            this.gameObject.SetActive(false);
         }
         else if (gameObject.name == "OnButton") // The button to turn the computer on.
         {
             ui.TurnOn();
-            brian.SwitchState(brian.States[1]);
-            this.speaker.playThis = dialogueObject;
 
-            if(this.spawningManager)
+            
+            if (this.spawningManager)
             {
                 this.spawningManager.spawnAliens(countOfAliens); // Spawn the aliens for minigame 3
             }
