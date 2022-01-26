@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - 'We need to find the button that allows us to start refueling. '
-  - 'First, turn on the computer by tapping the screen. '
+  - 'First, turn on the computer by tapping the on button. '
